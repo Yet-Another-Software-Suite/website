@@ -25,28 +25,28 @@ const links = [
 	description="Get in touch with YASS on Discord, GitHub, or Instagram."
 	url="https://yassrobotics.com/contact"
 >
-	<section class="bg-white dark:bg-neutral-950 py-16 sm:py-20 px-4 sm:px-6">
+	<section class="py-16 sm:py-20 px-4 sm:px-6">
 		<div class="max-w-3xl mx-auto text-center">
-			<h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 text-neutral-900 dark:text-white">
+			<h1 class="text-4xl sm:text-5xl font-bold mb-4 sm:mb-6 text-ink">
 				Get in Touch
 			</h1>
-			<p class="text-base sm:text-lg md:text-xl text-neutral-600 dark:text-neutral-300 leading-relaxed">
+			<p class="text-base sm:text-lg text-dim leading-relaxed">
 				Stuck on a config, found a bug, or want your team listed as a partner? Here's where to find us.
 			</p>
 		</div>
 	</section>
 
-	<section class="py-16 sm:py-20 px-4 sm:px-6 bg-neutral-50 dark:bg-neutral-900">
-		<div class="max-w-3xl mx-auto grid sm:grid-cols-3 gap-6">
+	<section class="py-16 sm:py-20 px-4 sm:px-6 bg-graphite-panel/40 border-y border-graphite-border">
+		<div class="max-w-3xl mx-auto grid sm:grid-cols-3 gap-5">
 			{links.map((link) => (
 				<a
 					href={link.url}
 					target="_blank"
 					rel="noopener noreferrer"
-					class="block bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg p-6 text-center hover:border-yass-600 dark:hover:border-yass-400 transition-colors"
+					class="block bg-graphite-panel border border-graphite-border rounded-sm p-6 text-center hover:border-yass-600 transition-colors"
 				>
-					<h2 class="font-bold text-lg text-neutral-900 dark:text-white mb-2">{link.name}</h2>
-					<p class="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">{link.description}</p>
+					<h2 class="font-bold text-lg text-ink mb-2">{link.name}</h2>
+					<p class="text-sm text-dim leading-relaxed">{link.description}</p>
 				</a>
 			))}
 		</div>

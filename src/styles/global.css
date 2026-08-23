@@ -3,32 +3,81 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-	--color-yass-50: #f2f9ec;
-	--color-yass-100: #e0f1cf;
-	--color-yass-200: #c3e3a3;
-	--color-yass-300: #9fd06e;
-	--color-yass-400: #82c34a;
-	--color-yass-500: #63a52f;
-	--color-yass-600: #4c8322;
-	--color-yass-700: #3b641c;
-	--color-yass-800: #2f4f1c;
-	--color-yass-900: #1e3312;
+	/* Base surfaces -- light-mode values by default, overridden under .dark below.
+	   Same custom properties, so every bg-graphite / text-ink / etc. utility
+	   automatically swaps with the theme, no dark: variants needed anywhere. */
+	--color-graphite: #f7f7f8;
+	--color-graphite-panel: #e6e8eb;
+	--color-graphite-raised: #d5d8dd;
+	--color-graphite-border: #c1c6cd;
+
+	/* Text */
+	--color-ink: #14181c;
+	--color-dim: #5a6372;
+	--color-faint: #8d96a5;
+
+	/* Fixed dark color for text on top of bright accent buttons/highlights --
+	   intentionally NOT theme-reactive, so accent buttons stay legible in both. */
+	--color-on-accent: #0f2214;
+
+	/* Primary accent (Bright Fern) -- constant across both themes. */
+	--color-yass-50: #f1faea;
+	--color-yass-100: #e0f4d2;
+	--color-yass-200: #c2eaa4;
+	--color-yass-300: #a3df77;
+	--color-yass-400: #87d54d;
+	--color-yass-500: #78d037;
+	--color-yass-600: #6bbf2d;
+	--color-yass-700: #589d25;
+	--color-yass-800: #457c1d;
+	--color-yass-900: #2e5313;
+	--color-accent-dim: #3c6b1a;
+
+	/* Library brand colors -- constant across both themes. */
+	--color-sapphire: #2d6fbf;
+	--color-sapphire-dark: #235796;
+	--color-yall: #c9a63b;
+	--color-yamg: #8e6bb0;
+	--color-spruce: #194825;
+	--color-hunter: #1f5a2e;
+
+	/* Partner Team Pink -- scoped to Partner Teams content only. */
+	--color-partner-pink: #cc0071;
+	--color-partner-maroon: #540000;
+	--color-partner-pink-tint: #f2b3d1;
+	--color-partner-pink-soft: rgba(204, 0, 113, 0.08);
+
+	--font-display: "Big Shoulders Display", sans-serif;
+	--font-mono: "JetBrains Mono", monospace;
+	--font-sans: "Inter", system-ui, sans-serif;
+}
+
+:root.dark {
+	--color-graphite: #17191c;
+	--color-graphite-panel: #2b2e34;
+	--color-graphite-raised: #373b43;
+	--color-graphite-border: #454a54;
+
+	--color-ink: #e9edef;
+	--color-dim: #a6a6a6;
+	--color-faint: #5b6570;
 }
 
 @layer base {
 	body {
 		font-family: "Inter", system-ui, sans-serif;
-		background-color: #ffffff;
-		color: #171717;
+		background:
+			repeating-linear-gradient(0deg, rgba(139, 151, 163, 0.08) 0px, transparent 1px, transparent 32px, rgba(139, 151, 163, 0.08) 32px),
+			repeating-linear-gradient(90deg, rgba(139, 151, 163, 0.08) 0px, transparent 1px, transparent 32px, rgba(139, 151, 163, 0.08) 32px),
+			var(--color-graphite);
+		color: var(--color-ink);
+		transition: background-color 0.2s ease, color 0.2s ease;
 	}
 
-	.dark body {
-		background-color: #0a0a0a;
-		color: #f5f5f5;
-	}
-
-	h1, h2, h3, h4, h5, h6 {
-		font-family: "JetBrains Mono", monospace;
+	h1, h2, h3 {
+		font-family: "Big Shoulders Display", sans-serif;
+		text-transform: uppercase;
+		letter-spacing: 0.01em;
 	}
 
 	code, pre {
@@ -37,11 +86,8 @@
 }
 
 ::selection {
-	background: #c3e3a3;
-}
-
-.dark ::selection {
-	background: #3b641c;
+	background: var(--color-yass-700);
+	color: #ffffff;
 }
 
 .scroll-animate {
@@ -53,4 +99,32 @@
 .scroll-animate.animate {
 	opacity: 1;
 	transform: translateY(0);
+}
+
+/* Riveted panel, used for the hero plate. */
+.plate {
+	position: relative;
+	background: var(--color-graphite-panel);
+	border: 1px solid var(--color-graphite-border);
+	border-radius: 2px;
+}
+
+.plate .rivet {
+	position: absolute;
+	width: 9px;
+	height: 9px;
+	border-radius: 50%;
+	background: radial-gradient(circle at 35% 30%, #9aa3ab, #3a4249 70%);
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.plate .rivet-tl { top: 14px; left: 14px; }
+.plate .rivet-tr { top: 14px; right: 14px; }
+.plate .rivet-bl { bottom: 14px; left: 14px; }
+.plate .rivet-br { bottom: 14px; right: 14px; }
+
+/* Hazard-stripe section divider. */
+.hazard-stripe {
+	height: 10px;
+	background: repeating-linear-gradient(-45deg, var(--color-yass-600), var(--color-yass-600) 14px, var(--color-spruce) 14px, var(--color-spruce) 28px);
 }

@@ -1,0 +1,51 @@
+---
+// Instagram's oEmbed widget renders unreliably (frequently blank) once framed
+// on third-party sites, so instead of embedding live iframes we mirror a
+// handful of posts as self-hosted cards that link back to the real post.
+// Swap the image/caption/url here to feature different posts.
+import yagslBeta from "../assets/instagram/ig-yagsl-2027-beta.jpg";
+import teamTestimonial from "../assets/instagram/ig-team-testimonial-gears.jpg";
+import byTheNumbers from "../assets/instagram/ig-yass-by-the-numbers.jpg";
+
+const posts = [
+	{
+		image: yagslBeta,
+		caption: "We are officially starting to prep for the 2027 season! YAGSL 2027 Beta is officially ready for testing!",
+		url: "https://www.instagram.com/yassrobotics/p/DcMyMyVNdNI/",
+	},
+	{
+		image: teamTestimonial,
+		caption: "Part 4 of our Team Testimonial Series! Here's what partner team 2181 GEARS has to say about YASS.",
+		url: "https://www.instagram.com/yassrobotics/p/Db6mY5pvaC5/",
+	},
+	{
+		image: byTheNumbers,
+		caption: "The numbers are in! This season, 537 FRC teams used a YASS library on their robot.",
+		url: "https://www.instagram.com/yassrobotics/p/DbeEmMdtnFz/",
+	},
+];
+---
+
+<div class="grid sm:grid-cols-3 gap-5">
+	{posts.map((post) => (
+		<a
+			href={post.url}
+			target="_blank"
+			rel="noopener noreferrer"
+			class="group block bg-graphite-panel border border-graphite-border rounded-sm overflow-hidden hover:border-yass-600 transition-colors"
+		>
+			<img
+				src={post.image.src}
+				alt={post.caption}
+				class="w-full aspect-square object-cover"
+				loading="lazy"
+			/>
+			<p class="p-4 text-sm text-dim leading-relaxed line-clamp-3">
+				{post.caption}
+			</p>
+			<p class="px-4 pb-4 font-mono text-xs uppercase tracking-wider text-yass-600 group-hover:underline">
+				View on Instagram &rarr;
+			</p>
+		</a>
+	))}
+</div>
