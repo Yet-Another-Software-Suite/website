@@ -1,0 +1,104 @@
+---
+import "../styles/global.css";
+import mascot from "../assets/logo/mascot.png";
+import Nav from "../components/Nav.astro";
+
+export interface Props {
+	title?: string;
+	description?: string;
+	image?: string;
+	url?: string;
+}
+
+const {
+	title = "Yet Another Software Suite",
+	description = "Free, open-source FRC and FTC software: YAGSL, YAMS, YAMG, and YALL. Master programming robots in days, not years.",
+	image = "/og-image.png",
+	url = "https://yassrobotics.com",
+} = Astro.props;
+const year = new Date().getFullYear();
+---
+
+<html lang="en">
+<head>
+	<script is:inline>
+		const storedTheme = localStorage.getItem("theme");
+		const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+		if (storedTheme === "dark" || (!storedTheme && prefersDark)) {
+			document.documentElement.classList.add("dark");
+		}
+	</script>
+	<meta charset="utf-8" />
+	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+	<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="generator" content={Astro.generator} />
+	<meta name="description" content={description} />
+	<meta name="keywords" content="FRC, FTC, FIRST Robotics Competition, YASS, Yet Another Software Suite, YAGSL, YAMS, YAMG, YALL, swerve drive library, robot programming, WPILib, robotics software" />
+	<link rel="sitemap" href="/sitemap-index.xml" />
+
+	<!-- OpenGraph / Facebook -->
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content={url} />
+	<meta property="og:title" content={title} />
+	<meta property="og:description" content={description} />
+	<meta property="og:image" content={new URL(image, Astro.url).href} />
+	<meta property="og:image:alt" content="Yet Another Software Suite logo" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:site_name" content="Yet Another Software Suite" />
+
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image" />
+	<meta property="twitter:url" content={url} />
+	<meta property="twitter:title" content={title} />
+	<meta property="twitter:description" content={description} />
+	<meta property="twitter:image" content={new URL(image, Astro.url).href} />
+	<meta property="twitter:image:alt" content="Yet Another Software Suite logo" />
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+	<title>{title}</title>
+	<slot name="head" />
+</head>
+<body>
+<Nav />
+<main>
+	<slot />
+</main>
+
+<footer class="bg-neutral-50 dark:bg-neutral-900 border-t border-neutral-200 dark:border-neutral-700 text-neutral-700 dark:text-neutral-300 py-10 px-6 text-center">
+	<div class="flex flex-col items-center gap-4">
+		<img src={mascot.src} alt="YASS logo" class="w-10 h-10 object-contain" />
+		<div class="flex gap-5 text-sm font-medium">
+			<a href="https://discord.gg/yass" target="_blank" rel="noopener noreferrer" class="hover:text-yass-600 dark:hover:text-yass-400 transition-colors">Discord</a>
+			<a href="https://www.instagram.com/yassrobotics" target="_blank" rel="noopener noreferrer" class="hover:text-yass-600 dark:hover:text-yass-400 transition-colors">Instagram</a>
+			<a href="https://github.com/Yet-Another-Software-Suite" target="_blank" rel="noopener noreferrer" class="hover:text-yass-600 dark:hover:text-yass-400 transition-colors">GitHub</a>
+			<a href="/merch" class="hover:text-yass-600 dark:hover:text-yass-400 transition-colors">Merch</a>
+		</div>
+		<p class="text-neutral-500 dark:text-neutral-400 text-sm">&copy; {year} Yet Another Software Suite. Founded by BroncBotz 3481, Grease Monkeys 457, RoboRaiders 3561, and Camber Robotics 9658.</p>
+	</div>
+</footer>
+
+<script>
+	function initScrollReveal() {
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach((entry) => {
+				if (entry.isIntersecting) {
+					entry.target.classList.add("animate");
+				}
+			});
+		}, {
+			threshold: 0.15,
+			rootMargin: "0px 0px -80px 0px",
+		});
+
+		document.querySelectorAll(".scroll-animate").forEach((el) => {
+			observer.observe(el);
+		});
+	}
+
+	document.addEventListener("DOMContentLoaded", initScrollReveal);
+</script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+	"name": "yass-website",
+	"type": "module",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "astro dev --host",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro"
+	},
+	"dependencies": {
+		"@astrojs/sitemap": "^3.7.3",
+		"@tailwindcss/vite": "^4.1.11",
+		"astro": "^7.1.6",
+		"tailwindcss": "^4.1.11"
+	}
+}

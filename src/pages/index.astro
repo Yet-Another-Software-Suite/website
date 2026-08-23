@@ -1,0 +1,192 @@
+---
+import { getCollection } from "astro:content";
+import lockup from "../assets/logo/lockup.png";
+import mascot from "../assets/logo/mascot.png";
+import { projects } from "../data/projects.js";
+import { foundingTeams, testimonials } from "../data/teams.js";
+import Layout from "../layouts/Layout.astro";
+
+const posts = (await getCollection("blog")).sort(
+	(a, b) => b.data.sortDate.valueOf() - a.data.sortDate.valueOf(),
+);
+const latestPosts = posts.slice(0, 3);
+
+const featuredTestimonials = testimonials.filter((t) =>
+	["Camber Robotics", "GEARS", "Ionic Bond"].includes(t.team),
+);
+---
+
+<Layout
+	title="Yet Another Software Suite"
+	description="Free, open-source FRC and FTC software built by students, for students: YAGSL, YAMS, YAMG, and YALL."
+	url="https://yassrobotics.com"
+>
+	<!-- Hero -->
+	<section class="bg-white dark:bg-neutral-950 py-16 sm:py-20 px-4 sm:px-6">
+		<div class="max-w-4xl mx-auto text-center">
+			<img src={mascot.src} alt="YASS logo" class="w-20 h-20 mx-auto mb-6 object-contain" />
+			<h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 text-neutral-900 dark:text-white">
+				Master programming robots in <span class="text-yass-600 dark:text-yass-400">days</span>, not years
+			</h1>
+			<p class="text-base sm:text-lg md:text-xl text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto leading-relaxed mb-8">
+				YASS is a set of free, open-source libraries for FRC (and FTC starting in 2028) that make robot code easier to write and easier to share, so your team spends less time fighting the framework and more time driving.
+			</p>
+			<div class="flex flex-col sm:flex-row justify-center gap-4">
+				<a
+					href="/projects"
+					class="inline-block rounded-md bg-yass-600 text-white font-semibold px-6 py-3 hover:bg-yass-700 transition-colors"
+				>
+					See Our Projects
+				</a>
+				<a
+					href="https://discord.gg/yass"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="inline-block rounded-md border border-neutral-300 dark:border-neutral-600 text-neutral-800 dark:text-neutral-200 font-semibold px-6 py-3 hover:border-yass-600 dark:hover:border-yass-400 hover:text-yass-600 dark:hover:text-yass-400 transition-colors"
+				>
+					Join Our Discord
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- What is YASS -->
+	<section class="py-16 sm:py-20 px-4 sm:px-6 bg-neutral-50 dark:bg-neutral-900">
+		<div class="max-w-3xl mx-auto text-center scroll-animate">
+			<h2 class="text-2xl sm:text-3xl font-bold text-neutral-900 dark:text-white mb-4 sm:mb-6">
+				What is YASS?
+			</h2>
+			<p class="text-sm sm:text-base lg:text-lg text-neutral-600 dark:text-neutral-300 leading-relaxed mb-4">
+				Yet Another Software Suite is a collection of libraries that make FRC programming significantly easier, built around shared code so debugging and development work the same way whether you're at your desk or standing next to the robot.
+			</p>
+			<p class="text-sm sm:text-base lg:text-lg text-neutral-600 dark:text-neutral-300 leading-relaxed">
+				We started as a handful of teams trading code between each other. Programming a robot shouldn't take years to learn, so we built the tools we wished we'd had, and now hand them to any team that wants them, for free.
+			</p>
+		</div>
+	</section>
+
+	<!-- Projects -->
+	<section class="py-16 sm:py-20 px-4 sm:px-6 bg-white dark:bg-neutral-950">
+		<div class="max-w-6xl mx-auto scroll-animate">
+			<h2 class="text-2xl sm:text-3xl font-bold text-center mb-2 text-neutral-900 dark:text-white">Our Projects</h2>
+			<p class="text-center text-neutral-600 dark:text-neutral-300 mb-8 sm:mb-12">Four libraries, all free and open source.</p>
+			<div class="grid sm:grid-cols-2 gap-4 sm:gap-6">
+				{projects.map((project) => (
+					<div class="bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 rounded-lg p-6 hover:border-yass-600 dark:hover:border-yass-400 transition-colors">
+						<h3 class="text-lg sm:text-xl font-bold text-neutral-900 dark:text-white mb-1">{project.name}</h3>
+						<p class="text-xs sm:text-sm text-neutral-500 dark:text-neutral-400 mb-3">{project.fullName}</p>
+						<p class="text-sm sm:text-base text-neutral-600 dark:text-neutral-300 leading-relaxed mb-4">{project.description}</p>
+						<div class="flex gap-4 text-sm font-semibold">
+							<a href={project.docs} target="_blank" rel="noopener noreferrer" class="text-yass-600 dark:text-yass-400 hover:underline">Docs &rarr;</a>
+							<a href={project.github} target="_blank" rel="noopener noreferrer" class="text-yass-600 dark:text-yass-400 hover:underline">GitHub &rarr;</a>
+						</div>
+					</div>
+				))}
+			</div>
+			<p class="text-center mt-8">
+				<a href="/projects" class="font-semibold text-yass-600 dark:text-yass-400 hover:underline">Learn more about every project &rarr;</a>
+			</p>
+		</div>
+	</section>
+
+	<!-- Founding Teams -->
+	<section class="py-16 sm:py-20 px-4 sm:px-6 bg-neutral-50 dark:bg-neutral-900">
+		<div class="max-w-4xl mx-auto text-center scroll-animate">
+			<h2 class="text-2xl sm:text-3xl font-bold text-neutral-900 dark:text-white mb-4">Founded by Four FRC Teams</h2>
+			<p class="text-sm sm:text-base lg:text-lg text-neutral-600 dark:text-neutral-300 leading-relaxed mb-8 max-w-2xl mx-auto">
+				YASS started when a few teams that already shared code with each other decided to make it official.
+			</p>
+			<div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+				{foundingTeams.map((team) => (
+					<div class="bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg p-4">
+						<p class="font-bold text-neutral-900 dark:text-white">{team.name}</p>
+						<p class="text-sm text-neutral-500 dark:text-neutral-400">Team {team.number}</p>
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<!-- Testimonials -->
+	<section class="py-16 sm:py-20 px-4 sm:px-6 bg-white dark:bg-neutral-950">
+		<div class="max-w-5xl mx-auto scroll-animate">
+			<h2 class="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-12 text-neutral-900 dark:text-white">What Teams Are Saying</h2>
+			<div class="grid md:grid-cols-3 gap-6">
+				{featuredTestimonials.map((t) => (
+					<figure class="bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 rounded-lg p-6 flex flex-col">
+						<blockquote class="text-sm sm:text-base text-neutral-600 dark:text-neutral-300 leading-relaxed mb-4 grow">
+							"{t.quote}"
+						</blockquote>
+						<figcaption class="text-sm font-semibold text-neutral-900 dark:text-white">
+							{t.team} <span class="text-neutral-500 dark:text-neutral-400 font-normal">Team {t.number}</span>
+						</figcaption>
+					</figure>
+				))}
+			</div>
+			<p class="text-center mt-8">
+				<a href="/teams" class="font-semibold text-yass-600 dark:text-yass-400 hover:underline">Meet all of our partner teams &rarr;</a>
+			</p>
+		</div>
+	</section>
+
+	<!-- Blog Teaser -->
+	{latestPosts.length > 0 && (
+		<section class="py-16 sm:py-20 px-4 sm:px-6 bg-neutral-50 dark:bg-neutral-900">
+			<div class="max-w-5xl mx-auto scroll-animate">
+				<h2 class="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-12 text-neutral-900 dark:text-white">From the Blog</h2>
+				<div class="grid md:grid-cols-3 gap-6">
+					{latestPosts.map((post) => (
+						<a
+							href={`/blog/${post.id}`}
+							class="block bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg p-6 hover:border-yass-600 dark:hover:border-yass-400 transition-colors"
+						>
+							<p class="text-neutral-500 dark:text-neutral-400 text-sm mb-2">
+								{post.data.displayDate ?? post.data.sortDate.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}
+							</p>
+							<h3 class="text-lg font-bold text-neutral-900 dark:text-white mb-2">{post.data.title}</h3>
+							<p class="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">{post.data.excerpt}</p>
+						</a>
+					))}
+				</div>
+				<p class="text-center mt-8">
+					<a href="/blog" class="font-semibold text-yass-600 dark:text-yass-400 hover:underline">Read the full blog &rarr;</a>
+				</p>
+			</div>
+		</section>
+	)}
+
+	<!-- Merch Teaser -->
+	<section class="py-16 sm:py-20 px-4 sm:px-6 bg-white dark:bg-neutral-950">
+		<div class="max-w-2xl mx-auto text-center scroll-animate">
+			<img src={lockup.src} alt="Yet Another Software Suite" class="h-24 mx-auto object-contain mb-6" />
+			<h2 class="text-2xl sm:text-3xl font-bold text-neutral-900 dark:text-white mb-4">Wear the Suite</h2>
+			<p class="text-sm sm:text-base lg:text-lg text-neutral-600 dark:text-neutral-300 leading-relaxed mb-8">
+				Shirts, hoodies, and other gear are available through our store. Every purchase helps fund development.
+			</p>
+			<a
+				href="/merch"
+				class="inline-block rounded-md bg-yass-600 text-white font-semibold px-8 py-3 hover:bg-yass-700 transition-colors"
+			>
+				Shop the Merch Store
+			</a>
+		</div>
+	</section>
+
+	<!-- Join CTA -->
+	<section class="py-16 sm:py-24 px-4 sm:px-6 bg-yass-700">
+		<div class="max-w-2xl mx-auto text-center scroll-animate">
+			<h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">Want Your Team's Robot Running on YASS?</h2>
+			<p class="text-yass-100 mb-8">
+				Every library is free, open source, and documented. Come find us on Discord if you get stuck, even if it has nothing to do with our libraries.
+			</p>
+			<a
+				href="https://discord.gg/yass"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="inline-block rounded-md bg-white text-yass-700 font-semibold px-8 py-3 hover:bg-yass-50 transition-colors"
+			>
+				Join the Discord
+			</a>
+		</div>
+	</section>
+</Layout>

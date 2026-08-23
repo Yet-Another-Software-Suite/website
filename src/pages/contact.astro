@@ -1,0 +1,54 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const links = [
+	{
+		name: "Discord",
+		description: "The fastest way to reach us. Ask setup questions, report bugs, or just say hi.",
+		url: "https://discord.gg/yass",
+	},
+	{
+		name: "GitHub",
+		description: "File issues, open pull requests, or browse the source for any of our projects.",
+		url: "https://github.com/Yet-Another-Software-Suite",
+	},
+	{
+		name: "Instagram",
+		description: "Photos from kickoff, competitions, and whatever we're building that week.",
+		url: "https://www.instagram.com/yassrobotics",
+	},
+];
+---
+
+<Layout
+	title="Contact - Yet Another Software Suite"
+	description="Get in touch with YASS on Discord, GitHub, or Instagram."
+	url="https://yassrobotics.com/contact"
+>
+	<section class="bg-white dark:bg-neutral-950 py-16 sm:py-20 px-4 sm:px-6">
+		<div class="max-w-3xl mx-auto text-center">
+			<h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 text-neutral-900 dark:text-white">
+				Get in Touch
+			</h1>
+			<p class="text-base sm:text-lg md:text-xl text-neutral-600 dark:text-neutral-300 leading-relaxed">
+				Stuck on a config, found a bug, or want your team listed as a partner? Here's where to find us.
+			</p>
+		</div>
+	</section>
+
+	<section class="py-16 sm:py-20 px-4 sm:px-6 bg-neutral-50 dark:bg-neutral-900">
+		<div class="max-w-3xl mx-auto grid sm:grid-cols-3 gap-6">
+			{links.map((link) => (
+				<a
+					href={link.url}
+					target="_blank"
+					rel="noopener noreferrer"
+					class="block bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg p-6 text-center hover:border-yass-600 dark:hover:border-yass-400 transition-colors"
+				>
+					<h2 class="font-bold text-lg text-neutral-900 dark:text-white mb-2">{link.name}</h2>
+					<p class="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">{link.description}</p>
+				</a>
+			))}
+		</div>
+	</section>
+</Layout>

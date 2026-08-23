@@ -1,0 +1,35 @@
+---
+import yassHoodie from "../assets/merch/yass-hoodie.jpg";
+import yassTshirt from "../assets/merch/yass-tshirt.jpg";
+import { storeUrl } from "../data/merch.js";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+	title="Merch - Yet Another Software Suite"
+	description="YASS merch is sold through our Fourthwall store. Redirecting you there now."
+	url="https://yassrobotics.com/merch"
+>
+	<meta slot="head" http-equiv="refresh" content={`2;url=${storeUrl}`} />
+
+	<section class="bg-white dark:bg-neutral-950 py-20 sm:py-28 px-4 sm:px-6">
+		<div class="max-w-xl mx-auto text-center">
+			<div class="flex justify-center gap-4 mb-8">
+				<img src={yassTshirt.src} alt="Y.A.S.S t-shirt" class="w-24 h-24 sm:w-28 sm:h-28 object-cover rounded-lg shadow-sm -rotate-3" />
+				<img src={yassHoodie.src} alt="Minimalist YASS hoodie" class="w-24 h-24 sm:w-28 sm:h-28 object-cover rounded-lg shadow-sm rotate-3" />
+			</div>
+			<h1 class="text-2xl sm:text-3xl font-bold text-neutral-900 dark:text-white mb-4">
+				Taking You to Our Store
+			</h1>
+			<p class="text-sm sm:text-base text-neutral-600 dark:text-neutral-300 leading-relaxed mb-8">
+				Our merch is sold through Fourthwall. You'll be redirected automatically, or you can head over right now.
+			</p>
+			<a
+				href={storeUrl}
+				class="inline-block rounded-md bg-yass-600 text-white font-semibold px-8 py-3 hover:bg-yass-700 transition-colors"
+			>
+				Continue to the Store &rarr;
+			</a>
+		</div>
+	</section>
+</Layout>

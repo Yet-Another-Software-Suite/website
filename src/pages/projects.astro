@@ -1,0 +1,92 @@
+---
+import { projects } from "../data/projects.js";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+	title="Projects - Yet Another Software Suite"
+	description="YAGSL, YAMS, YAMG, and YALL: free, open-source libraries for FRC and FTC robot programming."
+	url="https://yassrobotics.com/projects"
+>
+	<section class="bg-white dark:bg-neutral-950 py-16 sm:py-20 px-4 sm:px-6">
+		<div class="max-w-3xl mx-auto text-center">
+			<h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 text-neutral-900 dark:text-white">
+				Our Projects
+			</h1>
+			<p class="text-base sm:text-lg md:text-xl text-neutral-600 dark:text-neutral-300 leading-relaxed">
+				Every library we build is free, open source, and documented well enough that a team without a software mentor can still get a robot running.
+			</p>
+		</div>
+	</section>
+
+	<section class="py-16 sm:py-20 px-4 sm:px-6 bg-neutral-50 dark:bg-neutral-900">
+		<div class="max-w-4xl mx-auto space-y-8">
+			{projects.map((project) => (
+				<div class="bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg p-6 sm:p-8">
+					<div class="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-3">
+						<h2 class="text-2xl font-bold text-neutral-900 dark:text-white">{project.name}</h2>
+						<span class="text-neutral-500 dark:text-neutral-400">{project.fullName}</span>
+					</div>
+					<p class="text-sm sm:text-base text-neutral-600 dark:text-neutral-300 leading-relaxed mb-6">
+						{project.description}
+					</p>
+					<div class="flex flex-wrap gap-3">
+						<a
+							href={project.docs}
+							target="_blank"
+							rel="noopener noreferrer"
+							class="inline-block rounded-md bg-yass-600 text-white text-sm font-semibold px-4 py-2 hover:bg-yass-700 transition-colors"
+						>
+							Read the Docs
+						</a>
+						<a
+							href={project.github}
+							target="_blank"
+							rel="noopener noreferrer"
+							class="inline-block rounded-md border border-neutral-300 dark:border-neutral-600 text-neutral-800 dark:text-neutral-200 text-sm font-semibold px-4 py-2 hover:border-yass-600 dark:hover:border-yass-400 hover:text-yass-600 dark:hover:text-yass-400 transition-colors"
+						>
+							View on GitHub
+						</a>
+						{project.extra && (
+							<a
+								href={project.extra.url}
+								target="_blank"
+								rel="noopener noreferrer"
+								class="inline-block rounded-md border border-neutral-300 dark:border-neutral-600 text-neutral-800 dark:text-neutral-200 text-sm font-semibold px-4 py-2 hover:border-yass-600 dark:hover:border-yass-400 hover:text-yass-600 dark:hover:text-yass-400 transition-colors"
+							>
+								{project.extra.label}
+							</a>
+						)}
+					</div>
+				</div>
+			))}
+		</div>
+	</section>
+
+	<section class="py-16 sm:py-24 px-4 sm:px-6 bg-white dark:bg-neutral-950">
+		<div class="max-w-2xl mx-auto text-center scroll-animate">
+			<h2 class="text-2xl sm:text-3xl font-bold text-neutral-900 dark:text-white mb-4">Found a Bug? Have an Idea?</h2>
+			<p class="text-neutral-600 dark:text-neutral-300 mb-8">
+				Issues and pull requests are welcome on any of our repos. For general questions, the Discord is the best place to ask.
+			</p>
+			<div class="flex flex-col sm:flex-row justify-center gap-4">
+				<a
+					href="https://github.com/Yet-Another-Software-Suite"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="inline-block rounded-md bg-yass-600 text-white font-semibold px-6 py-3 hover:bg-yass-700 transition-colors"
+				>
+					Browse Our GitHub
+				</a>
+				<a
+					href="https://discord.gg/yass"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="inline-block rounded-md border border-neutral-300 dark:border-neutral-600 text-neutral-800 dark:text-neutral-200 font-semibold px-6 py-3 hover:border-yass-600 dark:hover:border-yass-400 hover:text-yass-600 dark:hover:text-yass-400 transition-colors"
+				>
+					Ask on Discord
+				</a>
+			</div>
+		</div>
+	</section>
+</Layout>
