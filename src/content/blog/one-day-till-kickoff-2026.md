@@ -3,8 +3,7 @@ title: "One Day Till Kickoff 2026"
 sortDate: 2026-01-09
 displayDate: "January 9, 2026"
 excerpt: "A last motor controller tutorial goes up the night before kickoff, useful whether or not you're running YAMS."
-image: "kickoff-eve-pixel-art-1"
-imageAlt: "A pixel-art YASS graphic posted the day before 2026 kickoff"
+logoHeader: true
 source: "https://www.chiefdelphi.com/t/introducing-yet-another-software-suite-yams-yall-yamg-yagsl/"
 ---
 

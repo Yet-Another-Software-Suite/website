@@ -3,8 +3,7 @@ title: "Gearing Up for Worlds"
 sortDate: 2026-04-24
 displayDate: "April 24, 2026"
 excerpt: "YALL adds 2026.1 firmware support ahead of the FIRST Championship, plus a meetup, stickers, and a few things we're not ready to announce yet."
-image: "worlds-2026-pixel-art"
-imageAlt: "A pixel-art YASS graphic posted ahead of the 2026 FIRST Championship"
+logoHeader: true
 source: "https://www.chiefdelphi.com/t/introducing-yet-another-software-suite-yams-yall-yamg-yagsl/"
 ---
 

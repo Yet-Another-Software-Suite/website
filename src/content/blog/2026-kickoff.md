@@ -3,8 +3,7 @@ title: "2026 Kickoff"
 sortDate: 2026-01-10
 displayDate: "January 10, 2026"
 excerpt: "Kickoff day arrives, and we gave our first live presentation walking teams through the suite."
-image: "kickoff-eve-pixel-art-2"
-imageAlt: "A pixel-art YASS graphic posted on the morning of 2026 kickoff"
+logoHeader: true
 source: "https://www.chiefdelphi.com/t/introducing-yet-another-software-suite-yams-yall-yamg-yagsl/"
 ---
 
