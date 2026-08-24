@@ -1,13 +1,8 @@
 ---
-import { getCollection } from "astro:content";
 import { projects } from "../data/projects.js";
 import InstagramFeed from "../components/InstagramFeed.astro";
+import YouTubeFeed from "../components/YouTubeFeed.astro";
 import Layout from "../layouts/Layout.astro";
-
-const posts = (await getCollection("blog")).sort(
-	(a, b) => b.data.sortDate.valueOf() - a.data.sortDate.valueOf(),
-);
-const latestPosts = posts.slice(0, 3);
 ---
 
 <Layout
@@ -16,16 +11,14 @@ const latestPosts = posts.slice(0, 3);
 	url="https://yassrobotics.com"
 >
 	<!-- Hero -->
-	<section class="pt-16 pb-12 sm:pt-20 sm:pb-16 px-4 sm:px-6">
-		<div class="max-w-5xl mx-auto">
-			<div class="plate px-6 py-12 sm:px-12 sm:py-14 scroll-animate">
-				<div class="rivet rivet-tl"></div><div class="rivet rivet-tr"></div><div class="rivet rivet-bl"></div><div class="rivet rivet-br"></div>
-				<div class="flex items-center gap-2.5 mb-6">
-					<span class="w-1.5 h-1.5 rounded-full bg-yass-600" style="box-shadow: 0 0 8px var(--color-yass-600);"></span>
+	<section class="pt-16 pb-12 sm:pt-20 sm:pb-16">
+		<div class="plate px-4 sm:px-6 lg:px-12 py-12 sm:py-14 scroll-animate">
+			<div class="max-w-5xl mx-auto">
+				<div class="mb-6">
 					<span class="font-mono text-xs uppercase tracking-widest text-dim">Open source &middot; FRC Team Software</span>
 				</div>
-				<h1 class="text-5xl sm:text-6xl md:text-7xl font-bold text-ink max-w-2xl">
-					Yet Another<br /><span class="text-faint font-semibold">Software Suite</span>
+				<h1 class="font-pixel text-2xl sm:text-3xl md:text-4xl leading-relaxed text-yass-600 max-w-2xl">
+					Yet Another<br /><span class="text-yass-600">Software Suite</span>
 				</h1>
 				<p class="text-base sm:text-lg text-dim max-w-xl mt-6 leading-relaxed">
 					Four vendor-agnostic libraries for swerve drives, mechanisms, vision, and mechanism design &mdash; built by FRC teams, for FRC teams, with simulation baked in from day one.
@@ -53,15 +46,15 @@ const latestPosts = posts.slice(0, 3);
 				</div>
 				<div class="flex flex-wrap gap-x-10 gap-y-4 mt-12 pt-6 border-t border-graphite-border">
 					<div>
-						<div class="font-display text-3xl font-bold text-ink">4</div>
+						<div class="font-display text-3xl font-bold text-yass-600">4</div>
 						<div class="font-mono text-xs uppercase tracking-wider text-dim">Libraries</div>
 					</div>
 					<div>
-						<div class="font-display text-3xl font-bold text-ink">500+</div>
+						<div class="font-display text-3xl font-bold text-yass-600">500+</div>
 						<div class="font-mono text-xs uppercase tracking-wider text-dim">Teams running YASS</div>
 					</div>
 					<div>
-						<div class="font-display text-3xl font-bold text-ink">100%</div>
+						<div class="font-display text-3xl font-bold text-yass-600">100%</div>
 						<div class="font-mono text-xs uppercase tracking-wider text-dim">Open source</div>
 					</div>
 				</div>
@@ -75,25 +68,24 @@ const latestPosts = posts.slice(0, 3);
 	<section id="libraries" class="py-16 sm:py-20 px-4 sm:px-6">
 		<div class="max-w-6xl mx-auto scroll-animate">
 			<div class="flex flex-wrap items-end justify-between gap-4 mb-10">
-				<h2 class="text-3xl sm:text-4xl font-bold text-ink">The Suite</h2>
+				<h2 class="text-3xl sm:text-4xl font-bold text-yass-600">YASS Libraries</h2>
 				<p class="text-dim max-w-sm text-sm">Each library owns one part of the stack. Use one, use all four &mdash; they're built to share a philosophy, not force a dependency.</p>
 			</div>
 			<div class="grid sm:grid-cols-2 gap-4 sm:gap-5">
-				{projects.map((project, i) => (
+				{projects.map((project) => (
 					<div
 						class="bg-graphite-panel border border-graphite-border rounded-sm p-6 hover:-translate-y-0.5 transition-transform"
 						style={`border-left: 3px solid ${project.ledColor ?? "var(--color-faint)"};`}
 					>
-						<div class="flex items-center justify-between mb-3">
-							<span class="font-mono text-[11px] text-faint uppercase tracking-widest">Lib / 0{i + 1}</span>
-							<span
-								class="inline-block w-2.5 h-2.5 rounded-full"
-								style={`background-color: ${project.ledColor ?? "var(--color-faint)"}; box-shadow: 0 0 8px ${project.ledColor ?? "transparent"};`}
-								aria-hidden="true"
-							></span>
+						<div class="flex items-start justify-between gap-3 mb-3">
+							<div>
+								<h3 class="text-3xl font-bold text-ink">{project.name}</h3>
+								<p class="font-mono text-sm uppercase tracking-wider" style={`color: ${project.ledColor ?? "var(--color-dim)"};`}>{project.fullName}</p>
+							</div>
+							{project.logo && (
+								<img src={project.logo.src} alt={`${project.name} logo`} class="w-16 h-16 object-contain shrink-0" />
+							)}
 						</div>
-						<h3 class="text-2xl font-bold text-ink">{project.name}</h3>
-						<p class="font-mono text-[11px] uppercase tracking-wider mb-3" style={`color: ${project.ledColor ?? "var(--color-dim)"};`}>{project.fullName}</p>
 						<p class="text-sm text-dim leading-relaxed mb-5">{project.description}</p>
 						<div class="flex flex-wrap gap-x-5 gap-y-2 font-mono text-xs">
 							<a href={project.docs} target="_blank" rel="noopener noreferrer" class="text-ink border-b border-faint hover:border-yass-600 hover:text-yass-600 pb-0.5 transition-colors">Docs</a>
@@ -111,48 +103,47 @@ const latestPosts = posts.slice(0, 3);
 		</div>
 	</section>
 
-	<!-- Blog Teaser -->
-	{latestPosts.length > 0 && (
-		<section class="py-16 sm:py-20 px-4 sm:px-6">
-			<div class="max-w-5xl mx-auto scroll-animate">
-				<h2 class="text-3xl sm:text-4xl font-bold text-center mb-10 text-ink">From the Blog</h2>
-				<div class="grid md:grid-cols-3 gap-5">
-					{latestPosts.map((post) => (
-						<a
-							href={`/blog/${post.id}`}
-							class="block bg-graphite-panel border border-graphite-border rounded-sm p-6 hover:border-yass-600 transition-colors"
-						>
-							<p class="font-mono text-xs text-faint mb-2">
-								{post.data.displayDate ?? post.data.sortDate.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}
-							</p>
-							<h3 class="text-lg font-bold text-ink mb-2">{post.data.title}</h3>
-							<p class="text-sm text-dim leading-relaxed">{post.data.excerpt}</p>
-						</a>
-					))}
-				</div>
-				<p class="text-center mt-10">
-					<a href="/blog" class="font-mono text-xs uppercase tracking-wider text-yass-600 hover:underline">Read the full blog &rarr;</a>
-				</p>
-			</div>
-		</section>
-	)}
+	<div class="hazard-stripe"></div>
 
 	<!-- Instagram -->
-	<section class="py-16 sm:py-20 px-4 sm:px-6 bg-graphite-panel/40 border-y border-graphite-border">
+	<section class="py-16 sm:py-20 px-4 sm:px-6 bg-graphite-panel/40">
 		<div class="max-w-5xl mx-auto scroll-animate">
-			<h2 class="text-3xl sm:text-4xl font-bold text-center mb-2 text-ink">Instagram</h2>
-			<p class="text-center text-dim mb-10 text-sm">
+			<h2 class="text-3xl sm:text-4xl font-bold text-center mb-2 text-yass-600">Instagram</h2>
+			<p class="text-center text-dim mb-10 text-base sm:text-lg">
 				Follow us on social media for quick updates, testimonials, and announcements.
 			</p>
 			<InstagramFeed />
 			<p class="text-center mt-10">
-				<a href="https://www.instagram.com/yassrobotics" target="_blank" rel="noopener noreferrer" class="font-mono text-xs uppercase tracking-wider text-yass-600 hover:underline">Follow along on Instagram &rarr;</a>
+				<a href="https://www.instagram.com/yassrobotics" target="_blank" rel="noopener noreferrer" class="font-mono text-xs uppercase tracking-wider text-yass-600 hover:underline">@yassrobotics &rarr;</a>
 			</p>
 		</div>
 	</section>
 
+	<div class="hazard-stripe"></div>
+
+	<!-- YouTube -->
+	<section class="py-16 sm:py-20 px-4 sm:px-6">
+		<div class="max-w-5xl mx-auto text-center scroll-animate">
+			<h2 class="text-3xl sm:text-4xl font-bold mb-2 text-yass-600">YouTube</h2>
+			<p class="text-dim mb-10 text-base sm:text-lg">Subscribe on YouTube for tutorials, YASS Weekly recordings, and more.</p>
+			<YouTubeFeed />
+			<p class="mt-10">
+				<a
+					href="https://www.youtube.com/@YASSRobotics"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="font-mono text-base sm:text-lg uppercase tracking-wider text-yass-600 hover:underline"
+				>
+					@YASSRobotics &rarr;
+				</a>
+			</p>
+		</div>
+	</section>
+
+	<div class="hazard-stripe"></div>
+
 	<!-- CTA -->
-	<section class="text-center py-20 sm:py-24 px-4 sm:px-6 border-t border-graphite-border">
+	<section class="text-center py-20 sm:py-24 px-4 sm:px-6">
 		<div class="max-w-xl mx-auto scroll-animate">
 			<h2 class="text-4xl sm:text-5xl font-bold text-ink mb-4">Built by the community,<br />proven on real robots.</h2>
 			<p class="font-mono text-sm text-dim mb-8 tracking-wide">YAGSL | YALL | YAMS | YAMG</p>
@@ -174,7 +165,7 @@ const latestPosts = posts.slice(0, 3);
 					Join Discord
 				</a>
 				<a
-					href="https://www.youtube.com/yassrobotics"
+					href="https://www.youtube.com/@YASSRobotics"
 					target="_blank"
 					rel="noopener noreferrer"
 					class="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider px-6 py-3.5 rounded-sm border border-faint text-ink hover:border-ink transition-colors"

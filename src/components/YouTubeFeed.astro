@@ -1,0 +1,43 @@
+---
+// Pulled from the channel's public RSS feed (youtube.com/feeds/videos.xml),
+// no API key needed. Swap the video ids/titles here to feature different videos.
+// Thumbnails are YouTube's stable i.ytimg.com CDN, no signed/expiring URLs.
+const videos = [
+	{
+		id: "_fH-ljIVDbw",
+		title: "Official FIRST Championship Workshop | Yet Another Software Suite",
+	},
+	{
+		id: "2n2_AlM3FLo",
+		title: "How to Turret Track and Shoot On the Fly with YAMS",
+	},
+	{
+		id: "YTVb_TOGYBo",
+		title: "How to Setup Config Files for YAGSL (2026) || Programming Swerve Part 1",
+	},
+];
+---
+
+<div class="grid sm:grid-cols-3 gap-5">
+	{videos.map((video) => (
+		<a
+			href={`https://www.youtube.com/watch?v=${video.id}`}
+			target="_blank"
+			rel="noopener noreferrer"
+			class="group block bg-graphite-panel border border-graphite-border rounded-sm overflow-hidden hover:border-yass-600 transition-colors"
+		>
+			<img
+				src={`https://i.ytimg.com/vi/${video.id}/hqdefault.jpg`}
+				alt={video.title}
+				class="w-full aspect-video object-cover"
+				loading="lazy"
+			/>
+			<p class="p-4 text-sm text-dim leading-relaxed line-clamp-3">
+				{video.title}
+			</p>
+			<p class="px-4 pb-4 font-mono text-xs uppercase tracking-wider text-yass-600 group-hover:underline">
+				Watch on YouTube &rarr;
+			</p>
+		</a>
+	))}
+</div>

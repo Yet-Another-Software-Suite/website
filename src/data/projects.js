@@ -1,3 +1,7 @@
+import yagslLogo from "../assets/logos/yagsl-logo.png";
+import yamsLogo from "../assets/logos/yams-logo.png";
+import yallLogo from "../assets/logos/yall-logo.png";
+
 export const projects = [
 	{
 		key: "yagsl",
@@ -9,6 +13,7 @@ export const projects = [
 		github: "https://github.com/Yet-Another-Software-Suite/YAGSL",
 		extra: { label: "Config Generator", url: "https://config.yagsl.com" },
 		ledColor: "var(--color-yass-600)",
+		logo: yagslLogo,
 	},
 	{
 		key: "yams",
@@ -19,6 +24,7 @@ export const projects = [
 		docs: "https://yams.yassrobotics.com",
 		github: "https://github.com/Yet-Another-Software-Suite/YAMS",
 		ledColor: "var(--color-sapphire)",
+		logo: yamsLogo,
 	},
 	{
 		key: "yamg",
@@ -40,5 +46,6 @@ export const projects = [
 		docs: "https://yall.yassrobotics.com",
 		github: "https://github.com/Yet-Another-Software-Suite/YALL",
 		ledColor: "var(--color-yall)",
+		logo: yallLogo,
 	},
 ];
