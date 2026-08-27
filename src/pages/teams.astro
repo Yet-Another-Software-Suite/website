@@ -24,7 +24,7 @@ const foundingTestimonials = testimonials.filter((t) => t.founding);
 
 	<section class="py-16 sm:py-20 px-4 sm:px-6 bg-graphite-panel/40">
 		<div class="max-w-5xl mx-auto scroll-animate">
-			<h2 class="text-3xl sm:text-4xl font-bold text-center mb-10 text-ink">Founding Teams</h2>
+			<h2 class="text-3xl sm:text-4xl font-bold text-center mb-10 text-yass-600">Founding Teams</h2>
 			<div class="grid sm:grid-cols-2 gap-5">
 				{foundingTestimonials.map((t) => {
 					const team = foundingTeams.find((f) => f.number === t.number);
@@ -51,9 +51,11 @@ const foundingTestimonials = testimonials.filter((t) => t.founding);
 									{t.contributions.map((c) => <li>{c}</li>)}
 								</ul>
 							)}
-							<blockquote class="text-sm sm:text-base text-dim leading-relaxed grow">
-								"{t.quote}"
-							</blockquote>
+							{t.quote && (
+								<blockquote class="text-sm sm:text-base text-dim leading-relaxed grow">
+									"{t.quote}"
+								</blockquote>
+							)}
 						</figure>
 					);
 				})}
@@ -66,7 +68,7 @@ const foundingTestimonials = testimonials.filter((t) => t.founding);
 	<section class="py-16 sm:py-20 px-4 sm:px-6">
 		<div class="max-w-5xl mx-auto scroll-animate">
 			<h2 class="text-3xl sm:text-4xl font-bold text-center mb-2 text-partner-pink"> 2026 Partner Teams</h2>
-			<p class="text-center text-dim mb-10"> Partner Teams are trusted collaborators who work closely with the core development group. The play a critical role by testing features early, providing feedback, community education and community outreach.</p>
+			<p class="text-center text-dim mb-10"> Partner Teams are trusted collaborators who work closely with the core development group. They play a critical role by testing features early, providing feedback, community education and community outreach.</p>
 			<div class="grid md:grid-cols-2 gap-5">
 				{partnerTeams.map((t) => (
 					<figure class="bg-graphite-panel border border-partner-pink-tint rounded-sm p-6 flex flex-col transition-colors hover:bg-partner-pink-soft hover:border-partner-pink">
@@ -91,9 +93,11 @@ const foundingTestimonials = testimonials.filter((t) => t.founding);
 								{t.contributions.map((c) => <li>{c}</li>)}
 							</ul>
 						)}
-						<blockquote class="text-sm sm:text-base text-dim leading-relaxed grow">
-							"{t.quote}"
-						</blockquote>
+						{t.quote && (
+							<blockquote class="text-sm sm:text-base text-dim leading-relaxed grow">
+								"{t.quote}"
+							</blockquote>
+						)}
 					</figure>
 				))}
 			</div>
@@ -115,7 +119,7 @@ const foundingTestimonials = testimonials.filter((t) => t.founding);
 		<div class="max-w-2xl mx-auto text-center scroll-animate">
 			<h2 class="text-3xl sm:text-4xl font-bold text-ink mb-4">Want to Become a Partner Team?</h2>
 			<p class="text-dim mb-8">
-				Parnter Team applications for the 2026-20217 season will be open in October 2026. Join the Discord and follow on Instagram for the announcement.
+				Partner Team applications for the 2026-2027 season will be open in October 2026. Join the Discord and follow on Instagram for the announcement.
 			</p>
 			<div class="flex flex-wrap justify-center gap-3">
 				<a

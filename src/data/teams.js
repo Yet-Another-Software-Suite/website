@@ -7,6 +7,9 @@ import logo9738 from "../assets/logos/teams/9738.png";
 import logo2181 from "../assets/logos/teams/2181.png";
 import logo5517 from "../assets/logos/teams/5517.png";
 import logo2225 from "../assets/logos/teams/2225.png";
+import logo7900 from "../assets/logos/teams/7900.jpg";
+import logo8818 from "../assets/logos/teams/8818.png";
+import logo6911 from "../assets/logos/teams/6911.png";
 
 export const foundingTeams = [
 	{ name: "BroncBotz", number: 3481 },
@@ -100,6 +103,27 @@ export const testimonials = [
 		quote: "YASS IS LOVE YASS IS LIFE",
 		url: "https://first2225.com",
 		logo: logo2225,
+		contributions: [],
+	},
+	{
+		team: "Trial and Terror",
+		number: 7900,
+		quote: null,
+		logo: logo7900,
+		contributions: [],
+	},
+	{
+		team: "Foe Foe Engineering",
+		number: 8818,
+		quote: null,
+		logo: logo8818,
+		contributions: [],
+	},
+	{
+		team: "So Botz",
+		number: 6911,
+		quote: null,
+		logo: logo6911,
 		contributions: [],
 	},
 ];
