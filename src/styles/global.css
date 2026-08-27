@@ -129,3 +129,15 @@
 	height: 10px;
 	background: repeating-linear-gradient(-45deg, var(--color-yass-600), var(--color-yass-600) 14px, var(--color-spruce) 14px, var(--color-spruce) 28px);
 }
+
+/* Same stripe, Partner Team Pink family in place of the greens -- used to
+   separate sections on the Teams page. */
+.hazard-stripe-partner {
+	height: 10px;
+	background: repeating-linear-gradient(-45deg, var(--color-partner-pink), var(--color-partner-pink) 14px, var(--color-partner-maroon) 14px, var(--color-partner-maroon) 28px);
+}
+
+/* Metallic gold text, for the Legacy Teams heading. */
+.text-metallic-gold {
+	color: #d4af37;
+}
