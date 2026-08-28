@@ -1,5 +1,6 @@
 import yagslLogo from "../assets/logos/yagsl-logo.png";
 import yamsLogo from "../assets/logos/yams-logo.png";
+import yamgLogo from "../assets/logos/yamg-logo.png";
 import yallLogo from "../assets/logos/yall-logo.png";
 
 export const projects = [
@@ -35,6 +36,7 @@ export const projects = [
 		github: "https://github.com/Yet-Another-Software-Suite/yamg",
 		extra: { label: "Live Tool", url: "https://yamg.yassrobotics.com", primary: true },
 		ledColor: "var(--color-yamg)",
+		logo: yamgLogo,
 	},
 	{
 		key: "yall",
