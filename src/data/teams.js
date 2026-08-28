@@ -31,7 +31,7 @@ export const testimonials = [
 			"It's really inspiring to see the impact YASS has on the FRC community. Being able to learn and graspadvanced concepts like swerve and simulation is truly a game changer. YASS is really for everyone, no matter the skill level. We are excited to see what else YASS has in store for the future!",
 		founding: true,
 		logo: logo3481,
-		contributions: [],
+		contributions: ["Discord Moderator"],
 	},
 	{
 		team: "Grease Monkeys",
@@ -60,7 +60,7 @@ export const testimonials = [
 		url: "https://camberrobotics.com",
 		founding: true,
 		logo: logo9658,
-		contributions: [],
+		contributions: ["Discord Moderator"],
 	},
 	{
 		team: "GEARS",
@@ -69,7 +69,7 @@ export const testimonials = [
 			"Using YAGSL has allowed our team to make unbelievable progress in terms of drivetrain capabilities. It made incorporating vision tracking, pose estimation, and field localization a breeze. With the built-in simulation, we were able to get Drive to Pose commands working and tested without access to a field, which is a huge success. Now with YAMS, we're able to take everything to the next level with simulation of any mechanism we might want to use.",
 		url: "https://www.frcteam2181.com/",
 		logo: logo2181,
-		contributions: [],
+		contributions: ["Discord Moderator"],
 	},
 	{
 		team: "Rebel Robotics",
@@ -77,7 +77,7 @@ export const testimonials = [
 		quote: "YASS IS LOVE YASS IS LIFE",
 		url: "https://first2225.com",
 		logo: logo2225,
-		contributions: [],
+		contributions: ["Discord Moderator"],
 	},
 	{
 		team: "The Engineers on Fire",
@@ -86,7 +86,7 @@ export const testimonials = [
 			"YASS has completely transformed how we build and code our robots. What started as Yet Another Generic Swerve Library has grown into an incredibly intuitive and dependable software suite that makes programming feel easy and exciting again. With YAMS now part of the mix, designing and fine-tuning our mechanisms has never been smoother.",
 		url: "https://sites.google.com/view/frc5517",
 		logo: logo5517,
-		contributions: [],
+		contributions: ["Discord Moderator"],
 	},
 	{
 		team: "Raider Robotics",
@@ -109,7 +109,7 @@ export const testimonials = [
 		number: 7900,
 		quote: null,
 		logo: logo7900,
-		contributions: [],
+		contributions: ["Discord Moderator"],
 	},
 	{
 		team: "Foe Foe Engineering",

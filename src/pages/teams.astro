@@ -94,6 +94,7 @@ const foundingTestimonials = testimonials.filter((t) => t.founding);
 							)}
 						</div>
 						{t.contributions?.length > 0 && (
+							<span class="block font-mono text-[11px] uppercase tracking-widest text-faint mb-1.5">Contributions</span>
 							<ul class="text-xs font-mono text-dim space-y-1 mb-4 list-disc list-inside">
 								{t.contributions.map((c) => <li>{c}</li>)}
 							</ul>
