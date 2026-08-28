@@ -77,7 +77,7 @@ export const testimonials = [
 		quote: "YASS IS LOVE YASS IS LIFE",
 		url: "https://first2225.com",
 		logo: logo2225,
-		contributions: ["Discord Moderator"],
+		contributions: ["YAMS beta tester", "Easy CRT beta tester", "Discord Moderator"],
 	},
 	{
 		team: "The Engineers on Fire",
