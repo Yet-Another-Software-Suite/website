@@ -95,7 +95,7 @@ export const testimonials = [
 			"On 5561, we started using YAGSL in 2024-2025, and that was the easiest swerve library I've used. With the release of YAMG and YAMS, I have extremely high expectations for our team. YASS as a whole will be an incredible organization to learn from and to teach from.",
 		url: "https://sites.google.com/view/frc5561/home",
 		logo: logo5561,
-		contributions: ["2026 Worlds Presenter"],
+		contributions: ["2026 Worlds Presenter", "YASS Weekly Host", "Inspiration for YAMG"],
 	},
 	{
 		team: "Trial and Terror",
