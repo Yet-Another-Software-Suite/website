@@ -41,7 +41,7 @@ export const testimonials = [
 		url: "https://frcteam457.wixsite.com/team-457",
 		founding: true,
 		logo: logo457,
-		contributions: ["YASS Kickoff Presenter", "YASS Weekly Host"],
+		contributions: ["YASS Kickoff Presenter", "YASS Weekly Host", "YAGSL MaxSwerve test robot"],
 	},
 	{
 		team: "RoboRaiders",
