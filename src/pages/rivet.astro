@@ -40,38 +40,38 @@ const holidays = [
 	{
 		image: newYears,
 		title: "New Year's",
-		description: "Rivet rings in the new year with a noisemaker in one hand and a list of resolutions he'll abandon by February.",
+		description: 'Rivet rings in the new year with a noisemaker in one hand and a list of resolutions <span class="pronoun-cycle" data-he="he\'ll" data-she="she\'ll" data-they="they\'ll">he\'ll</span> abandon by Kickoff.',
 	},
 	{
 		image: valentines,
 		title: "Valentine's Day",
-		description: "Rivet swaps in a pair of heart-eyed glasses and leaves little paper hearts on every desk in the build space.",
+		description: 'Rivet swaps in a pair of heart-eyed glasses and leaves little paper hearts on every desk in the build space, because <span class="pronoun-cycle" data-he="he\'s" data-she="she\'s" data-they="they\'re">he\'s</span> a romantic at heart.',
 	},
 	{
 		image: pi,
 		title: "Pi Day",
-		description: "Rivet wears an actual pie on his head and recites digits of pi until someone bribes him with a real slice.",
+		description: 'On Pi Day, Rivet challenges the whole team to a pi-memorization contest and insists <span class="pronoun-cycle" data-he="he won" data-she="she won" data-they="they won">he won</span> every year, even when nobody kept score.',
 	},
 	{
 		image: lucky,
 		title: "St. Patrick's Day",
-		description: "Rivet goes full leprechaun for the day, hiding chocolate coins around the shop for anyone who finds a bug.",
+		description: 'Rivet goes full leprechaun for the day, hiding chocolate coins around the shop for anyone <span class="pronoun-cycle" data-he="he thinks" data-she="she thinks" data-they="they think">he thinks</span> needs a treasure hunt.',
 	},
 	{
 		image: easter,
 		title: "Easter",
-		description: "Rivet dons bunny ears and hides painted eggs in robot totes for students to find during the build season.",
+		description: 'Rivet dons bunny ears and hides painted eggs in robot totes, convinced <span class="pronoun-cycle" data-he="he\'s" data-she="she\'s" data-they="they\'re">he\'s</span> the best egg hider on the team.',
 	},
 	{
 		image: pride,
 		title: "Pride Month",
-		description: "Rivet spends Pride Month splashing rainbow paint on everything in sight and reminding everyone that frogs don't do labels.",
+		description: 'Rivet spends Pride Month splashing rainbow paint on everything in sight, because <span class="pronoun-cycle" data-he="he figures" data-she="she figures" data-they="they figure">he figures</span> the pronouns should get to have some fun too.',
 		rainbow: true,
 	},
 	{
 		image: christmas,
 		title: "Christmas",
-		description: "Rivet trades his usual look for a santa hat and leaves battery-powered gifts under the team's tree.",
+		description: 'Rivet trades <span class="pronoun-cycle" data-he="his" data-she="her" data-they="their">his</span> usual look for a santa hat and leaves battery-powered gifts under the team\'s tree.',
 	},
 ];
 ---
@@ -175,7 +175,7 @@ const holidays = [
 								))
 								: holiday.title}
 						</figcaption>
-						<p class="text-xs text-dim leading-relaxed">{holiday.description}</p>
+						<p class="text-xs text-dim leading-relaxed" set:html={holiday.description} />
 					</figure>
 				))}
 			</div>
