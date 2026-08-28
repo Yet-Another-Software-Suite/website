@@ -147,3 +147,11 @@
 	color: var(--color-legacy-gold);
 }
 
+/* Rainbow gradient text, for the Pride Month label on /rivet. */
+.rainbow-text {
+	background: linear-gradient(90deg, #e40303, #ff8c00, #ffed00, #008026, #004dff, #750787);
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+}
+

@@ -37,7 +37,7 @@ const roles = [
 const holidays = [
 	{ image: valentines, title: "Valentine's Day" },
 	{ image: lucky, title: "St. Patrick's Day" },
-	{ image: pride, title: "Pride Month" },
+	{ image: pride, title: "Pride Month", rainbow: true },
 	{ image: easter, title: "Easter" },
 	{ image: pi, title: "Pi Day" },
 	{ image: newYears, title: "New Year's" },
@@ -137,7 +137,7 @@ const holidays = [
 				{holidays.map((holiday) => (
 					<figure class="bg-graphite-panel border border-graphite-border rounded-sm p-4 flex flex-col items-center text-center hover:border-yass-600 transition-colors">
 						<img src={holiday.image.src} alt={`Rivet dressed up for ${holiday.title}`} class="w-full h-auto mb-3" />
-						<figcaption class="text-sm font-mono uppercase tracking-wider text-yass-600">{holiday.title}</figcaption>
+						<figcaption class={`text-sm font-mono uppercase tracking-wider ${holiday.rainbow ? "rainbow-text" : "text-yass-600"}`}>{holiday.title}</figcaption>
 					</figure>
 				))}
 			</div>
