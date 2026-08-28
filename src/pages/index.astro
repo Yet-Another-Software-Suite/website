@@ -89,7 +89,7 @@ import Layout from "../layouts/Layout.astro";
 						<p class="text-sm text-dim leading-relaxed mb-5">{project.description}</p>
 						<div class="flex flex-wrap gap-x-5 gap-y-2 font-mono text-xs">
 							{project.extra?.primary && (
-								<a href={project.extra.url} target="_blank" rel="noopener noreferrer" class="text-yass-600 border-b border-yass-600 hover:text-yass-500 hover:border-yass-500 pb-0.5 transition-colors">{project.extra.label}</a>
+								<a href={project.extra.url} target="_blank" rel="noopener noreferrer" class="text-ink border-b border-faint hover:border-yass-600 hover:text-yass-600 pb-0.5 transition-colors">{project.extra.label}</a>
 							)}
 							{project.docs && (
 								<a href={project.docs} target="_blank" rel="noopener noreferrer" class="text-ink border-b border-faint hover:border-yass-600 hover:text-yass-600 pb-0.5 transition-colors">Docs</a>
