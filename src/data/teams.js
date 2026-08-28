@@ -50,7 +50,7 @@ export const testimonials = [
 			"YASS has been a fundamental stepping stone for our team. With no mentors experienced in coding, our students often struggled to find reliable resources and troubleshoot complex issues. Thanks to the simplicity and accessibility of the YASS suite, students with little to no programming background have been able to successfully code entire robots, including swerve drives and multiple advanced subsystems. None of this would have been possible without YASS and the incredible YASS community.",
 		founding: true,
 		logo: logo3561,
-		contributions: [],
+		contributions: ["YAMS alpha tester", "YALL Beta tester"],
 	},
 	{
 		team: "Camber Robotics",
