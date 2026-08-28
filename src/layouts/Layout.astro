@@ -1,6 +1,6 @@
 ---
 import "../styles/global.css";
-import mascot from "../assets/logo/mascot.png";
+import rivet from "../assets/logo/rivet.png";
 import Nav from "../components/Nav.astro";
 
 export interface Props {
@@ -70,7 +70,7 @@ const year = new Date().getFullYear();
 
 <footer class="bg-graphite-panel border-t border-graphite-border text-dim py-10 px-6 text-center">
 	<div class="flex flex-col items-center gap-4">
-		<img src={mascot.src} alt="YASS logo" class="w-10 h-10 object-contain" />
+		<img src={rivet.src} alt="Rivet, the YASS mascot" class="w-10 h-10 object-contain" />
 		<div class="flex flex-wrap justify-center gap-5 text-sm font-mono uppercase tracking-wide">
 			<a href="https://discord.gg/yass" target="_blank" rel="noopener noreferrer" class="hover:text-yass-600 transition-colors">Discord</a>
 			<a href="https://www.instagram.com/yassrobotics" target="_blank" rel="noopener noreferrer" class="hover:text-yass-600 transition-colors">Instagram</a>
