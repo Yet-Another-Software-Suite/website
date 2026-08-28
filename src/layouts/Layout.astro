@@ -216,11 +216,18 @@ const year = new Date().getFullYear();
 		const forms = ["he", "she", "they"];
 		const pronouns = document.querySelectorAll(".pronoun-cycle");
 		const mustacheBubble = document.getElementById("mustache-bubble");
+		const heroImg = document.getElementById("hero-rivet-img");
 
 		function checkAllShe() {
 			if (!mustacheBubble) return;
 			const allShe = pronouns.length > 0 && Array.from(pronouns).every((el) => el.dataset.form === "she");
 			mustacheBubble.style.opacity = allShe ? "1" : "";
+		}
+
+		function checkAllThey() {
+			if (!heroImg || !heroImg.dataset.theySrc) return;
+			const allThey = pronouns.length > 0 && Array.from(pronouns).every((el) => el.dataset.form === "they");
+			heroImg.src = allThey ? heroImg.dataset.theySrc : heroImg.dataset.defaultSrc;
 		}
 
 		pronouns.forEach((el) => {
@@ -229,6 +236,7 @@ const year = new Date().getFullYear();
 				const next = forms[(forms.indexOf(el.dataset.form) + 1) % forms.length];
 				el.dataset.form = next;
 				el.textContent = el.dataset[next];
+				checkAllThey();
 				checkAllShe();
 			});
 		});

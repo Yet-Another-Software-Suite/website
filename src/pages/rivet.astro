@@ -90,7 +90,14 @@ const holidays = [
 						<div class="absolute top-full left-1/2 -translate-x-1/2 w-2 h-2 bg-graphite-raised border-b border-r border-graphite-border rotate-45 -mt-1"></div>
 					</div>
 				</div>
-				<img src={rivetHero.src} alt="Rivet, the YASS mascot" class="w-32 h-32 sm:w-40 sm:h-40 object-contain" />
+				<img
+					id="hero-rivet-img"
+					src={rivetHero.src}
+					data-default-src={rivetHero.src}
+					data-they-src={pride.src}
+					alt="Rivet, the YASS mascot"
+					class="w-32 h-32 sm:w-40 sm:h-40 object-contain"
+				/>
 			</div>
 			<h1 class="text-4xl sm:text-5xl font-bold mb-4 text-yass-600">Rivet</h1>
 			<p class="text-base sm:text-lg text-dim leading-relaxed">
