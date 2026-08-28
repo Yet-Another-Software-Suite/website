@@ -63,30 +63,20 @@ export const testimonials = [
 		contributions: [],
 	},
 	{
-		team: "Raider Robotics",
-		number: 5561,
-		quote:
-			"On 5561, we started using YAGSL in 2024-2025, and that was the easiest swerve library I've used. With the release of YAMG and YAMS, I have extremely high expectations for our team. YASS as a whole will be an incredible organization to learn from and to teach from.",
-		url: "https://sites.google.com/view/frc5561/home",
-		logo: logo5561,
-		contributions: [],
-	},
-	{
-		team: "Ionic Bond",
-		number: 9738,
-		quote:
-			"YASS has been an amazing community to be part of and collaborate with. It enabled us to program a swerve drive much faster than we could have achieved on our own, while sparing us countless headaches. Thanks to YALL, working with the Limelight has also become far easier and more intuitive. We see YASS as a vital part of the FRC ecosystem and believe it deserves recognition for its simplicity and impact.",
-		url: "https://ionicbond.io/",
-		logo: logo9738,
-		contributions: [],
-	},
-	{
 		team: "GEARS",
 		number: 2181,
 		quote:
 			"Using YAGSL has allowed our team to make unbelievable progress in terms of drivetrain capabilities. It made incorporating vision tracking, pose estimation, and field localization a breeze. With the built-in simulation, we were able to get Drive to Pose commands working and tested without access to a field, which is a huge success. Now with YAMS, we're able to take everything to the next level with simulation of any mechanism we might want to use.",
 		url: "https://www.frcteam2181.com/",
 		logo: logo2181,
+		contributions: [],
+	},
+	{
+		team: "Rebel Robotics",
+		number: 2225,
+		quote: "YASS IS LOVE YASS IS LIFE",
+		url: "https://first2225.com",
+		logo: logo2225,
 		contributions: [],
 	},
 	{
@@ -99,11 +89,19 @@ export const testimonials = [
 		contributions: [],
 	},
 	{
-		team: "Rebel Robotics",
-		number: 2225,
-		quote: "YASS IS LOVE YASS IS LIFE",
-		url: "https://first2225.com",
-		logo: logo2225,
+		team: "Raider Robotics",
+		number: 5561,
+		quote:
+			"On 5561, we started using YAGSL in 2024-2025, and that was the easiest swerve library I've used. With the release of YAMG and YAMS, I have extremely high expectations for our team. YASS as a whole will be an incredible organization to learn from and to teach from.",
+		url: "https://sites.google.com/view/frc5561/home",
+		logo: logo5561,
+		contributions: [],
+	},
+	{
+		team: "So Botz",
+		number: 6911,
+		quote: null,
+		logo: logo6911,
 		contributions: [],
 	},
 	{
@@ -122,10 +120,12 @@ export const testimonials = [
 		contributions: [],
 	},
 	{
-		team: "So Botz",
-		number: 6911,
-		quote: null,
-		logo: logo6911,
+		team: "Ionic Bond",
+		number: 9738,
+		quote:
+			"YASS has been an amazing community to be part of and collaborate with. It enabled us to program a swerve drive much faster than we could have achieved on our own, while sparing us countless headaches. Thanks to YALL, working with the Limelight has also become far easier and more intuitive. We see YASS as a vital part of the FRC ecosystem and believe it deserves recognition for its simplicity and impact.",
+		url: "https://ionicbond.io/",
+		logo: logo9738,
 		contributions: [],
 	},
 ];
