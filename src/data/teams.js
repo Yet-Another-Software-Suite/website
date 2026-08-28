@@ -126,7 +126,7 @@ export const testimonials = [
 			"YASS has been an amazing community to be part of and collaborate with. It enabled us to program a swerve drive much faster than we could have achieved on our own, while sparing us countless headaches. Thanks to YALL, working with the Limelight has also become far easier and more intuitive. We see YASS as a vital part of the FRC ecosystem and believe it deserves recognition for its simplicity and impact.",
 		url: "https://ionicbond.io/",
 		logo: logo9738,
-		contributions: ["YASS Student Leader", "YASS Weekly Host"],
+		contributions: ["YASS Student Leader", "YASS Weekly Host", "Designed original Rivet Mascot"],
 	},
 ];
 
