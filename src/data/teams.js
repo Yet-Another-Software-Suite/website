@@ -60,7 +60,7 @@ export const testimonials = [
 		url: "https://camberrobotics.com",
 		founding: true,
 		logo: logo9658,
-		contributions: ["Discord Moderator", "YASS Kickoff Presenter", "2026 Worlds Presenter"],
+		contributions: ["Discord Moderator", "YASS Kickoff Presenter", "2026 Worlds Presenter", "Graphic Design", "Mascot Variants", "Helped develop Branding Standards"],
 	},
 	{
 		team: "GEARS",
