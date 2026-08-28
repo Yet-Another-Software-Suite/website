@@ -28,17 +28,6 @@ export const projects = [
 		logo: yamsLogo,
 	},
 	{
-		key: "yamg",
-		name: "YAMG",
-		fullName: "Yet Another Mechanism Generator",
-		description:
-			"A web-based mechanism simulator and code generator. Prototype an arm, elevator, or turret and see how it behaves before you've cut a single piece of metal.",
-		github: "https://github.com/Yet-Another-Software-Suite/yamg",
-		extra: { label: "Live Tool", url: "https://yamg.yassrobotics.com", primary: true },
-		ledColor: "var(--color-yamg)",
-		logo: yamgLogo,
-	},
-	{
 		key: "yall",
 		name: "YALL",
 		fullName: "Yet Another Limelight Library",
@@ -48,5 +37,16 @@ export const projects = [
 		github: "https://github.com/Yet-Another-Software-Suite/YALL",
 		ledColor: "var(--color-yall)",
 		logo: yallLogo,
+	},
+	{
+		key: "yamg",
+		name: "YAMG",
+		fullName: "Yet Another Mechanism Generator",
+		description:
+			"A web-based mechanism simulator and code generator. Prototype an arm, elevator, or turret and see how it behaves before you've cut a single piece of metal.",
+		github: "https://github.com/Yet-Another-Software-Suite/yamg",
+		extra: { label: "Live Tool", url: "https://yamg.yassrobotics.com", primary: true },
+		ledColor: "var(--color-yamg)",
+		logo: yamgLogo,
 	},
 ];
