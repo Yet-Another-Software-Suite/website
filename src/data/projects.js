@@ -33,7 +33,7 @@ export const projects = [
 		description:
 			"A web-based mechanism simulator and code generator. Prototype an arm, elevator, or turret and see how it behaves before you've cut a single piece of metal.",
 		github: "https://github.com/Yet-Another-Software-Suite/yamg",
-		extra: { label: "Live Tool", url: "https://yamg.yassrobotics.com" },
+		extra: { label: "Live Tool", url: "https://yamg.yassrobotics.com", primary: true },
 		ledColor: "var(--color-yamg)",
 	},
 	{

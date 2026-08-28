@@ -39,6 +39,16 @@ import Layout from "../layouts/Layout.astro";
 						{project.description}
 					</p>
 					<div class="flex flex-wrap gap-3">
+						{project.extra?.primary && (
+							<a
+								href={project.extra.url}
+								target="_blank"
+								rel="noopener noreferrer"
+								class="inline-block rounded-sm bg-yass-600 text-on-accent text-sm font-bold font-mono uppercase tracking-wider px-4 py-2.5 hover:bg-yass-500 transition-colors"
+							>
+								{project.extra.label}
+							</a>
+						)}
 						{project.docs && (
 							<a
 								href={project.docs}
@@ -57,7 +67,7 @@ import Layout from "../layouts/Layout.astro";
 						>
 							View on GitHub
 						</a>
-						{project.extra && (
+						{project.extra && !project.extra.primary && (
 							<a
 								href={project.extra.url}
 								target="_blank"
