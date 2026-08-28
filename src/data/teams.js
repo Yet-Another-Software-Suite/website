@@ -31,7 +31,7 @@ export const testimonials = [
 			"It's really inspiring to see the impact YASS has on the FRC community. Being able to learn and graspadvanced concepts like swerve and simulation is truly a game changer. YASS is really for everyone, no matter the skill level. We are excited to see what else YASS has in store for the future!",
 		founding: true,
 		logo: logo3481,
-		contributions: ["Discord Moderator", "YASS Student Leader", "YASS Kickoff Presenter", "2026 Worlds Presenter"],
+		contributions: ["Discord Moderator", "YASS Student Leader", "YASS Kickoff Presenter", "2026 Worlds Presenter", "YASS Weekly Host"],
 	},
 	{
 		team: "Grease Monkeys",
@@ -41,7 +41,7 @@ export const testimonials = [
 		url: "https://frcteam457.wixsite.com/team-457",
 		founding: true,
 		logo: logo457,
-		contributions: ["YASS Kickoff Presenter"],
+		contributions: ["YASS Kickoff Presenter", "YASS Weekly Host"],
 	},
 	{
 		team: "RoboRaiders",
@@ -126,7 +126,7 @@ export const testimonials = [
 			"YASS has been an amazing community to be part of and collaborate with. It enabled us to program a swerve drive much faster than we could have achieved on our own, while sparing us countless headaches. Thanks to YALL, working with the Limelight has also become far easier and more intuitive. We see YASS as a vital part of the FRC ecosystem and believe it deserves recognition for its simplicity and impact.",
 		url: "https://ionicbond.io/",
 		logo: logo9738,
-		contributions: ["YASS Student Leader"],
+		contributions: ["YASS Student Leader", "YASS Weekly Host"],
 	},
 ];
 
