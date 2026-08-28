@@ -212,9 +212,22 @@ const year = new Date().getFullYear();
 		});
 	}
 
+	function initPronounCycle() {
+		const forms = ["he", "she", "they"];
+		document.querySelectorAll(".pronoun-cycle").forEach((el) => {
+			el.dataset.form = "he";
+			el.addEventListener("mouseenter", () => {
+				const next = forms[(forms.indexOf(el.dataset.form) + 1) % forms.length];
+				el.dataset.form = next;
+				el.textContent = el.dataset[next];
+			});
+		});
+	}
+
 	document.addEventListener("DOMContentLoaded", () => {
 		initScrollReveal();
 		initRivetFooterEasterEgg();
+		initPronounCycle();
 	});
 </script>
 </body>

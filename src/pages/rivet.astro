@@ -19,16 +19,18 @@ const roles = [
 		image: csa,
 		title: "Control Systems Advisor",
 		description: "Rivet volunteers as a CSA at FRC events, helping teams track down wiring gremlins before they cost a match.",
+		accent: "#f55d11",
 	},
 	{
 		image: lri,
 		title: "Lead Robot Inspector",
-		description: "As an LRI, Rivet has checked over more robots than he can count, clipboard in hand, tape measure ready.",
+		description: 'As an LRI, Rivet has checked over more robots than <span class="pronoun-cycle" data-he="he can count" data-she="she can count" data-they="they can count">he can count</span>, clipboard in hand, tape measure ready.',
+		accent: "#f5d611",
 	},
 	{
 		image: referee,
 		title: "FTC Referee",
-		description: "Whistle around his neck, penalty card ready — Rivet also shows up to FTC events as a referee.",
+		description: 'Whistle around <span class="pronoun-cycle" data-he="his" data-she="her" data-they="their">his</span> neck, penalty card ready — Rivet also shows up to FTC events as a referee.',
 	},
 ];
 
@@ -53,7 +55,7 @@ const holidays = [
 			<img src={rivetHero.src} alt="Rivet, the YASS mascot" class="w-32 h-32 sm:w-40 sm:h-40 object-contain mx-auto mb-6" />
 			<h1 class="text-4xl sm:text-5xl font-bold mb-4 text-yass-600">Rivet</h1>
 			<p class="text-base sm:text-lg text-dim leading-relaxed">
-				You found him. Here's the story of the frog behind the software.
+				You found <span class="pronoun-cycle" data-he="him" data-she="her" data-they="them">him</span>. Here's the story of the frog behind the software.
 			</p>
 		</div>
 	</section>
@@ -64,13 +66,13 @@ const holidays = [
 		<div class="max-w-3xl mx-auto text-center scroll-animate">
 			<h2 class="text-3xl sm:text-4xl font-bold mb-6 text-ink">Who is Rivet?</h2>
 			<p class="text-base sm:text-lg text-dim leading-relaxed mb-4">
-				Rivet is the mascot of Yet Another Software Suite — a frog who loves to program, volunteer, and help students learn robotics as a whole. He's a bit crazy — he'll do things like licking batteries in public, purely because he's curious whether they're charged.
+				Rivet is the mascot of Yet Another Software Suite — a frog who loves to program, volunteer, and help students learn robotics as a whole. <span class="pronoun-cycle" data-he="He's" data-she="She's" data-they="They're">He's</span> a bit crazy — <span class="pronoun-cycle" data-he="he'll" data-she="she'll" data-they="they'll">he'll</span> do things like licking batteries in public, purely because <span class="pronoun-cycle" data-he="he's" data-she="she's" data-they="they're">he's</span> curious whether they're charged.
 			</p>
 			<p class="text-base sm:text-lg text-dim leading-relaxed mb-4">
-				He'll cause a little chaos, help anyone who asks for it, and encourages students of every skill level to do the same.
+				<span class="pronoun-cycle" data-he="He'll" data-she="She'll" data-they="They'll">He'll</span> cause a little chaos, help anyone who asks for it, and encourages students of every skill level to do the same.
 			</p>
 			<p class="text-base sm:text-lg text-dim leading-relaxed">
-				He's also a frog, so he switches genders whenever he feels like it — don't be surprised if the pronouns around here shift too.
+				<span class="pronoun-cycle" data-he="He's" data-she="She's" data-they="They're">He's</span> also a frog, so <span class="pronoun-cycle" data-he="he switches" data-she="she switches" data-they="they switch">he switches</span> genders whenever <span class="pronoun-cycle" data-he="he feels" data-she="she feels" data-they="they feel">he feels</span> like it — don't be surprised if the pronouns around here shift too.
 			</p>
 		</div>
 	</section>
@@ -80,10 +82,13 @@ const holidays = [
 			<h2 class="text-3xl sm:text-4xl font-bold text-center mb-10 text-ink">On the Job</h2>
 			<div class="grid sm:grid-cols-3 gap-5">
 				{roles.map((role) => (
-					<figure class="bg-graphite-panel border border-graphite-border rounded-sm p-6 flex flex-col items-center text-center hover:border-yass-600 transition-colors">
+					<figure
+						class="bg-graphite-panel border border-graphite-border rounded-sm p-6 flex flex-col items-center text-center transition-colors [--role-accent:var(--color-yass-600)] hover:border-[var(--role-accent)]"
+						style={role.accent ? `--role-accent: ${role.accent};` : undefined}
+					>
 						<img src={role.image.src} alt={role.title} class="w-28 h-28 object-contain mb-4" />
 						<figcaption class="text-lg font-semibold text-ink mb-2">{role.title}</figcaption>
-						<p class="text-sm text-dim leading-relaxed">{role.description}</p>
+						<p class="text-sm text-dim leading-relaxed" set:html={role.description} />
 					</figure>
 				))}
 			</div>
@@ -99,7 +104,7 @@ const holidays = [
 				<div>
 					<h2 class="text-2xl sm:text-3xl font-bold mb-3 text-ink">Curious to a Fault</h2>
 					<p class="text-dim leading-relaxed">
-						Is it charged? Only one way to find out. Rivet's scientific method leaves a little to be desired, but nobody can say he isn't thorough.
+						Is it charged? Only one way to find out. Rivet's scientific method leaves a little to be desired, but nobody can say <span class="pronoun-cycle" data-he="he isn't" data-she="she isn't" data-they="they aren't">he isn't</span> thorough.
 					</p>
 				</div>
 			</div>
