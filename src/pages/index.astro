@@ -88,7 +88,9 @@ import Layout from "../layouts/Layout.astro";
 						</div>
 						<p class="text-sm text-dim leading-relaxed mb-5">{project.description}</p>
 						<div class="flex flex-wrap gap-x-5 gap-y-2 font-mono text-xs">
-							<a href={project.docs} target="_blank" rel="noopener noreferrer" class="text-ink border-b border-faint hover:border-yass-600 hover:text-yass-600 pb-0.5 transition-colors">Docs</a>
+							{project.docs && (
+								<a href={project.docs} target="_blank" rel="noopener noreferrer" class="text-ink border-b border-faint hover:border-yass-600 hover:text-yass-600 pb-0.5 transition-colors">Docs</a>
+							)}
 							<a href={project.github} target="_blank" rel="noopener noreferrer" class="text-ink border-b border-faint hover:border-yass-600 hover:text-yass-600 pb-0.5 transition-colors">GitHub</a>
 							{project.extra && (
 								<a href={project.extra.url} target="_blank" rel="noopener noreferrer" class="text-ink border-b border-faint hover:border-yass-600 hover:text-yass-600 pb-0.5 transition-colors">{project.extra.label}</a>

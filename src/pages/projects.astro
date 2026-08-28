@@ -39,14 +39,16 @@ import Layout from "../layouts/Layout.astro";
 						{project.description}
 					</p>
 					<div class="flex flex-wrap gap-3">
-						<a
-							href={project.docs}
-							target="_blank"
-							rel="noopener noreferrer"
-							class="inline-block rounded-sm bg-yass-600 text-on-accent text-sm font-bold font-mono uppercase tracking-wider px-4 py-2.5 hover:bg-yass-500 transition-colors"
-						>
-							Read the Docs
-						</a>
+						{project.docs && (
+							<a
+								href={project.docs}
+								target="_blank"
+								rel="noopener noreferrer"
+								class="inline-block rounded-sm bg-yass-600 text-on-accent text-sm font-bold font-mono uppercase tracking-wider px-4 py-2.5 hover:bg-yass-500 transition-colors"
+							>
+								Read the Docs
+							</a>
+						)}
 						<a
 							href={project.github}
 							target="_blank"
