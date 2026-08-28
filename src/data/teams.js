@@ -50,7 +50,7 @@ export const testimonials = [
 			"YASS has been a fundamental stepping stone for our team. With no mentors experienced in coding, our students often struggled to find reliable resources and troubleshoot complex issues. Thanks to the simplicity and accessibility of the YASS suite, students with little to no programming background have been able to successfully code entire robots, including swerve drives and multiple advanced subsystems. None of this would have been possible without YASS and the incredible YASS community.",
 		founding: true,
 		logo: logo3561,
-		contributions: ["YAMS alpha tester", "YALL Beta tester"],
+		contributions: ["YAMS alpha tester", "YALL beta tester"],
 	},
 	{
 		team: "Camber Robotics",
@@ -69,7 +69,7 @@ export const testimonials = [
 			"Using YAGSL has allowed our team to make unbelievable progress in terms of drivetrain capabilities. It made incorporating vision tracking, pose estimation, and field localization a breeze. With the built-in simulation, we were able to get Drive to Pose commands working and tested without access to a field, which is a huge success. Now with YAMS, we're able to take everything to the next level with simulation of any mechanism we might want to use.",
 		url: "https://www.frcteam2181.com/",
 		logo: logo2181,
-		contributions: ["2026 Worlds Presenter", "Discord Moderator"],
+		contributions: ["2026 Worlds Presenter", "YAMS beta testing", "Easy CRT beta testing", "Shoot on the Move tutorial", "Discord Moderator"],
 	},
 	{
 		team: "Rebel Robotics",
