@@ -86,7 +86,7 @@ export const testimonials = [
 			"YASS has completely transformed how we build and code our robots. What started as Yet Another Generic Swerve Library has grown into an incredibly intuitive and dependable software suite that makes programming feel easy and exciting again. With YAMS now part of the mix, designing and fine-tuning our mechanisms has never been smoother.",
 		url: "https://sites.google.com/view/frc5517",
 		logo: logo5517,
-		contributions: ["Discord Moderator"],
+		contributions: ["Inspiration for YAMS", "Contributed towards an upcoming library", "Discord Moderator"],
 	},
 	{
 		team: "Raider Robotics",
