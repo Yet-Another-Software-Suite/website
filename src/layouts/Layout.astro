@@ -70,9 +70,17 @@ const year = new Date().getFullYear();
 
 <footer class="bg-graphite-panel border-t border-graphite-border text-dim py-10 px-6 text-center">
 	<div class="flex flex-col items-center gap-4">
-		<button type="button" id="rivet-footer-trigger" class="w-10 h-10 p-0 border-0 bg-transparent cursor-pointer" aria-label="Rivet">
-			<img src={rivet.src} alt="Rivet, the YASS mascot" class="w-10 h-10 object-contain" />
-		</button>
+		<div class="relative group">
+			<div class="absolute -top-2 left-1/2 -translate-x-1/2 -translate-y-full opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">
+				<div class="relative bg-graphite-raised border border-graphite-border text-ink text-xs font-mono px-3 py-1.5 rounded-sm">
+					click me
+					<div class="absolute top-full left-1/2 -translate-x-1/2 w-2 h-2 bg-graphite-raised border-b border-r border-graphite-border rotate-45 -mt-1"></div>
+				</div>
+			</div>
+			<button type="button" id="rivet-footer-trigger" class="w-10 h-10 p-0 border-0 bg-transparent cursor-pointer" aria-label="Rivet">
+				<img src={rivet.src} alt="Rivet, the YASS mascot" class="w-10 h-10 object-contain" />
+			</button>
+		</div>
 		<div class="flex flex-wrap justify-center gap-5 text-sm font-mono uppercase tracking-wide">
 			<a href="https://discord.gg/yass" target="_blank" rel="noopener noreferrer" class="hover:text-yass-600 transition-colors">Discord</a>
 			<a href="https://www.instagram.com/yassrobotics" target="_blank" rel="noopener noreferrer" class="hover:text-yass-600 transition-colors">Instagram</a>
@@ -130,7 +138,20 @@ const year = new Date().getFullYear();
 			bouncer.style.filter = "drop-shadow(0 2px 6px rgba(0,0,0,0.4))";
 			document.body.appendChild(bouncer);
 
-			trigger.style.visibility = "hidden";
+			const bubble = document.createElement("div");
+			bubble.style.position = "fixed";
+			bubble.style.zIndex = "10000";
+			bubble.style.pointerEvents = "none";
+			bubble.innerHTML = `
+				<div class="relative bg-graphite-raised border border-graphite-border text-ink text-xs font-mono px-3 py-1.5 rounded-sm whitespace-nowrap">
+					WHEEEE!
+					<div class="absolute top-full left-1/2 -translate-x-1/2 w-2 h-2 bg-graphite-raised border-b border-r border-graphite-border rotate-45 -mt-1"></div>
+				</div>
+			`;
+			document.body.appendChild(bubble);
+
+			const group = trigger.closest(".group") || trigger;
+			group.style.visibility = "hidden";
 			bouncer.style.transformOrigin = "center bottom";
 
 			let x = triggerRect.left;
@@ -176,6 +197,10 @@ const year = new Date().getFullYear();
 				bouncer.style.left = x + "px";
 				bouncer.style.top = y + "px";
 				bouncer.style.transform = `scale(${2 - squashAmount}, ${squashAmount})`;
+
+				bubble.style.left = (x + size / 2) + "px";
+				bubble.style.top = (y - 10) + "px";
+				bubble.style.transform = "translate(-50%, -100%)";
 
 				if (elapsed < duration) {
 					requestAnimationFrame(frame);
