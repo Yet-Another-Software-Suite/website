@@ -1,1 +1,1 @@
-export const storeUrl = "https://yet-another-software-suite-shop.fourthwall.com";
+export const storeUrl = "https://shop.yassrobotics.com";
