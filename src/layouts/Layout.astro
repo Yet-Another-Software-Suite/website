@@ -214,12 +214,22 @@ const year = new Date().getFullYear();
 
 	function initPronounCycle() {
 		const forms = ["he", "she", "they"];
-		document.querySelectorAll(".pronoun-cycle").forEach((el) => {
+		const pronouns = document.querySelectorAll(".pronoun-cycle");
+		const mustacheBubble = document.getElementById("mustache-bubble");
+
+		function checkAllShe() {
+			if (!mustacheBubble) return;
+			const allShe = pronouns.length > 0 && Array.from(pronouns).every((el) => el.dataset.form === "she");
+			mustacheBubble.style.opacity = allShe ? "1" : "";
+		}
+
+		pronouns.forEach((el) => {
 			el.dataset.form = "he";
 			el.addEventListener("mouseenter", () => {
 				const next = forms[(forms.indexOf(el.dataset.form) + 1) % forms.length];
 				el.dataset.form = next;
 				el.textContent = el.dataset[next];
+				checkAllShe();
 			});
 		});
 	}

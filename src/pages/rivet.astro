@@ -24,7 +24,7 @@ const roles = [
 	{
 		image: lri,
 		title: "Lead Robot Inspector",
-		description: 'As an LRI, Rivet has checked over more robots than <span class="pronoun-cycle" data-he="he can count" data-she="she can count" data-they="they can count">he can count</span>, clipboard in hand, tape measure ready.',
+		description: 'As an LRI, Rivet has inspected more robots than <span class="pronoun-cycle" data-he="he can count" data-she="she can count" data-they="they can count">he can count</span>, clipboard in hand, tape measure ready.',
 		accent: "#f5d611",
 	},
 	{
@@ -83,7 +83,15 @@ const holidays = [
 >
 	<section class="py-16 sm:py-20 px-4 sm:px-6">
 		<div class="max-w-2xl mx-auto text-center scroll-animate">
-			<img src={rivetHero.src} alt="Rivet, the YASS mascot" class="w-32 h-32 sm:w-40 sm:h-40 object-contain mx-auto mb-6" />
+			<div class="relative inline-block mb-6">
+				<div id="mustache-bubble" class="absolute -top-2 left-1/2 -translate-x-1/2 -translate-y-full opacity-0 transition-opacity pointer-events-none whitespace-nowrap">
+					<div class="relative bg-graphite-raised border border-graphite-border text-ink text-xs font-mono px-3 py-1.5 rounded-sm">
+						did you know my mustache is fake!
+						<div class="absolute top-full left-1/2 -translate-x-1/2 w-2 h-2 bg-graphite-raised border-b border-r border-graphite-border rotate-45 -mt-1"></div>
+					</div>
+				</div>
+				<img src={rivetHero.src} alt="Rivet, the YASS mascot" class="w-32 h-32 sm:w-40 sm:h-40 object-contain" />
+			</div>
 			<h1 class="text-4xl sm:text-5xl font-bold mb-4 text-yass-600">Rivet</h1>
 			<p class="text-base sm:text-lg text-dim leading-relaxed">
 				You found <span class="pronoun-cycle" data-he="him" data-she="her" data-they="them">him</span>. Here's the story of the frog behind the software.
