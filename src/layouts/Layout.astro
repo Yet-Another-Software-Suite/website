@@ -70,7 +70,9 @@ const year = new Date().getFullYear();
 
 <footer class="bg-graphite-panel border-t border-graphite-border text-dim py-10 px-6 text-center">
 	<div class="flex flex-col items-center gap-4">
-		<img src={rivet.src} alt="Rivet, the YASS mascot" class="w-10 h-10 object-contain" />
+		<button type="button" id="rivet-footer-trigger" class="w-10 h-10 p-0 border-0 bg-transparent cursor-pointer" aria-label="Rivet">
+			<img src={rivet.src} alt="Rivet, the YASS mascot" class="w-10 h-10 object-contain" />
+		</button>
 		<div class="flex flex-wrap justify-center gap-5 text-sm font-mono uppercase tracking-wide">
 			<a href="https://discord.gg/yass" target="_blank" rel="noopener noreferrer" class="hover:text-yass-600 transition-colors">Discord</a>
 			<a href="https://www.instagram.com/yassrobotics" target="_blank" rel="noopener noreferrer" class="hover:text-yass-600 transition-colors">Instagram</a>
@@ -101,7 +103,94 @@ const year = new Date().getFullYear();
 		});
 	}
 
-	document.addEventListener("DOMContentLoaded", initScrollReveal);
+	function initRivetFooterEasterEgg() {
+		const trigger = document.getElementById("rivet-footer-trigger");
+		const footer = document.querySelector("footer");
+		if (!trigger || !footer) return;
+
+		trigger.addEventListener("click", () => {
+			if (trigger.dataset.animating === "true") return;
+			trigger.dataset.animating = "true";
+
+			const footerRect = footer.getBoundingClientRect();
+			const triggerRect = trigger.getBoundingClientRect();
+			const size = triggerRect.width;
+			const img = trigger.querySelector("img");
+
+			const bouncer = document.createElement("img");
+			bouncer.src = img.src;
+			bouncer.alt = "";
+			bouncer.style.position = "fixed";
+			bouncer.style.width = size + "px";
+			bouncer.style.height = size + "px";
+			bouncer.style.left = triggerRect.left + "px";
+			bouncer.style.top = triggerRect.top + "px";
+			bouncer.style.zIndex = "9999";
+			bouncer.style.pointerEvents = "none";
+			bouncer.style.filter = "drop-shadow(0 2px 6px rgba(0,0,0,0.4))";
+			document.body.appendChild(bouncer);
+
+			trigger.style.visibility = "hidden";
+			bouncer.style.transformOrigin = "center bottom";
+
+			let x = triggerRect.left;
+			let y = triggerRect.top;
+			let vx = 0;
+			let vy = 0;
+			let hopDir = Math.random() > 0.5 ? 1 : -1;
+			let landed = false;
+			let squashAmount = 1;
+			const gravity = 0.35;
+			const minX = footerRect.left + 4;
+			const maxX = footerRect.right - size - 4;
+			const groundY = footerRect.bottom - size - 8;
+
+			const startTime = performance.now();
+			const duration = 2200;
+
+			function hop() {
+				vy = -(7 + Math.random() * 2);
+				vx = hopDir * (2.5 + Math.random() * 1.5);
+			}
+
+			function frame(now) {
+				const elapsed = now - startTime;
+				vy += gravity;
+				x += vx;
+				y += vy;
+
+				if (x < minX) { x = minX; hopDir = 1; }
+				if (x > maxX) { x = maxX; hopDir = -1; }
+
+				if (y >= groundY) {
+					y = groundY;
+					if (!landed || vy > 0) {
+						landed = true;
+						squashAmount = 0.6;
+						if (elapsed < duration) hop();
+						else { vx = 0; vy = 0; }
+					}
+				}
+				squashAmount += (1 - squashAmount) * 0.25;
+
+				bouncer.style.left = x + "px";
+				bouncer.style.top = y + "px";
+				bouncer.style.transform = `scale(${2 - squashAmount}, ${squashAmount})`;
+
+				if (elapsed < duration) {
+					requestAnimationFrame(frame);
+				} else {
+					window.location.href = "/rivet";
+				}
+			}
+			requestAnimationFrame(frame);
+		});
+	}
+
+	document.addEventListener("DOMContentLoaded", () => {
+		initScrollReveal();
+		initRivetFooterEasterEgg();
+	});
 </script>
 </body>
 </html>

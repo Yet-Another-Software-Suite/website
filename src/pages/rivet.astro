@@ -1,0 +1,136 @@
+---
+import rivetHero from "../assets/logo/rivet.png";
+import battery from "../assets/rivet/battery.png";
+import csa from "../assets/rivet/csa.png";
+import lri from "../assets/rivet/lri.png";
+import referee from "../assets/rivet/referee.png";
+import graduating from "../assets/rivet/graduating.png";
+import christmas from "../assets/rivet/christmas.png";
+import newYears from "../assets/rivet/new-years.png";
+import lucky from "../assets/rivet/lucky.png";
+import pi from "../assets/rivet/pi.png";
+import valentines from "../assets/rivet/valentines.png";
+import easter from "../assets/rivet/easter.png";
+import Layout from "../layouts/Layout.astro";
+
+const roles = [
+	{
+		image: csa,
+		title: "Control Systems Advisor",
+		description: "Rivet volunteers as a CSA at FRC events, helping teams track down wiring gremlins before they cost a match.",
+	},
+	{
+		image: lri,
+		title: "Lead Robot Inspector",
+		description: "As an LRI, Rivet has checked over more robots than he can count, clipboard in hand, magnifying glass ready.",
+	},
+	{
+		image: referee,
+		title: "FTC Referee",
+		description: "Whistle around his neck, penalty card ready — Rivet also shows up on the FTC side of the house as a referee.",
+	},
+];
+
+const holidays = [
+	{ image: valentines, title: "Valentine's Day" },
+	{ image: lucky, title: "St. Patrick's Day" },
+	{ image: easter, title: "Easter" },
+	{ image: pi, title: "Pi Day" },
+	{ image: newYears, title: "New Year's" },
+	{ image: christmas, title: "Christmas" },
+];
+---
+
+<Layout
+	title="Rivet - Yet Another Software Suite"
+	description="The lore of Rivet, the YASS mascot."
+	url="https://yassrobotics.com/rivet"
+>
+	<section class="py-16 sm:py-20 px-4 sm:px-6">
+		<div class="max-w-2xl mx-auto text-center scroll-animate">
+			<img src={rivetHero.src} alt="Rivet, the YASS mascot" class="w-32 h-32 sm:w-40 sm:h-40 object-contain mx-auto mb-6" />
+			<h1 class="text-4xl sm:text-5xl font-bold mb-4 text-yass-600">Rivet</h1>
+			<p class="text-base sm:text-lg text-dim leading-relaxed">
+				You found him. Here's the story of the frog behind the software.
+			</p>
+		</div>
+	</section>
+
+	<div class="hazard-stripe"></div>
+
+	<section class="py-16 sm:py-20 px-4 sm:px-6 bg-graphite-panel/40">
+		<div class="max-w-3xl mx-auto text-center scroll-animate">
+			<h2 class="text-3xl sm:text-4xl font-bold mb-6 text-ink">Who is Rivet?</h2>
+			<p class="text-base sm:text-lg text-dim leading-relaxed mb-4">
+				Rivet is the mascot of Yet Another Software Suite — a frog who loves to program, volunteer, and help students learn robotics as a whole. He's a bit crazy — he'll do things like licking batteries in public, purely because he's curious whether they're charged.
+			</p>
+			<p class="text-base sm:text-lg text-dim leading-relaxed">
+				He'll cause a little chaos, help anyone who asks for it, and encourages students of every skill level to do the same.
+			</p>
+		</div>
+	</section>
+
+	<section class="py-16 sm:py-20 px-4 sm:px-6">
+		<div class="max-w-5xl mx-auto scroll-animate">
+			<h2 class="text-3xl sm:text-4xl font-bold text-center mb-10 text-ink">On the Job</h2>
+			<div class="grid sm:grid-cols-3 gap-5">
+				{roles.map((role) => (
+					<figure class="bg-graphite-panel border border-graphite-border rounded-sm p-6 flex flex-col items-center text-center hover:border-yass-600 transition-colors">
+						<img src={role.image.src} alt={role.title} class="w-28 h-28 object-contain mb-4" />
+						<figcaption class="text-lg font-semibold text-ink mb-2">{role.title}</figcaption>
+						<p class="text-sm text-dim leading-relaxed">{role.description}</p>
+					</figure>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<div class="hazard-stripe"></div>
+
+	<section class="py-16 sm:py-20 px-4 sm:px-6 bg-graphite-panel/40">
+		<div class="max-w-3xl mx-auto scroll-animate">
+			<div class="grid sm:grid-cols-2 gap-5 items-center">
+				<img src={battery.src} alt="Rivet licking a battery" class="w-full h-auto" />
+				<div>
+					<h2 class="text-2xl sm:text-3xl font-bold mb-3 text-ink">Curious to a Fault</h2>
+					<p class="text-dim leading-relaxed">
+						Is it charged? Only one way to find out. Rivet's scientific method leaves a little to be desired, but nobody can say he isn't thorough.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="py-16 sm:py-20 px-4 sm:px-6">
+		<div class="max-w-3xl mx-auto scroll-animate">
+			<div class="grid sm:grid-cols-2 gap-5 items-center">
+				<div class="sm:order-2">
+					<img src={graduating.src} alt="Rivet in a graduation cap" class="w-full h-auto" />
+				</div>
+				<div class="sm:order-1">
+					<h2 class="text-2xl sm:text-3xl font-bold mb-3 text-ink">Every Graduation</h2>
+					<p class="text-dim leading-relaxed">
+						Rivet is right there alongside students every year as they graduate — cap, tassel, and all.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<div class="hazard-stripe"></div>
+
+	<section class="py-16 sm:py-20 px-4 sm:px-6 bg-graphite-panel/40">
+		<div class="max-w-5xl mx-auto scroll-animate">
+			<h2 class="text-3xl sm:text-4xl font-bold text-center mb-2 text-ink">Dressed for the Occasion</h2>
+			<p class="text-center text-dim mb-10">Rivet loves to dress up for the holidays.</p>
+			<div class="grid grid-cols-2 sm:grid-cols-4 gap-5">
+				{holidays.map((holiday) => (
+					<figure class="bg-graphite-panel border border-graphite-border rounded-sm p-4 flex flex-col items-center text-center hover:border-yass-600 transition-colors">
+						<img src={holiday.image.src} alt={`Rivet dressed up for ${holiday.title}`} class="w-full h-auto mb-3" />
+						<figcaption class="text-sm font-mono uppercase tracking-wider text-yass-600">{holiday.title}</figcaption>
+					</figure>
+				))}
+			</div>
+		</div>
+	</section>
+</Layout>
