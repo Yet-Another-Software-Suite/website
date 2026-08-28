@@ -31,7 +31,7 @@ export const testimonials = [
 			"It's really inspiring to see the impact YASS has on the FRC community. Being able to learn and graspadvanced concepts like swerve and simulation is truly a game changer. YASS is really for everyone, no matter the skill level. We are excited to see what else YASS has in store for the future!",
 		founding: true,
 		logo: logo3481,
-		contributions: ["Discord Moderator", "YASS Student Leader", "YASS Kickoff Presenter", "2026 Worlds Presenter", "YASS Weekly Host"],
+		contributions: ["YASS Student Leader", "YASS Kickoff Presenter", "2026 Worlds Presenter", "YASS Weekly Host", "Discord Moderator"],
 	},
 	{
 		team: "Grease Monkeys",
@@ -60,7 +60,7 @@ export const testimonials = [
 		url: "https://camberrobotics.com",
 		founding: true,
 		logo: logo9658,
-		contributions: ["Discord Moderator", "YASS Kickoff Presenter", "2026 Worlds Presenter", "Graphic Design", "Mascot Variants", "Helped develop Branding Standards"],
+		contributions: ["YASS Kickoff Presenter", "2026 Worlds Presenter", "Graphic Design", "Mascot Variants", "Helped develop Branding Standards", "Discord Moderator"],
 	},
 	{
 		team: "GEARS",
@@ -69,7 +69,7 @@ export const testimonials = [
 			"Using YAGSL has allowed our team to make unbelievable progress in terms of drivetrain capabilities. It made incorporating vision tracking, pose estimation, and field localization a breeze. With the built-in simulation, we were able to get Drive to Pose commands working and tested without access to a field, which is a huge success. Now with YAMS, we're able to take everything to the next level with simulation of any mechanism we might want to use.",
 		url: "https://www.frcteam2181.com/",
 		logo: logo2181,
-		contributions: ["Discord Moderator", "2026 Worlds Presenter"],
+		contributions: ["2026 Worlds Presenter", "Discord Moderator"],
 	},
 	{
 		team: "Rebel Robotics",
