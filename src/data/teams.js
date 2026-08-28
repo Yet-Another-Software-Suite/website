@@ -102,7 +102,7 @@ export const testimonials = [
 		number: 7900,
 		quote: null,
 		logo: logo7900,
-		contributions: ["Discord Moderator"],
+		contributions: ["YAGSL Maintainer", "Discord Moderator"],
 	},
 	{
 		team: "Ionic Bond",
