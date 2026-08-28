@@ -37,13 +37,42 @@ const roles = [
 const rainbowColors = ["#e40303", "#ff8c00", "#ffed00", "#008026", "#004dff", "#750787"];
 
 const holidays = [
-	{ image: newYears, title: "New Year's" },
-	{ image: valentines, title: "Valentine's Day" },
-	{ image: pi, title: "Pi Day" },
-	{ image: lucky, title: "St. Patrick's Day" },
-	{ image: easter, title: "Easter" },
-	{ image: pride, title: "Pride Month", rainbow: true },
-	{ image: christmas, title: "Christmas" },
+	{
+		image: newYears,
+		title: "New Year's",
+		description: "Rivet rings in the new year with a noisemaker in one hand and a list of resolutions he'll abandon by February.",
+	},
+	{
+		image: valentines,
+		title: "Valentine's Day",
+		description: "Rivet swaps in a pair of heart-eyed glasses and leaves little paper hearts on every desk in the build space.",
+	},
+	{
+		image: pi,
+		title: "Pi Day",
+		description: "Rivet wears an actual pie on his head and recites digits of pi until someone bribes him with a real slice.",
+	},
+	{
+		image: lucky,
+		title: "St. Patrick's Day",
+		description: "Rivet goes full leprechaun for the day, hiding chocolate coins around the shop for anyone who finds a bug.",
+	},
+	{
+		image: easter,
+		title: "Easter",
+		description: "Rivet dons bunny ears and hides painted eggs in robot totes for students to find during the build season.",
+	},
+	{
+		image: pride,
+		title: "Pride Month",
+		description: "Rivet spends Pride Month splashing rainbow paint on everything in sight and reminding everyone that frogs don't do labels.",
+		rainbow: true,
+	},
+	{
+		image: christmas,
+		title: "Christmas",
+		description: "Rivet trades his usual look for a santa hat and leaves battery-powered gifts under the team's tree.",
+	},
 ];
 ---
 
@@ -139,13 +168,14 @@ const holidays = [
 				{holidays.map((holiday) => (
 					<figure class="bg-graphite-panel border border-graphite-border rounded-sm p-4 flex flex-col items-center text-center hover:border-yass-600 transition-colors">
 						<img src={holiday.image.src} alt={`Rivet dressed up for ${holiday.title}`} class="w-full h-auto mb-3" />
-						<figcaption class={`text-sm font-mono uppercase tracking-wider ${holiday.rainbow ? "" : "text-yass-600"}`}>
+						<figcaption class={`text-sm font-mono uppercase tracking-wider mb-2 ${holiday.rainbow ? "" : "text-yass-600"}`}>
 							{holiday.rainbow
 								? holiday.title.split("").map((char, i) => (
 									<span style={`color: ${rainbowColors[i % rainbowColors.length]};`}>{char}</span>
 								))
 								: holiday.title}
 						</figcaption>
+						<p class="text-xs text-dim leading-relaxed">{holiday.description}</p>
 					</figure>
 				))}
 			</div>
