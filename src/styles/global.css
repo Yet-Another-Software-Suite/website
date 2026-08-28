@@ -147,7 +147,3 @@
 	color: var(--color-legacy-gold);
 }
 
-/* Rivet's pronouns cycle he/she/they on hover -- see /rivet. */
-.pronoun-cycle {
-	cursor: pointer;
-}
