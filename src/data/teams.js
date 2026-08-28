@@ -2,7 +2,7 @@ import logo3481 from "../assets/logos/teams/3481.png";
 import logo457 from "../assets/logos/teams/457.png";
 import logo3561 from "../assets/logos/teams/3561.jpg";
 import logo9658 from "../assets/logos/teams/9658.jpg";
-import logo5561 from "../assets/logos/teams/5561.jpg";
+import logo5561 from "../assets/logos/teams/5561.png";
 import logo9738 from "../assets/logos/teams/9738.png";
 import logo2181 from "../assets/logos/teams/2181.png";
 import logo5517 from "../assets/logos/teams/5517.png";
@@ -10,6 +10,7 @@ import logo2225 from "../assets/logos/teams/2225.png";
 import logo7900 from "../assets/logos/teams/7900.jpg";
 import logo8818 from "../assets/logos/teams/8818.png";
 import logo6911 from "../assets/logos/teams/6911.png";
+import logo3100 from "../assets/logos/teams/3100.png";
 
 export const foundingTeams = [
 	{ name: "BroncBotz", number: 3481 },
@@ -115,7 +116,8 @@ export const testimonials = [
 	{
 		team: "Foe Foe Engineering",
 		number: 8818,
-		quote: null,
+		quote:
+			"Using YAGSL made a huge difference in our ability to program our robot for the 2025 season. The library simplified programming and fine-tuning our swerve base, allowing our rookie programmer to get the drive base running smoothly. Thanks to YAGSL, we were able to focus on improving subsystems and develop autonomous routines much earlier in the season than we otherwise could have.",
 		logo: logo8818,
 		contributions: [],
 	},
@@ -125,5 +127,20 @@ export const testimonials = [
 		quote: null,
 		logo: logo6911,
 		contributions: [],
+	},
+];
+
+// Past partner teams no longer active with YASS, but who made a lasting
+// contribution to the suite.
+export const legacyTeams = [
+	{
+		team: "Lightning Turtles",
+		number: 3100,
+		quote: null,
+		logo: logo3100,
+		contributions: [
+			"Original testers of MaxSwerve support in YAGSL",
+			"Helped other MaxSwerve teams adopt YAGSL",
+		],
 	},
 ];

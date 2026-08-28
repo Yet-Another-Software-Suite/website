@@ -47,6 +47,11 @@
 	--color-partner-pink-tint: #f2b3d1;
 	--color-partner-pink-soft: rgba(204, 0, 113, 0.08);
 
+	/* Legacy Teams gold -- scoped to Legacy Teams content only. */
+	--color-legacy-gold: #d4af37;
+	--color-legacy-gold-tint: #e9d28e;
+	--color-legacy-gold-soft: rgba(212, 175, 55, 0.08);
+
 	--font-display: "Courier Prime", monospace;
 	--font-mono: "JetBrains Mono", monospace;
 	--font-sans: "Inter", system-ui, sans-serif;
@@ -139,5 +144,5 @@
 
 /* Metallic gold text, for the Legacy Teams heading. */
 .text-metallic-gold {
-	color: #d4af37;
+	color: var(--color-legacy-gold);
 }
