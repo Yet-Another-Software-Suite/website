@@ -69,7 +69,7 @@ export const testimonials = [
 			"Using YAGSL has allowed our team to make unbelievable progress in terms of drivetrain capabilities. It made incorporating vision tracking, pose estimation, and field localization a breeze. With the built-in simulation, we were able to get Drive to Pose commands working and tested without access to a field, which is a huge success. Now with YAMS, we're able to take everything to the next level with simulation of any mechanism we might want to use.",
 		url: "https://www.frcteam2181.com/",
 		logo: logo2181,
-		contributions: ["2026 Worlds Presenter", "YAMS beta testing", "Easy CRT beta testing", "Shoot on the Move tutorial", "Discord Moderator"],
+		contributions: ["2026 Worlds Presenter", "YAMS beta tester", "Easy CRT beta tester", "Shoot on the Move tutorial", "Discord Moderator"],
 	},
 	{
 		team: "Rebel Robotics",
