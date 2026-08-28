@@ -60,7 +60,7 @@ export const testimonials = [
 		url: "https://camberrobotics.com",
 		founding: true,
 		logo: logo9658,
-		contributions: ["YASS Kickoff Presenter", "2026 Worlds Presenter", "Graphic Design", "Mascot Variants", "Helped develop Branding Standards", "Discord Moderator"],
+		contributions: ["YASS Kickoff Presenter", "2026 Worlds Presenter", "Graphic Design", "Holiday Rivet Variants", "Helped develop Branding Standards", "Discord Moderator"],
 	},
 	{
 		team: "GEARS",
@@ -98,26 +98,11 @@ export const testimonials = [
 		contributions: ["2026 Worlds Presenter"],
 	},
 	{
-		team: "So Botz",
-		number: 6911,
-		quote: null,
-		logo: logo6911,
-		contributions: ["Developed EasyCRT for YAMS"],
-	},
-	{
 		team: "Trial and Terror",
 		number: 7900,
 		quote: null,
 		logo: logo7900,
 		contributions: ["Discord Moderator"],
-	},
-	{
-		team: "Foe Foe Engineering",
-		number: 8818,
-		quote:
-			"Using YAGSL made a huge difference in our ability to program our robot for the 2025 season. The library simplified programming and fine-tuning our swerve base, allowing our rookie programmer to get the drive base running smoothly. Thanks to YAGSL, we were able to focus on improving subsystems and develop autonomous routines much earlier in the season than we otherwise could have.",
-		logo: logo8818,
-		contributions: ["Helped develop and beta tested the YAGSL 8 steps"],
 	},
 	{
 		team: "Ionic Bond",
@@ -142,5 +127,20 @@ export const legacyTeams = [
 			"Original testers of MaxSwerve support in YAGSL",
 			"Helped other MaxSwerve teams adopt YAGSL",
 		],
+	},
+	{
+		team: "So Botz",
+		number: 6911,
+		quote: null,
+		logo: logo6911,
+		contributions: ["Developed EasyCRT for YAMS"],
+	},
+	{
+		team: "Foe Foe Engineering",
+		number: 8818,
+		quote:
+			"Using YAGSL made a huge difference in our ability to program our robot for the 2025 season. The library simplified programming and fine-tuning our swerve base, allowing our rookie programmer to get the drive base running smoothly. Thanks to YAGSL, we were able to focus on improving subsystems and develop autonomous routines much earlier in the season than we otherwise could have.",
+		logo: logo8818,
+		contributions: ["Helped develop and beta tested the YAGSL 8 steps"],
 	},
 ];
