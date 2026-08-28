@@ -21,7 +21,7 @@ export const projects = [
 		name: "YAMS",
 		fullName: "Yet Another Mechanism System",
 		description:
-			"A unified interface for elevators, arms, and pivots, with simulation and telemetry built in from the start. Write your mechanism code once and run it the same way on the real robot and in sim, for FRC and FTC.",
+			"A unified interface for elevators, arms, and pivots, with simulation and telemetry built in from the start. Write your mechanism code once and run it the same way on the real robot and in sim for FRC.",
 		docs: "https://yams.yassrobotics.com",
 		github: "https://github.com/Yet-Another-Software-Suite/YAMS",
 		ledColor: "var(--color-sapphire)",
