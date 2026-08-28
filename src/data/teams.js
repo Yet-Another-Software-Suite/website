@@ -117,7 +117,7 @@ export const testimonials = [
 		quote:
 			"Using YAGSL made a huge difference in our ability to program our robot for the 2025 season. The library simplified programming and fine-tuning our swerve base, allowing our rookie programmer to get the drive base running smoothly. Thanks to YAGSL, we were able to focus on improving subsystems and develop autonomous routines much earlier in the season than we otherwise could have.",
 		logo: logo8818,
-		contributions: [],
+		contributions: ["Helped Develop and Beta tested the YAGSL 8 steps"],
 	},
 	{
 		team: "Ionic Bond",
