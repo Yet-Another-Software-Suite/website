@@ -7,11 +7,9 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout
 	title="Merch - Yet Another Software Suite"
-	description="YASS merch is sold through our Fourthwall store. Redirecting you there now."
+	description="YASS merch is sold through our Fourthwall store."
 	url="https://yassrobotics.com/merch"
 >
-	<meta slot="head" http-equiv="refresh" content={`2;url=${storeUrl}`} />
-
 	<section class="py-20 sm:py-28 px-4 sm:px-6">
 		<div class="max-w-xl mx-auto text-center">
 			<div class="flex justify-center gap-4 mb-8">
@@ -19,13 +17,15 @@ import Layout from "../layouts/Layout.astro";
 				<img src={yassHoodie.src} alt="Minimalist YASS hoodie" class="w-24 h-24 sm:w-28 sm:h-28 object-cover rounded-sm border border-graphite-border rotate-3" />
 			</div>
 			<h1 class="text-2xl sm:text-3xl font-bold text-ink mb-4">
-				Taking You to Our Store
+				Our Store
 			</h1>
 			<p class="text-sm sm:text-base text-dim leading-relaxed mb-8">
-				Our merch is sold through Fourthwall. You'll be redirected automatically, or you can head over right now.
+				Our merch is sold through Fourthwall. Head over whenever you're ready.
 			</p>
 			<a
 				href={storeUrl}
+				target="_blank"
+				rel="noopener noreferrer"
 				class="inline-block rounded-sm bg-yass-600 text-on-accent font-bold font-mono text-xs uppercase tracking-wider px-8 py-3.5 hover:bg-yass-500 transition-colors"
 			>
 				Continue to the Store &rarr;
