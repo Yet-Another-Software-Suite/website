@@ -12,7 +12,21 @@ import pi from "../assets/rivet/pi.png";
 import valentines from "../assets/rivet/valentines.png";
 import easter from "../assets/rivet/easter.png";
 import pride from "../assets/rivet/pride.png";
+import prideNonbinary from "../assets/rivet/pride-collection/nonbinary.png";
+import prideLesbian from "../assets/rivet/pride-collection/lesbian.png";
+import prideBisexual from "../assets/rivet/pride-collection/bisexual.png";
+import prideAsexual from "../assets/rivet/pride-collection/asexual.png";
+import prideAromantic from "../assets/rivet/pride-collection/aromantic.png";
 import Layout from "../layouts/Layout.astro";
+
+const prideFlags = [
+	{ image: pride, title: "Pride" },
+	{ image: prideNonbinary, title: "Nonbinary" },
+	{ image: prideLesbian, title: "Lesbian" },
+	{ image: prideBisexual, title: "Bisexual" },
+	{ image: prideAsexual, title: "Asexual" },
+	{ image: prideAromantic, title: "Aromantic" },
+];
 
 const roles = [
 	{
@@ -205,6 +219,25 @@ const holidays = [
 						<p class="text-xs text-dim leading-relaxed" set:html={holiday.description} />
 					</figure>
 				))}
+			</div>
+
+			<div id="pride-collection" style="display: none;" class="mt-12 pt-10 border-t border-graphite-border text-center">
+				<h3 class="text-2xl sm:text-3xl font-bold mb-2">
+					{"Every Flag At Once".split("").map((char, i) => (
+						char === " "
+							? <span> </span>
+							: <span style={`color: ${rainbowColors[i % rainbowColors.length]};`}>{char}</span>
+					))}
+				</h3>
+				<p class="text-dim mb-8">When the pronouns can't decide, neither can Rivet's wardrobe.</p>
+				<div class="grid grid-cols-3 sm:grid-cols-6 gap-4">
+					{prideFlags.map((flag) => (
+						<figure class="bg-graphite-panel border border-graphite-border rounded-sm p-3 flex flex-col items-center text-center hover:border-yass-600 transition-colors">
+							<img src={flag.image.src} alt={`Rivet dressed up for ${flag.title}`} class="w-full h-auto mb-2" />
+							<figcaption class="text-[11px] font-mono uppercase tracking-wider text-faint">{flag.title}</figcaption>
+						</figure>
+					))}
+				</div>
 			</div>
 		</div>
 	</section>

@@ -227,9 +227,14 @@ const year = new Date().getFullYear();
 		}
 
 		function checkAllThey() {
-			if (!heroImg || !heroImg.dataset.theySrc) return;
 			const allThey = pronouns.length > 0 && Array.from(pronouns).every((el) => el.dataset.form === "they");
-			heroImg.src = allThey ? heroImg.dataset.theySrc : heroImg.dataset.defaultSrc;
+			if (heroImg && heroImg.dataset.theySrc) {
+				heroImg.src = allThey ? heroImg.dataset.theySrc : heroImg.dataset.defaultSrc;
+			}
+			const prideCollection = document.getElementById("pride-collection");
+			if (prideCollection) {
+				prideCollection.style.display = allThey ? "block" : "none";
+			}
 		}
 
 		pronouns.forEach((el) => {
