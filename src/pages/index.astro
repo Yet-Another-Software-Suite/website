@@ -79,7 +79,9 @@ import Layout from "../layouts/Layout.astro";
 					>
 						<div class="flex items-start justify-between gap-3 mb-3">
 							<div>
-								<h3 class="text-3xl font-bold text-ink">{project.name}</h3>
+								<h3 class="text-3xl font-bold text-ink">
+									<a href={project.docs ?? project.extra?.url} target="_blank" rel="noopener noreferrer">{project.name}</a>
+								</h3>
 								<p class="font-mono text-sm font-bold uppercase tracking-wider" style={`color: ${project.ledColor ?? "var(--color-dim)"};`}>{project.fullName}</p>
 							</div>
 							{project.logo && (
