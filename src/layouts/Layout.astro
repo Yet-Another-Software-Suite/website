@@ -313,6 +313,8 @@ const year = new Date().getFullYear();
 
 		if (heroImg) {
 			let spinClickTimes = [];
+			let spinCount = 0;
+			const originalDefaultSrc = heroImg.dataset.defaultSrc;
 
 			heroImg.addEventListener("click", () => {
 				const now = Date.now();
@@ -323,7 +325,15 @@ const year = new Date().getFullYear();
 					heroImg.classList.remove("spin-once");
 					void heroImg.offsetWidth;
 					heroImg.classList.add("spin-once");
-					setTimeout(() => heroImg.classList.remove("spin-once"), 700);
+					setTimeout(() => {
+						heroImg.classList.remove("spin-once");
+						spinCount = (spinCount % 3) + 1;
+						let newSrc = originalDefaultSrc;
+						if (spinCount === 1 && heroImg.dataset.lriSrc) newSrc = heroImg.dataset.lriSrc;
+						else if (spinCount === 2 && heroImg.dataset.csaSrc) newSrc = heroImg.dataset.csaSrc;
+						heroImg.dataset.defaultSrc = newSrc;
+						heroImg.src = newSrc;
+					}, 700);
 				}
 			});
 		}
