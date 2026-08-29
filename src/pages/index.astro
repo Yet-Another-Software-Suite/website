@@ -3,6 +3,7 @@ import { projects } from "../data/projects.js";
 import InstagramFeed from "../components/InstagramFeed.astro";
 import YouTubeFeed from "../components/YouTubeFeed.astro";
 import Layout from "../layouts/Layout.astro";
+import rivetHero from "../assets/logo/rivet.png";
 ---
 
 <Layout
@@ -13,7 +14,8 @@ import Layout from "../layouts/Layout.astro";
 	<!-- Hero -->
 	<section class="pt-16 pb-12 sm:pt-20 sm:pb-16">
 		<div class="plate px-4 sm:px-6 lg:px-12 py-12 sm:py-14 scroll-animate">
-			<div class="max-w-5xl mx-auto">
+			<div class="max-w-5xl mx-auto flex items-center gap-8 lg:gap-12">
+			<div class="flex-1">
 				<div class="mb-6">
 					<span class="font-mono text-xs uppercase tracking-widest text-dim">Open source &middot; FRC Team Software</span>
 				</div>
@@ -58,6 +60,8 @@ import Layout from "../layouts/Layout.astro";
 						<div class="font-mono text-xs uppercase tracking-wider text-dim">Open source</div>
 					</div>
 				</div>
+			</div>
+			<img src={rivetHero.src} alt="Rivet, the YASS mascot" class="hidden md:block w-40 lg:w-52 h-40 lg:h-52 object-contain shrink-0" />
 			</div>
 		</div>
 	</section>
