@@ -255,11 +255,14 @@ const holidays = [
 
 			<div id="pride-collection" style="display: none;" class="mt-12 pt-10 border-t border-graphite-border text-center" data-pride-images={JSON.stringify(prideFlags.map((f) => f.image.src))}>
 				<h3 class="text-2xl sm:text-3xl font-bold mb-2">
-					{"Every Flag At Once".split("").map((char, i) => (
-						char === " "
-							? <span> </span>
-							: <span style={`color: ${rainbowColors[i % rainbowColors.length]};`}>{char}</span>
-					))}
+					{(() => {
+						let letterIndex = 0;
+						return "Every Flag At Once".split("").map((char) => (
+							char === " "
+								? <span> </span>
+								: <span style={`color: ${rainbowColors[letterIndex++ % rainbowColors.length]};`}>{char}</span>
+						));
+					})()}
 				</h3>
 				<p class="text-dim mb-8">When the pronouns can't decide, neither can Rivet's wardrobe.</p>
 				<div class="grid grid-cols-3 sm:grid-cols-6 gap-4">
