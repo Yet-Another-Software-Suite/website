@@ -147,3 +147,13 @@
 	color: var(--color-legacy-gold);
 }
 
+/* One-shot spin for the Rivet hero image easter egg. */
+@keyframes rivet-spin {
+	from { transform: rotate(0deg); }
+	to { transform: rotate(360deg); }
+}
+
+.spin-once {
+	animation: rivet-spin 0.6s ease-in-out;
+}
+

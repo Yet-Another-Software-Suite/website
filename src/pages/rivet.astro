@@ -17,15 +17,39 @@ import prideLesbian from "../assets/rivet/pride-collection/lesbian.png";
 import prideBisexual from "../assets/rivet/pride-collection/bisexual.png";
 import prideAsexual from "../assets/rivet/pride-collection/asexual.png";
 import prideAromantic from "../assets/rivet/pride-collection/aromantic.png";
+import prideAroace from "../assets/rivet/pride-collection/aroace.png";
+import prideDemiboy from "../assets/rivet/pride-collection/demiboy.png";
+import pridePansexual from "../assets/rivet/pride-collection/pansexual.png";
+import prideTransgender from "../assets/rivet/pride-collection/transgender.png";
 import Layout from "../layouts/Layout.astro";
+
+const rivetPhrases = [
+	"I lick batteries for fun.",
+	"I programmed an arm today :)",
+	"This mustache is 100% real.",
+	"Ask me about YAGSL sometime.",
+	"I once inspected 40 robots in one day.",
+	"Simulation first, always.",
+	"My pronouns change when I feel like it.",
+	"That tickles.",
+	"Free software, free frog.",
+	"I'm basically a CSA now.",
+	"Pi Day is my Super Bowl.",
+	"Rivet was here.",
+	"I may have eaten a battery once.",
+];
 
 const prideFlags = [
 	{ image: pride, title: "Pride" },
+	{ image: prideTransgender, title: "Transgender" },
 	{ image: prideNonbinary, title: "Nonbinary" },
 	{ image: prideLesbian, title: "Lesbian" },
 	{ image: prideBisexual, title: "Bisexual" },
+	{ image: pridePansexual, title: "Pansexual" },
 	{ image: prideAsexual, title: "Asexual" },
 	{ image: prideAromantic, title: "Aromantic" },
+	{ image: prideAroace, title: "Aroace" },
+	{ image: prideDemiboy, title: "Demiboy" },
 ];
 
 const roles = [
@@ -104,13 +128,19 @@ const holidays = [
 						<div class="absolute top-full left-1/2 -translate-x-1/2 w-2 h-2 bg-graphite-raised border-b border-r border-graphite-border rotate-45 -mt-1"></div>
 					</div>
 				</div>
+				<div id="hero-speech-bubble" class="absolute -top-2 left-1/2 -translate-x-1/2 -translate-y-full opacity-0 transition-opacity pointer-events-none whitespace-nowrap" data-phrases={JSON.stringify(rivetPhrases)}>
+					<div class="relative bg-graphite-raised border border-graphite-border text-ink text-xs font-mono px-3 py-1.5 rounded-sm">
+						<span id="hero-speech-bubble-text"></span>
+						<div class="absolute top-full left-1/2 -translate-x-1/2 w-2 h-2 bg-graphite-raised border-b border-r border-graphite-border rotate-45 -mt-1"></div>
+					</div>
+				</div>
 				<img
 					id="hero-rivet-img"
 					src={rivetHero.src}
 					data-default-src={rivetHero.src}
 					data-they-src={pride.src}
 					alt="Rivet, the YASS mascot"
-					class="w-32 h-32 sm:w-40 sm:h-40 object-contain"
+					class="w-32 h-32 sm:w-40 sm:h-40 object-contain cursor-default"
 				/>
 			</div>
 			<h1 class="text-4xl sm:text-5xl font-bold mb-4 text-yass-600">Rivet</h1>
@@ -221,7 +251,7 @@ const holidays = [
 				))}
 			</div>
 
-			<div id="pride-collection" style="display: none;" class="mt-12 pt-10 border-t border-graphite-border text-center">
+			<div id="pride-collection" style="display: none;" class="mt-12 pt-10 border-t border-graphite-border text-center" data-pride-images={JSON.stringify(prideFlags.map((f) => f.image.src))}>
 				<h3 class="text-2xl sm:text-3xl font-bold mb-2">
 					{"Every Flag At Once".split("").map((char, i) => (
 						char === " "

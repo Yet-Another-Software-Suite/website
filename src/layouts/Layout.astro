@@ -219,6 +219,8 @@ const year = new Date().getFullYear();
 		const pronouns = document.querySelectorAll(".pronoun-cycle");
 		const mustacheBubble = document.getElementById("mustache-bubble");
 		const heroImg = document.getElementById("hero-rivet-img");
+		const prideCollection = document.getElementById("pride-collection");
+		let secretMode = false;
 
 		function checkAllShe() {
 			if (!mustacheBubble) return;
@@ -231,7 +233,6 @@ const year = new Date().getFullYear();
 			if (heroImg && heroImg.dataset.theySrc) {
 				heroImg.src = allThey ? heroImg.dataset.theySrc : heroImg.dataset.defaultSrc;
 			}
-			const prideCollection = document.getElementById("pride-collection");
 			if (prideCollection) {
 				prideCollection.style.display = allThey ? "block" : "none";
 			}
@@ -240,6 +241,7 @@ const year = new Date().getFullYear();
 		pronouns.forEach((el) => {
 			el.dataset.form = "he";
 			el.addEventListener("mouseenter", () => {
+				secretMode = false;
 				const next = forms[(forms.indexOf(el.dataset.form) + 1) % forms.length];
 				el.dataset.form = next;
 				el.textContent = el.dataset[next];
@@ -247,6 +249,84 @@ const year = new Date().getFullYear();
 				checkAllShe();
 			});
 		});
+
+		if (heroImg && prideCollection) {
+			let prideImages = [];
+			try {
+				prideImages = JSON.parse(prideCollection.dataset.prideImages || "[]");
+			} catch (e) {
+				prideImages = [];
+			}
+
+			let interactionTimes = [];
+
+			function activateSecretMode() {
+				if (prideImages.length === 0) return;
+				secretMode = true;
+				pronouns.forEach((el) => {
+					const randomForm = forms[Math.floor(Math.random() * forms.length)];
+					el.dataset.form = randomForm;
+					el.textContent = el.dataset[randomForm];
+				});
+				heroImg.src = prideImages[Math.floor(Math.random() * prideImages.length)];
+				prideCollection.style.display = "block";
+			}
+
+			function registerHeroInteraction() {
+				const now = Date.now();
+				interactionTimes.push(now);
+				interactionTimes = interactionTimes.filter((t) => now - t <= 30000);
+				if (interactionTimes.length >= 30 && !secretMode) {
+					activateSecretMode();
+				}
+			}
+
+			heroImg.addEventListener("mouseenter", registerHeroInteraction);
+			heroImg.addEventListener("click", registerHeroInteraction);
+		}
+
+		const heroSpeechBubble = document.getElementById("hero-speech-bubble");
+		const heroSpeechBubbleText = document.getElementById("hero-speech-bubble-text");
+		if (heroImg && heroSpeechBubble && heroSpeechBubbleText) {
+			let phrases = [];
+			try {
+				phrases = JSON.parse(heroSpeechBubble.dataset.phrases || "[]");
+			} catch (e) {
+				phrases = [];
+			}
+
+			let tapCount = 0;
+			let speechBubbleTimeout = null;
+
+			heroImg.addEventListener("click", () => {
+				tapCount += 1;
+				if (tapCount % 3 !== 0 || phrases.length === 0) return;
+				const phrase = phrases[Math.floor(Math.random() * phrases.length)];
+				heroSpeechBubbleText.textContent = phrase;
+				heroSpeechBubble.style.opacity = "1";
+				clearTimeout(speechBubbleTimeout);
+				speechBubbleTimeout = setTimeout(() => {
+					heroSpeechBubble.style.opacity = "";
+				}, 2500);
+			});
+		}
+
+		if (heroImg) {
+			let spinClickTimes = [];
+
+			heroImg.addEventListener("click", () => {
+				const now = Date.now();
+				spinClickTimes.push(now);
+				spinClickTimes = spinClickTimes.filter((t) => now - t <= 60000);
+				if (spinClickTimes.length >= 100) {
+					spinClickTimes = [];
+					heroImg.classList.remove("spin-once");
+					void heroImg.offsetWidth;
+					heroImg.classList.add("spin-once");
+					setTimeout(() => heroImg.classList.remove("spin-once"), 700);
+				}
+			});
+		}
 	}
 
 	document.addEventListener("DOMContentLoaded", () => {
