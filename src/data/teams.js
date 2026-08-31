@@ -31,7 +31,7 @@ export const testimonials = [
 			"It's really inspiring to see the impact YASS has on the FRC community. Being able to learn and graspadvanced concepts like swerve and simulation is truly a game changer. YASS is really for everyone, no matter the skill level. We are excited to see what else YASS has in store for the future!",
 		founding: true,
 		logo: logo3481,
-		contributions: ["YASS Student Leader", "YASS Kickoff Presenter", "2026 Worlds Presenter", "YASS Weekly Host", "Discord Moderator"],
+		contributions: ["YASS Student Leader", "YASS Kickoff Presenter", "2026 Worlds Presenter", "YASS Weekly Host", "YASS Code Review", "YAGSL Youtube Tutorials", "Beta Tested YAGSL, YALL, and YAMS", "Discord Moderator"],
 	},
 	{
 		team: "Grease Monkeys",
