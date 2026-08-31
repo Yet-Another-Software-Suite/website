@@ -26,7 +26,11 @@ const currentPath = new URL(Astro.request.url).pathname;
 				<a
 					href={link.href}
 					class={`font-mono text-xs uppercase tracking-wider transition-colors ${
-						currentPath === link.href ? "text-yass-600" : "text-dim hover:text-yass-600"
+						currentPath === link.href
+							? "text-yass-600"
+							: link.href === "/teams"
+								? "text-dim hover:text-partner-pink"
+								: "text-dim hover:text-yass-600"
 					}`}
 				>
 					{link.label}
@@ -69,7 +73,11 @@ const currentPath = new URL(Astro.request.url).pathname;
 				<a
 					href={link.href}
 					class={`font-mono text-sm uppercase tracking-wider transition-colors ${
-						currentPath === link.href ? "text-yass-600" : "text-dim hover:text-yass-600"
+						currentPath === link.href
+							? "text-yass-600"
+							: link.href === "/teams"
+								? "text-dim hover:text-partner-pink"
+								: "text-dim hover:text-yass-600"
 					}`}
 				>
 					{link.label}
