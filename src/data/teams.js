@@ -13,8 +13,8 @@ import logo6911 from "../assets/logos/teams/6911.png";
 import logo3100 from "../assets/logos/teams/3100.png";
 
 export const foundingTeams = [
-	{ name: "BroncBotz", number: 3481 },
 	{ name: "Grease Monkeys", number: 457, url: "https://frcteam457.wixsite.com/team-457" },
+	{ name: "BroncBotz", number: 3481 },
 	{ name: "RoboRaiders", number: 3561 },
 	{ name: "Camber Robotics", number: 9658, url: "https://camberrobotics.com" },
 ];
@@ -25,15 +25,6 @@ export const foundingTeams = [
 // until then the card falls back to a placeholder badge and hides the list.
 export const testimonials = [
 	{
-		team: "BroncBotz",
-		number: 3481,
-		quote:
-			"It's really inspiring to see the impact YASS has on the FRC community. Being able to learn and graspadvanced concepts like swerve and simulation is truly a game changer. YASS is really for everyone, no matter the skill level. We are excited to see what else YASS has in store for the future!",
-		founding: true,
-		logo: logo3481,
-		contributions: ["YASS Student Leader", "YASS Kickoff Presenter", "2026 Worlds Presenter", "YASS Weekly Host", "YASS Code Review", "YAGSL Youtube Tutorials", "Beta Tested YAGSL, YALL, and YAMS", "Discord Moderator"],
-	},
-	{
 		team: "Grease Monkeys",
 		number: 457,
 		quote:
@@ -42,6 +33,15 @@ export const testimonials = [
 		founding: true,
 		logo: logo457,
 		contributions: ["YASS Kickoff Presenter", "YASS Weekly Host", "YAGSL MaxSwerve test robot"],
+	},
+	{
+		team: "BroncBotz",
+		number: 3481,
+		quote:
+			"It's really inspiring to see the impact YASS has on the FRC community. Being able to learn and graspadvanced concepts like swerve and simulation is truly a game changer. YASS is really for everyone, no matter the skill level. We are excited to see what else YASS has in store for the future!",
+		founding: true,
+		logo: logo3481,
+		contributions: ["YASS Student Leader", "YASS Kickoff Presenter", "2026 Worlds Presenter", "YASS Weekly Host", "YASS Code Review", "YAGSL Youtube Tutorials", "Beta Tested YAGSL, YALL, and YAMS", "Discord Moderator"],
 	},
 	{
 		team: "RoboRaiders",
