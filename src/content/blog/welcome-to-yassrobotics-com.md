@@ -10,7 +10,7 @@ For the last year, if you wanted to know what YASS actually was, you had three o
 So this offseason, we actually built a real website. [yassrobotics.com](https://yassrobotics.com) now has:
 
 - A description of every project we maintain (YAGSL, YAMS, YAMG, YALL) with links straight to docs and source
-- A page for our founding and partner teams, with the their contributions, and testimonials they gave us about running YASS in competition
+- A page for our Founding, Partner, and Legacy teams, with the their contributions, and testimonials they gave us about running YASS in competition
 - This blog, so major updates and new features won't be buried in the  [Chief Delphi announcement thread](https://www.chiefdelphi.com/t/introducing-yet-another-software-suite-yams-yall-yamg-yagsl/).
 - A live feed of our social media posts 
 - A merch link that actually takes you to the store instead of us trying to reinvent online shopping. 
