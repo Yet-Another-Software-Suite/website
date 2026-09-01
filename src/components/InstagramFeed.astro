@@ -3,11 +3,16 @@
 // on third-party sites, so instead of embedding live iframes we mirror a
 // handful of posts as self-hosted cards that link back to the real post.
 // Swap the image/caption/url here to feature different posts.
+import newWebsite from "../assets/instagram/ig-new-website.jpg";
 import yallApriltagSim from "../assets/instagram/ig-yall-apriltag-sim.jpg";
 import yamsCpp from "../assets/instagram/ig-yams-cpp.jpg";
-import yagslBeta from "../assets/instagram/ig-yagsl-2027-beta.jpg";
 
 const posts = [
+	{
+		image: newWebsite,
+		caption: "Check out the new YASS website! yassrobotics.com — let us know if you find the Easter Eggs.",
+		url: "https://www.instagram.com/yassrobotics/p/DcwqUsavSYL/",
+	},
 	{
 		image: yallApriltagSim,
 		caption: "New YALL feature! YALL now has built in simulation for AprilTag detection, letting teams do whole robot simulation with vision.",
@@ -17,11 +22,6 @@ const posts = [
 		image: yamsCpp,
 		caption: "Introducing YAMS for C++! No longer a Java exclusive, teams that program in C++ can now use YAMS!",
 		url: "https://www.instagram.com/yassrobotics/p/DccUJdgt7dP/",
-	},
-	{
-		image: yagslBeta,
-		caption: "We are officially starting to prep for the 2027 season! YAGSL 2027 Beta is officially ready for testing!",
-		url: "https://www.instagram.com/yassrobotics/p/DcMyMyVNdNI/",
 	},
 ];
 ---
