@@ -13,7 +13,7 @@ So this offseason, we actually built a real website. [yassrobotics.com](https://
 - A page for our founding and partner teams, with the their contributions, and testimonials they gave us about running YASS in competition
 - This blog, so major updates and new features won't be buried in the  [Chief Delphi announcement thread](https://www.chiefdelphi.com/t/introducing-yet-another-software-suite-yams-yall-yamg-yagsl/).
 - A live feed of our social media posts 
-- A merch link that actually takes you to the store instead of us trying to reinvent checkout
+- A merch link that actually takes you to the store instead of us trying to reinvent online shopping. 
 
 Merch is still sold through Fourthwall. We're not building our own storefront, we're just giving it a front door that isn't a bare Fourthwall subdomain. Buying a shirt still supports the same thing it always did: time spent building and documenting these libraries.
 
