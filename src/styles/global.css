@@ -96,17 +96,6 @@
 	color: #ffffff;
 }
 
-.scroll-animate {
-	opacity: 0;
-	transform: translateY(30px);
-	transition: opacity 0.7s ease-out, transform 0.7s ease-out;
-}
-
-.scroll-animate.animate {
-	opacity: 1;
-	transform: translateY(0);
-}
-
 /* Riveted panel, used for the hero plate. */
 .plate {
 	position: relative;

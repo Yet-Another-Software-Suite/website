@@ -103,23 +103,6 @@ const year = new Date().getFullYear();
 </footer>
 
 <script>
-	function initScrollReveal() {
-		const observer = new IntersectionObserver((entries) => {
-			entries.forEach((entry) => {
-				if (entry.isIntersecting) {
-					entry.target.classList.add("animate");
-				}
-			});
-		}, {
-			threshold: 0.15,
-			rootMargin: "0px 0px -80px 0px",
-		});
-
-		document.querySelectorAll(".scroll-animate").forEach((el) => {
-			observer.observe(el);
-		});
-	}
-
 	function initRivetFooterEasterEgg() {
 		const trigger = document.getElementById("rivet-footer-trigger");
 		const footer = document.querySelector("footer");
@@ -347,7 +330,6 @@ const year = new Date().getFullYear();
 	}
 
 	document.addEventListener("DOMContentLoaded", () => {
-		initScrollReveal();
 		initRivetFooterEasterEgg();
 		initPronounCycle();
 	});
