@@ -155,7 +155,8 @@ const img = post.data.image ? blogImages[post.data.image] : null;
 		color: var(--color-ink);
 		font-weight: 700;
 	}
-	.post-content :global(img) {
+	.post-content :global(img),
+	.post-content :global(video) {
 		width: 100%;
 		border-radius: 2px;
 		border: 1px solid var(--color-graphite-border);
