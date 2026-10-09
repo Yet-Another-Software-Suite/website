@@ -3,25 +3,25 @@
 // on third-party sites, so instead of embedding live iframes we mirror a
 // handful of posts as self-hosted cards that link back to the real post.
 // Swap the image/caption/url here to feature different posts.
-import newWebsite from "../assets/instagram/ig-new-website.jpg";
-import yallApriltagSim from "../assets/instagram/ig-yall-apriltag-sim.jpg";
-import yamsCpp from "../assets/instagram/ig-yams-cpp.jpg";
+import rivetTrivia from "../assets/instagram/ig-rivet-trivia.jpg";
+import ionicBondTestimonial from "../assets/instagram/ig-ionic-bond-testimonial.jpg";
+import jsimComingSoon from "../assets/instagram/ig-jsim-coming-soon.jpg";
 
 const posts = [
 	{
-		image: newWebsite,
-		caption: "Check out the new YASS website! yassrobotics.com — let us know if you find the Easter Eggs.",
-		url: "https://www.instagram.com/yassrobotics/p/DcwqUsavSYL/",
+		image: rivetTrivia,
+		caption: "YASS Trivia! Did you know that Rivet has STRONG opinions about fasteners?",
+		url: "https://www.instagram.com/yassrobotics/p/DeNhfjDEfh3/",
 	},
 	{
-		image: yallApriltagSim,
-		caption: "New YALL feature! YALL now has built in simulation for AprilTag detection, letting teams do whole robot simulation with vision.",
-		url: "https://www.instagram.com/yassrobotics/p/DcoYhz4RWit/",
+		image: ionicBondTestimonial,
+		caption: "Working with YASS has been a real advantage for our team — partner team FRC 9738, Ionic Bond.",
+		url: "https://www.instagram.com/yassrobotics/p/DdaA3KJNcCU/",
 	},
 	{
-		image: yamsCpp,
-		caption: "Introducing YAMS for C++! No longer a Java exclusive, teams that program in C++ can now use YAMS!",
-		url: "https://www.instagram.com/yassrobotics/p/DccUJdgt7dP/",
+		image: jsimComingSoon,
+		caption: "New library coming to YASS! Introducing JSim, a physics simulator for FRC.",
+		url: "https://www.instagram.com/yassrobotics/reel/DdCtAf6pGlS/",
 	},
 ];
 ---
@@ -37,7 +37,7 @@ const posts = [
 			<img
 				src={post.image.src}
 				alt={post.caption}
-				class="w-full h-auto"
+				class="w-full aspect-square object-cover"
 				loading="lazy"
 			/>
 			<p class="p-4 text-sm text-dim leading-relaxed line-clamp-3">
