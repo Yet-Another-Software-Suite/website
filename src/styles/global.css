@@ -32,6 +32,7 @@
 	--color-yass-800: #457c1d;
 	--color-yass-900: #2e5313;
 	--color-accent-dim: #3c6b1a;
+	--color-yass-soft: rgba(107, 191, 45, 0.08);
 
 	/* Library brand colors -- constant across both themes. */
 	--color-sapphire: #2d6fbf;
