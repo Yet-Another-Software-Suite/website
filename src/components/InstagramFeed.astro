@@ -3,11 +3,16 @@
 // on third-party sites, so instead of embedding live iframes we mirror a
 // handful of posts as self-hosted cards that link back to the real post.
 // Swap the image/caption/url here to feature different posts.
+import yagslSystemcore from "../assets/instagram/ig-yagsl-systemcore.jpg";
 import rivetTrivia from "../assets/instagram/ig-rivet-trivia.jpg";
 import ionicBondTestimonial from "../assets/instagram/ig-ionic-bond-testimonial.jpg";
-import jsimComingSoon from "../assets/instagram/ig-jsim-coming-soon.jpg";
 
 const posts = [
+	{
+		image: yagslSystemcore,
+		caption: "YAGSL for SystemCore is live! For those wanting to alpha test new changes, check out Alpha7 on the WPILib page.",
+		url: "https://www.instagram.com/yassrobotics/p/DeSjanlORc1/",
+	},
 	{
 		image: rivetTrivia,
 		caption: "YASS Trivia! Did you know that Rivet has STRONG opinions about fasteners?",
@@ -17,11 +22,6 @@ const posts = [
 		image: ionicBondTestimonial,
 		caption: "Working with YASS has been a real advantage for our team — partner team FRC 9738, Ionic Bond.",
 		url: "https://www.instagram.com/yassrobotics/p/DdaA3KJNcCU/",
-	},
-	{
-		image: jsimComingSoon,
-		caption: "New library coming to YASS! Introducing JSim, a physics simulator for FRC.",
-		url: "https://www.instagram.com/yassrobotics/reel/DdCtAf6pGlS/",
 	},
 ];
 ---
