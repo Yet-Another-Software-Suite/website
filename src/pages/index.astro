@@ -194,4 +194,71 @@ import rivetHero from "../assets/logo/rivet.png";
 			</a>
 		</div>
 	</section>
+
+	<dialog
+		id="partner-apps-dialog"
+		aria-labelledby="partner-apps-title"
+		class="m-auto w-[calc(100%-2rem)] max-w-md rounded-sm border border-partner-pink bg-graphite-panel text-ink p-0 backdrop:bg-black/60"
+	>
+		<div class="relative p-6 sm:p-8 text-center">
+			<button
+				type="button"
+				id="partner-apps-close"
+				aria-label="Close"
+				class="absolute top-3 right-3 w-8 h-8 flex items-center justify-center text-dim hover:text-ink transition-colors text-2xl leading-none"
+			>
+				&times;
+			</button>
+			<p class="font-mono text-xs uppercase tracking-widest text-partner-pink mb-2">Applications are live</p>
+			<h2 id="partner-apps-title" class="text-2xl sm:text-3xl font-bold text-ink mb-3">Partner Team applications are open!</h2>
+			<p class="text-dim mb-2">
+				Apply to become a 2026-2027 YASS Partner Team and work closely with the core development group.
+			</p>
+			<p class="font-mono text-sm font-bold text-partner-pink mb-6">Deadline: November 13</p>
+			<div class="flex flex-wrap justify-center gap-3">
+				<a
+					href="https://docs.google.com/forms/d/e/1FAIpQLSdl3Jf_2HzPgFP8PF9abXcG21ZQ6LmE5BUKLv3bUopzj1wpzg/viewform"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="inline-block rounded-sm bg-partner-pink text-white font-bold font-mono text-xs uppercase tracking-wider px-6 py-3.5 hover:opacity-90 transition-opacity"
+				>
+					Apply now
+				</a>
+				<a
+					href="/teams"
+					class="inline-block rounded-sm border border-faint text-ink font-mono text-xs uppercase tracking-wider px-6 py-3.5 hover:border-partner-pink hover:text-partner-pink transition-colors"
+				>
+					Learn more
+				</a>
+			</div>
+		</div>
+	</dialog>
 </Layout>
+
+<script>
+	const dialog = document.getElementById("partner-apps-dialog") as HTMLDialogElement | null;
+	const storageKey = "partner-apps-2026-dismissed";
+
+	let dismissed = false;
+	try {
+		dismissed = localStorage.getItem(storageKey) === "1";
+	} catch {}
+
+	if (dialog && !dismissed) {
+		dialog.showModal();
+	}
+
+	function dismiss() {
+		try {
+			localStorage.setItem(storageKey, "1");
+		} catch {}
+		dialog?.close();
+	}
+
+	document.getElementById("partner-apps-close")?.addEventListener("click", dismiss);
+	dialog?.addEventListener("cancel", dismiss);
+	dialog?.addEventListener("click", (e) => {
+		if (e.target === dialog) dismiss();
+	});
+	dialog?.querySelectorAll("a").forEach((a) => a.addEventListener("click", dismiss));
+</script>
