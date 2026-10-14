@@ -6,6 +6,7 @@ import Layout from "../layouts/Layout.astro";
 
 const partnerTeams = testimonials.filter((t) => !t.founding);
 const foundingTestimonials = testimonials.filter((t) => t.founding);
+const applyUrl = "https://docs.google.com/forms/d/e/1FAIpQLSdl3Jf_2HzPgFP8PF9abXcG21ZQ6LmE5BUKLv3bUopzj1wpzg/viewform";
 ---
 
 <Layout
@@ -19,6 +20,25 @@ const foundingTestimonials = testimonials.filter((t) => t.founding);
 			<h1 class="text-4xl sm:text-5xl font-bold text-yass-600">
 				Team YASS
 			</h1>
+		</div>
+	</section>
+
+	<section class="px-4 sm:px-6 pb-16 sm:pb-20">
+		<div class="max-w-3xl mx-auto rounded-sm border border-partner-pink bg-partner-pink-soft p-6 sm:p-8 text-center">
+			<p class="font-mono text-xs uppercase tracking-widest text-partner-pink mb-2">Applications are live</p>
+			<h2 class="text-2xl sm:text-3xl font-bold text-ink mb-3">Partner Team applications are open!</h2>
+			<p class="text-dim mb-6">
+				Want to work closely with the YASS core team, test features early, and help shape the suite? Apply to become a 2026-2027 Partner Team.
+			</p>
+			<p class="font-mono text-sm font-bold text-partner-pink mb-6">Deadline: November 13</p>
+			<a
+				href={applyUrl}
+				target="_blank"
+				rel="noopener noreferrer"
+				class="inline-block rounded-sm bg-partner-pink text-white font-bold font-mono text-xs uppercase tracking-wider px-6 py-3.5 hover:opacity-90 transition-opacity"
+			>
+				Apply now
+			</a>
 		</div>
 	</section>
 
@@ -162,9 +182,17 @@ const foundingTestimonials = testimonials.filter((t) => t.founding);
 		<div class="max-w-2xl mx-auto text-center scroll-animate">
 			<h2 class="text-3xl sm:text-4xl font-bold text-yass-600 mb-4">Want to Become a Partner Team?</h2>
 			<p class="text-dim mb-8">
-				Partner Team applications for the 2026-2027 season will be open in October 2026. Join the Discord and follow on Instagram for the announcement.
+				Partner Team applications for the 2026-2027 season are now open, with a deadline of November 13. Apply below, and join the Discord or follow on Instagram for updates.
 			</p>
 			<div class="flex flex-wrap justify-center gap-3">
+				<a
+					href={applyUrl}
+					target="_blank"
+					rel="noopener noreferrer"
+					class="inline-block rounded-sm bg-partner-pink text-white font-bold font-mono text-xs uppercase tracking-wider px-6 py-3.5 hover:opacity-90 transition-opacity"
+				>
+					Apply now
+				</a>
 				<a
 					href="https://discord.gg/yass"
 					target="_blank"
