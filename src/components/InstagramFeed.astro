@@ -3,11 +3,16 @@
 // on third-party sites, so instead of embedding live iframes we mirror a
 // handful of posts as self-hosted cards that link back to the real post.
 // Swap the image/caption/url here to feature different posts.
+import partnerApps from "../assets/instagram/ig-partner-apps.jpg";
 import yagslSystemcore from "../assets/instagram/ig-yagsl-systemcore.jpg";
 import rivetTrivia from "../assets/instagram/ig-rivet-trivia.jpg";
-import ionicBondTestimonial from "../assets/instagram/ig-ionic-bond-testimonial.jpg";
 
 const posts = [
+	{
+		image: partnerApps,
+		caption: "2026-2027 YASS Partner Team Applications are now live! Open to all FRC teams. Deadline: November 13.",
+		url: "https://www.instagram.com/yassrobotics/p/DefXaDpBZP0/",
+	},
 	{
 		image: yagslSystemcore,
 		caption: "YAGSL for SystemCore is live! For those wanting to alpha test new changes, check out Alpha7 on the WPILib page.",
@@ -17,11 +22,6 @@ const posts = [
 		image: rivetTrivia,
 		caption: "YASS Trivia! Did you know that Rivet has STRONG opinions about fasteners?",
 		url: "https://www.instagram.com/yassrobotics/p/DeNhfjDEfh3/",
-	},
-	{
-		image: ionicBondTestimonial,
-		caption: "Working with YASS has been a real advantage for our team — partner team FRC 9738, Ionic Bond.",
-		url: "https://www.instagram.com/yassrobotics/p/DdaA3KJNcCU/",
 	},
 ];
 ---
