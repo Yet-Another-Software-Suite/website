@@ -10,7 +10,7 @@ YAMS and YAGSL both run on WPILib 2027.0.0-alpha-7 and the SystemCore. They now 
 
 **[SystemcoreTesting/YASS.md](https://github.com/wpilibsuite/SystemcoreTesting/blob/main/YASS.md)**
 
-That page is the place to start. It has the vendordep URLs, the current versions, the supported hardware, and migration notes for coming from 2026.
+That page has the current versions, the supported hardware, and migration notes for coming from 2026.
 
 ![YASS (YAMS) in the SystemcoreTesting list of vendor libraries](../../assets/blog/yass-2027-alpha7/systemcoretesting-vendor-libraries.png)
 
@@ -24,7 +24,7 @@ A big thank you to the Limelight team for reviewing and merging [the pull reques
 
 What's different in 2027:
 
-- **One vendordep per command framework.** Install `yams_commands2.json` for Commands v2 (Java and C++), or `yams_commands3.json` for Commands v3 (Java). Install one or the other, not both.
+- **One vendordep per command framework.** In the WPILib Vendor Dependencies manager, install **Yet Another Mechanism System (Commands v2)** for Java or C++, or **Yet Another Mechanism System (Commands v3)** for Java. Install one or the other, not both.
 - **A split API.** `yams.core` holds the mechanism state, simulation and telemetry, with no dependency on a command framework. Robot code imports from `yams.commands2` or `yams.commands3`, which add the `Command` and `Trigger` factories. Most 2026 code only needs new imports.
 - **Served from our own CDN.** The vendordeps and libraries come from `cdn.yassrobotics.com`, including when you build, so YAMS works on school networks that block `github.io`.
 - **Every SystemCore motor controller.** YAMS supports the TalonFX, TalonFXS, SPARK MAX, SPARK Flex and, new for 2027, the Thrifty Nova. The same gains in YAMS units give the same voltage on all of them, and we have tests that check it.
@@ -41,6 +41,7 @@ While testing on alpha 7 we also found a few bugs in REVLib's SPARK simulation, 
 [YAGSL](https://docs.yagsl.com) (Yet Another Generic Swerve Library) is now built on YAMS. It reads your swerve JSON files and builds a YAMS `SwerveDrive` with the motors, encoders and gyro already configured. Driving, odometry, input streams and telemetry all come from YAMS, so YAGSL and your other mechanisms share the same simulation and telemetry. The current release for alpha 7 is [v2026.10.09](https://github.com/Yet-Another-Software-Suite/YAGSL/releases/tag/v2026.10.09).
 
 - **Make your configuration at [config.yagsl.com](http://config.yagsl.com).** Fill in your gyro, modules and properties, then download the files. The Quick Start Guide walks you through a new project from scratch. The 2027 JSON format has changed, so regenerate your configuration instead of editing your 2026 files.
+- **Install it from the vendor dependency manager.** Pick **YAGSL (Commands v2)** or **YAGSL (Commands v3)**, matching your YAMS.
 - **Every vendor's devices are optional.** Each YAGSL vendordep only requires the matching YAMS vendordep. Install REVLib, Phoenix 6, ReduxLib or ThriftyLib only if your robot uses them.
 - **One way to name a CAN bus.** `canbus` is empty for `can_s0`, or `"1"` to `"4"` for the other SystemCore buses, whatever the vendor. CTRE devices can still name a CANivore.
 - **The SystemCore's built in IMU** can be your gyro, with no vendordep at all.
@@ -53,7 +54,7 @@ While testing on alpha 7 we also found a few bugs in REVLib's SPARK simulation, 
 Alpha 7 is the time to try 2027, not January. You don't need a SystemCore to start: YAMS and YAGSL simulate themselves, so you can build your mechanisms and swerve drive, drive them, and tune them in AdvantageScope from a laptop.
 
 1. Install WPILib 2027.0.0-alpha-7, and make a new project from a 2027 template.
-2. Add YAMS (and YAGSL if you run swerve) using the URLs in [YASS.md](https://github.com/wpilibsuite/SystemcoreTesting/blob/main/YASS.md).
+2. Open the WPILib Vendor Dependencies manager in VS Code, and install YAMS (and YAGSL if you run swerve) for your command framework. Both are listed for 2027 alpha 7, so you don't need a URL. If you ever need to install one by hand, the URLs are in [YASS.md](https://github.com/wpilibsuite/SystemcoreTesting/blob/main/YASS.md).
 3. Generate a mechanism with [YAMG](https://yamg.yassrobotics.com), or start from the [YAMS](https://github.com/Yet-Another-Software-Suite/YAMS/tree/master/examples) and [YAGSL](https://github.com/Yet-Another-Software-Suite/YAGSL/tree/main/examples) examples.
 4. Run it in simulation, and break it.
 
