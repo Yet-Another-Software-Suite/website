@@ -162,6 +162,16 @@ const img = post.data.image ? blogImages[post.data.image] : null;
 		border: 1px solid var(--color-graphite-border);
 		margin-bottom: 1.5rem;
 	}
+	/* Two images on one line sit side by side, for tall screenshots. */
+	.post-content :global(p:has(> img + img)) {
+		display: flex;
+		gap: 1rem;
+		align-items: flex-start;
+	}
+	.post-content :global(p:has(> img + img) > img) {
+		width: calc(50% - 0.5rem);
+		height: auto;
+	}
 	.post-content :global(a) {
 		color: var(--color-yass-600);
 		font-weight: 600;
