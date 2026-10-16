@@ -34,6 +34,12 @@ The icons in the gutter next to `Periodic()` and `SimulationPeriodic()` take you
 
 ![The YAMS shooter subsystem in CLion, with its overriding methods marked in the gutter](../../assets/blog/frc-plugin-clion/03-shooter-subsystem.png)
 
+## The vendordep manager
+
+The plugin's **Vendordeps** tool window works in CLion too. Open it from the FIRST icon on the right side of the window. It lists the vendordeps your project has installed, with their versions, and the ones you can add from WPILib's vendor repository. Select one and click **Install**, **Update** or **Remove**, or use **Install from URL** for a vendordep JSON that isn't in the repository. When the `vendordeps` folder changes, the plugin reloads the Gradle project for you.
+
+![The Vendordeps tool window in CLion, listing the installed Phoenix 6, REVLib and ThriftyLib vendordeps and the ones available to install](../../assets/blog/frc-plugin-clion/04-vendordeps.png)
+
 ## Trying it
 
 It's a beta, so expect rough edges. Download `FRC-2026.6.5-2026.2-beta2.zip` from the [release](https://github.com/thenetworkgrinch/frc-intelij-plugin/releases/tag/v2026.6.5-beta2), then in CLion open **Settings ▸ Plugins**, click the gear icon, choose **Install Plugin from Disk…**, pick the zip and restart.
