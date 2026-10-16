@@ -24,6 +24,10 @@ The plugin fixes that by generating compile commands from the project's Gradle b
 
 The icons in the gutter next to `Periodic()` and `SimulationPeriodic()` take you to the `SubsystemBase` methods they override, inside WPILib's headers.
 
+Those library headers get compile commands too, so when you go to a definition inside a vendordep, it doesn't turn red. Here's Phoenix 6's `CANcoder.hpp`, opened from the Gradle cache, with its own includes of CTRE and WPILib headers resolved:
+
+![Phoenix 6's CANcoder.hpp opened from the Gradle cache in CLion, with its WPILib and CTRE base classes resolved](../../assets/blog/frc-plugin-clion/05-vendor-header.png)
+
 ## What's in the beta
 
 - **CLion support for WPILib C++ robot projects.** Open a GradleRIO C++ project and CLion understands it.
@@ -36,9 +40,11 @@ The icons in the gutter next to `Periodic()` and `SimulationPeriodic()` take you
 
 ## The vendordep manager
 
-The plugin's **Vendordeps** tool window works in CLion too. Open it from the FIRST icon on the right side of the window. It lists the vendordeps your project has installed, with their versions, and the ones you can add from WPILib's vendor repository. Select one and click **Install**, **Update** or **Remove**, or use **Install from URL** for a vendordep JSON that isn't in the repository. When the `vendordeps` folder changes, the plugin reloads the Gradle project for you.
+The plugin's **Vendordeps** tool window works in CLion too. Open it from the FIRST icon on the right side of the window. It lists the vendordeps your project has installed and the ones you can add from WPILib's vendor repository, for the season in your project's `.wpilib/wpilib_preferences.json` (here, 2027 alpha 7). Select one and click **Install**, **Update** or **Remove**, or use **Install from URL** for a vendordep JSON that isn't in the repository. When the `vendordeps` folder changes, the plugin reloads the Gradle project for you.
 
-![The Vendordeps tool window in CLion, listing the installed Phoenix 6, REVLib and ThriftyLib vendordeps and the ones available to install](../../assets/blog/frc-plugin-clion/04-vendordeps.png)
+![The Vendordeps tool window in CLion for 2027 alpha 7, with REVLib flagged for an update from alpha 7 to alpha 8](../../assets/blog/frc-plugin-clion/04-vendordeps.png)
+
+An installed vendordep with a newer version in the repository gets a warning icon and an arrow to the new version, like REVLib going from 2027.0.0-alpha-7 to alpha-8 here.
 
 ## Trying it
 
