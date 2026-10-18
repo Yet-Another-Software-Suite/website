@@ -1,0 +1,187 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { foundingTeams } from "../data/teams.js";
+import { projects } from "../data/projects.js";
+
+const logo = (key) => projects.find((project) => project.key === key)?.logo;
+
+const goals = [
+	{
+		title: "Resources for every team",
+		description:
+			"Libraries, tools, tutorials and documentation that any FRC team can use for free, whatever their budget or experience.",
+	},
+	{
+		title: "Less stress, less difficulty",
+		description:
+			"Modern FRC programming is a lot to learn in one season. We make it approachable, so students spend their time building and learning, not fighting their code.",
+	},
+	{
+		title: "Pitfalls, documented",
+		description:
+			"The mistakes that cost teams a match, or a whole season, are written down, so the next team doesn't have to make them to learn them.",
+	},
+	{
+		title: "A chance to compete",
+		description:
+			"Features top teams took years to develop, in one place, so every team has a real shot on the field.",
+	},
+];
+
+const story = [
+	{
+		title: "2023: it started with YAGSL",
+		logo: logo("yagsl"),
+		text: "YASS was founded by several teams outside of San Antonio, Texas, after one of our mentors found that the modern state of FRC programming was too difficult for most students to grasp within a single season. Our first library was YAGSL, started in January 2023 to make swerve drives approachable.",
+	},
+	{
+		title: "Mentors from around the world",
+		text: "Other mentors from around the world joined, and one of them started ManipLib, a library for mechanisms. At first we set it aside: it seemed too complicated for the teams we wanted to help. Then we found a way to make it simple, without hundreds of config files.",
+	},
+	{
+		title: "2025: YAMS, shown at the World Championship",
+		logo: logo("yams"),
+		text: "In 2025 we built a proof of concept and showed it off at the World Championship. That became YAMS: describe a mechanism once, and get its commands, simulation, telemetry and live tuning.",
+	},
+	{
+		title: "YAMG, a generator for mechanisms",
+		logo: logo("yamg"),
+		text: "Teams started asking for more code generators, like CTRE's swerve generator, so we made YAMG. Fill in a form, and it writes the mechanism and simulates it in your browser.",
+	},
+	{
+		title: "YALL, for Limelight",
+		logo: logo("yall"),
+		text: "Limelight had no proper vendordep, so we made YALL: a simpler, more reliable way to get Limelight vision working on a robot.",
+	},
+	{
+		title: "2026: over 500 teams",
+		text: "Over 500 teams used YASS in the 2025 and 2026 seasons, and the community keeps growing.",
+	},
+];
+---
+
+<Layout
+	title="About - Yet Another Software Suite"
+	description="Why YASS exists: to improve the state of FRC with free resources, approachable programming and documented pitfalls, in an inclusive community built on Gracious Professionalism."
+	url="https://yassrobotics.com/about"
+>
+	<section class="py-16 sm:py-20 px-4 sm:px-6">
+		<div class="max-w-3xl mx-auto text-center">
+			<h1 class="text-4xl sm:text-5xl font-bold mb-4 sm:mb-6 text-yass-600">About YASS</h1>
+			<p class="text-base sm:text-lg text-dim leading-relaxed">
+				We aim to improve the state of FRC by providing resources, reducing the stress and difficulty of programming,
+				and documenting the pitfalls. We want everyone in FRC to have a chance to be competitive, and to learn so much
+				more than they would on their own.
+			</p>
+		</div>
+	</section>
+
+	<section class="py-16 sm:py-20 px-4 sm:px-6 bg-graphite-panel/40 border-y border-graphite-border">
+		<div class="max-w-5xl mx-auto">
+			<h2 class="text-3xl sm:text-4xl font-bold text-yass-600 mb-8 text-center">Our goals</h2>
+			<div class="grid sm:grid-cols-2 gap-5">
+				{goals.map((goal) => (
+					<div class="bg-graphite-panel border border-graphite-border rounded-sm p-6">
+						<h3 class="font-bold text-lg text-ink mb-2">{goal.title}</h3>
+						<p class="text-sm text-dim leading-relaxed">{goal.description}</p>
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<section class="py-16 sm:py-20 px-4 sm:px-6">
+		<div class="max-w-3xl mx-auto">
+			<h2 class="text-3xl sm:text-4xl font-bold text-yass-600 mb-8 text-center">Our story</h2>
+			<ol class="relative border-l border-graphite-border ml-3 space-y-10">
+				{story.map((step) => (
+					<li class="pl-8 relative scroll-animate">
+						<span class="absolute -left-[7px] top-1.5 w-3 h-3 rounded-full bg-yass-600" aria-hidden="true"></span>
+						<div class="flex items-center gap-3 mb-2">
+							{step.logo && <img src={step.logo.src} alt="" class="w-8 h-8 object-contain" />}
+							<h3 class="font-bold text-lg text-ink">{step.title}</h3>
+						</div>
+						<p class="text-dim leading-relaxed">{step.text}</p>
+					</li>
+				))}
+			</ol>
+			<p class="text-sm text-dim mt-10">
+				Our founding teams:{" "}
+				{foundingTeams.map((team, i) => (
+					<span>
+						{i > 0 && ", "}
+						{team.url ? (
+							<a href={team.url} target="_blank" rel="noopener noreferrer" class="text-yass-600 hover:underline">
+								{team.number} {team.name}
+							</a>
+						) : (
+							<span class="text-ink">{team.number} {team.name}</span>
+						)}
+					</span>
+				))}.
+				<a href="/teams" class="text-yass-600 hover:underline ml-1">Meet Team YASS &rarr;</a>
+			</p>
+		</div>
+	</section>
+
+	<section class="py-16 sm:py-20 px-4 sm:px-6 bg-graphite-panel/40 border-y border-graphite-border">
+		<div class="max-w-5xl mx-auto">
+			<h2 class="text-3xl sm:text-4xl font-bold text-yass-600 mb-8 text-center">What our tools make possible</h2>
+			<div class="grid md:grid-cols-2 gap-5">
+				<div class="bg-graphite-panel border border-graphite-border rounded-sm p-6">
+					<div class="flex items-center gap-3 mb-3">
+						<img src={logo("yamg")?.src} alt="" class="w-8 h-8 object-contain" />
+						<h3 class="font-bold text-lg text-ink">Train builders with YAMG</h3>
+					</div>
+					<p class="text-sm text-dim leading-relaxed">
+						YAMG's simulation runs in your browser, so builders can test a mechanism interactively before anything is
+						cut: try a gear ratio, a motor or a mass, and see whether it's fast enough, or whether it stalls. It's a
+						way to learn how mechanisms behave, and to catch costly mistakes before they're made.
+					</p>
+					<a href="https://yamg.yassrobotics.com" target="_blank" rel="noopener noreferrer" class="inline-block mt-4 font-mono text-xs uppercase tracking-wider text-yass-600 hover:underline">Open YAMG &rarr;</a>
+				</div>
+				<div class="bg-graphite-panel border border-graphite-border rounded-sm p-6">
+					<div class="flex items-center gap-3 mb-3">
+						<img src={logo("yams")?.src} alt="" class="w-8 h-8 object-contain" />
+						<h3 class="font-bold text-lg text-ink">Program with YAMS</h3>
+					</div>
+					<p class="text-sm text-dim leading-relaxed">
+						YAMS makes programming mechanisms easy, and puts features top teams took years to develop in one library:
+						simulation, live tuning, telemetry, exponential profiles, LQR, and more.
+					</p>
+					<a href="https://yams.yassrobotics.com" target="_blank" rel="noopener noreferrer" class="inline-block mt-4 font-mono text-xs uppercase tracking-wider text-yass-600 hover:underline">Learn YAMS &rarr;</a>
+				</div>
+			</div>
+			<p class="text-center mt-8">
+				<a href="/projects" class="font-mono text-sm uppercase tracking-wider text-yass-600 hover:underline">See every project &rarr;</a>
+			</p>
+		</div>
+	</section>
+
+	<section class="py-16 sm:py-24 px-4 sm:px-6">
+		<div class="max-w-3xl mx-auto text-center scroll-animate">
+			<h2 class="text-3xl sm:text-4xl font-bold text-yass-600 mb-4">A space for everyone</h2>
+			<p class="text-dim leading-relaxed mb-8">
+				YASS is an inclusive space for everyone in FRC, whatever their team, experience or background. We embrace
+				Woodie Flowers' ideal of Gracious Professionalism and the <em>FIRST</em> ethos: we compete hard, help each
+				other, and share what we learn, so the whole community gets better together.
+			</p>
+			<div class="flex flex-wrap justify-center gap-4">
+				<a
+					href="https://discord.gg/yass"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider px-6 py-3.5 rounded-sm bg-yass-600 text-on-accent font-bold hover:bg-yass-500 transition-colors"
+				>
+					Join the Discord &rarr;
+				</a>
+				<a
+					href="/teams"
+					class="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider px-6 py-3.5 rounded-sm border border-faint text-ink hover:border-yass-600 hover:text-yass-600 transition-colors"
+				>
+					Become a Partner Team
+				</a>
+			</div>
+		</div>
+	</section>
+</Layout>
