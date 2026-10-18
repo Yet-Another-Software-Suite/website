@@ -32,7 +32,7 @@ const story = [
 	{
 		title: "2023: it started with YAGSL",
 		logo: logo("yagsl"),
-		text: "YASS began at BroncBotz, FRC Team 3481, outside of San Antonio, Texas, after one of our mentors found that the modern state of FRC programming was too difficult for most students to grasp within a single season. Our first library was YAGSL, started in January 2023 after Swerve Drive Specialties deprecated its swerve library, SDSLib, to make swerve drives approachable for every team.",
+		text: "YASS began at <a href=\"https://broncbotz.org\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-yass-600 hover:underline\">BroncBotz</a>, FRC Team 3481, outside of San Antonio, Texas, after one of our mentors found that the modern state of FRC programming was too difficult for most students to grasp within a single season. Our first library was YAGSL, started in January 2023 after Swerve Drive Specialties deprecated its swerve library, SDSLib, to make swerve drives approachable for every team.",
 	},
 	{
 		title: "Mentors from around the world",
@@ -55,7 +55,7 @@ const story = [
 	},
 	{
 		title: "2025: YASS spins off from BroncBotz",
-		text: "In 2025, YASS spun off from BroncBotz into its own organization, founded by several teams outside of San Antonio, so that it could grow as a community for every team.",
+		text: "In 2025, YASS spun off from <a href=\"https://broncbotz.org\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-yass-600 hover:underline\">BroncBotz</a> into its own organization, founded by several teams outside of San Antonio, so that it could grow as a community for every team.",
 	},
 	{
 		title: "2026: over 500 teams",
@@ -105,7 +105,7 @@ const story = [
 							{step.logo && <img src={step.logo.src} alt="" class="w-8 h-8 object-contain" />}
 							<h3 class="font-bold text-lg text-ink">{step.title}</h3>
 						</div>
-						<p class="text-dim leading-relaxed">{step.text}</p>
+						<p class="text-dim leading-relaxed" set:html={step.text} />
 					</li>
 				))}
 			</ol>

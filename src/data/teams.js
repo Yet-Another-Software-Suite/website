@@ -14,7 +14,7 @@ import logo3100 from "../assets/logos/teams/3100.png";
 
 export const foundingTeams = [
 	{ name: "Grease Monkeys", number: 457, url: "https://frcteam457.wixsite.com/team-457" },
-	{ name: "BroncBotz", number: 3481 },
+	{ name: "BroncBotz", number: 3481, url: "https://broncbotz.org" },
 	{ name: "RoboRaiders", number: 3561 },
 	{ name: "Camber Robotics", number: 9658, url: "https://camberrobotics.com" },
 ];
