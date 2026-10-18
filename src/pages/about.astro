@@ -38,6 +38,31 @@ const admins = [
 	{ number: 5561, name: "Raider Robotics", role: "Alumni", url: "https://sites.google.com/view/frc5561/home" },
 ];
 
+// How we support teams, beyond the code.
+const support = [
+	{
+		title: "Calls, late into the night",
+		description:
+			"When a team is stuck, we get on a call, often late at night for some of us, and work through it together.",
+	},
+	{
+		title: "From the people who built it",
+		description:
+			"Questions about a feature are answered by the people who created it, so you get the why, not just the how.",
+	},
+	{
+		title: "Videos to get started",
+		description: "We make videos that walk every team through getting started, from a first project to a working robot.",
+		link: { label: "Watch on YouTube", url: "https://www.youtube.com/@YASSRobotics" },
+	},
+	{
+		title: "Code reviews at YASS Weekly",
+		description:
+			"During the season, our weekly YASS Weekly talks include code reviews of teams' robot code, so everyone learns from them.",
+		link: { label: "Join on Discord", url: "https://discord.gg/yass" },
+	},
+];
+
 const story = [
 	{
 		title: "2023: it started with YAGSL",
@@ -168,6 +193,25 @@ const story = [
 
 	<section class="py-16 sm:py-20 px-4 sm:px-6">
 		<div class="max-w-5xl mx-auto">
+			<h2 class="text-3xl sm:text-4xl font-bold text-yass-600 mb-8 text-center">How we support teams</h2>
+			<div class="grid sm:grid-cols-2 gap-5">
+				{support.map((item) => (
+					<div class="bg-graphite-panel border border-graphite-border rounded-sm p-6">
+						<h3 class="font-bold text-lg text-ink mb-2">{item.title}</h3>
+						<p class="text-sm text-dim leading-relaxed">{item.description}</p>
+						{item.link && (
+							<a href={item.link.url} target="_blank" rel="noopener noreferrer" class="inline-block mt-4 font-mono text-xs uppercase tracking-wider text-yass-600 hover:underline">
+								{item.link.label} &rarr;
+							</a>
+						)}
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<section class="py-16 sm:py-20 px-4 sm:px-6 bg-graphite-panel/40 border-y border-graphite-border">
+		<div class="max-w-5xl mx-auto">
 			<h2 class="text-3xl sm:text-4xl font-bold text-yass-600 mb-8 text-center">What our tools make possible</h2>
 			<div class="grid md:grid-cols-2 gap-5">
 				<div class="bg-graphite-panel border border-graphite-border rounded-sm p-6">
@@ -200,7 +244,7 @@ const story = [
 		</div>
 	</section>
 
-	<section class="py-16 sm:py-24 px-4 sm:px-6 bg-graphite-panel/40 border-t border-graphite-border">
+	<section class="py-16 sm:py-24 px-4 sm:px-6">
 		<div class="max-w-3xl mx-auto text-center scroll-animate">
 			<h2 class="text-3xl sm:text-4xl font-bold text-yass-600 mb-4">A space for everyone</h2>
 			<p class="text-dim leading-relaxed mb-8">
