@@ -1,6 +1,5 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { foundingTeams } from "../data/teams.js";
 import { projects } from "../data/projects.js";
 
 const logo = (key) => projects.find((project) => project.key === key)?.logo;
@@ -36,63 +35,79 @@ const admins = [
 	{ number: 2445, name: "RoboKAP", role: "Mentors" },
 	{ number: 7900, name: "Trial and Terror", role: "Mentors" },
 	{ number: 9251, name: "EliteBots", role: "Mentors" },
+	{ number: 9658, name: "Camber Robotics", role: "Mentors", url: "https://camberrobotics.com" },
+	{ number: 3481, name: "BroncBotz", role: "Mentors", url: "https://broncbotz.org" },
 	{ number: 8114, name: "Rocketeers", role: "Alumni" },
 	{ number: 5561, name: "Raider Robotics", role: "Alumni", url: "https://sites.google.com/view/frc5561/home" },
-];
+].sort((a, b) => a.number - b.number);
 
 // How we support teams, beyond the code.
 const support = [
 	{
-		title: "Calls, late into the night",
+		title: "24/7 Helpdesk",
 		description:
-			"When a team is stuck, we get on a call, often late at night for some of us, and work through it together.",
+			"When a team is stuck, we get on a call and work through it together. Even if its at 2AM on a Wednesday in the middle of tournament season.",
 	},
 	{
-		title: "From the people who built it",
+		title: "Detailed answers to questions",
 		description:
 			"Questions about a feature are answered by the people who created it, so you get the why, not just the how.",
 	},
 	{
 		title: "Videos to get started",
-		description: "We make videos that walk every team through getting started, from a first project to a working robot.",
+		description: "We make videos that walk teams through getting started, from a first project to a working robot.",
 		link: { label: "Watch on YouTube", url: "https://www.youtube.com/@YASSRobotics" },
 	},
 	{
-		title: "Code reviews at YASS Weekly",
+		title: "YASS Weekly",
 		description:
-			"During the season, our weekly YASS Weekly talks include code reviews of teams' robot code, so everyone learns from them.",
+			"During the season, we have a weekly hangout where our student leaders conduct Code Reviews, showcase YASS Features, and chat about all things FRC.",
 		link: { label: "Join on Discord", url: "https://discord.gg/yass" },
+	},
+	{
+		title: "Event volunteering",
+		description:
+			"Many members of the YASS Admin team are CSA's at events who can help troubleshoot robots live on the ground. Many of our YASS student leaders also lend a hand with troubleshooting during events.  We also have an LRI for Inspection related questions.",
 	},
 ];
 
 const story = [
 	{
-		title: "2023: it started with YAGSL",
+		title: "January 2023: YAGSL",
 		logo: logo("yagsl"),
-		text: "YASS began at <a href=\"https://broncbotz.org\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-yass-600 hover:underline\">BroncBotz</a>, FRC Team 3481, outside of San Antonio, Texas, after one of our mentors found that the modern state of FRC programming was too difficult for most students to grasp within a single season. Our first library was YAGSL, started in January 2023 after Swerve Drive Specialties deprecated its swerve library, SDSLib, to make swerve drives approachable for every team.",
+		text: "YASS began at BroncBotz, FRC Team 3481, from San Antonio, Texas, after one of our mentors found that the modern state of FRC programming was too difficult for most students to grasp within a single season. Our first library was YAGSL, started in January 2023 after Swerve Drive Specialties deprecated its swerve library, SDSLib, to make swerve drives approachable for every team.",
 	},
 	{
 		title: "Mentors from around the world",
 		text: "Other mentors from around the world joined, and one of them started ManipLib, a library for mechanisms. At first we set it aside: it seemed too complicated for the teams we wanted to help.",
 	},
 	{
-		title: "2024: YALL, for Limelight",
+		title: "November 2024: YALL",
 		logo: logo("yall"),
 		text: "Limelight had no proper vendordep, so in November 2024 we made YALL: a simpler, more reliable way to get Limelight vision working on a robot.",
 	},
 	{
-		title: "2025: YAMS, shown at the World Championship",
+		title: "March 2025: YAMS",
 		logo: logo("yams"),
-		text: "Then we found a way to make a mechanism library simple, without hundreds of config files. We started YAMS in March 2025, and showed a proof of concept at the World Championship that April. Describe a mechanism once, and YAMS gives you its commands, simulation, telemetry and live tuning.",
+		text: "Then we found a way to make a mechanism library simple, without hundreds of config files. We started YAMS in March 2025. Describe a mechanism once, and YAMS gives you its commands, simulation, telemetry and live tuning.",
 	},
 	{
-		title: "2025: YAMG, a generator for mechanisms",
+		title: "April 2025: YASS World's Debut",
+		logo: logo("yams"),
+		text: "Showed YAMS proof of concept at the World Championship that April.",
+	},
+	{
+		title: "May 2025: YAMG",
 		logo: logo("yamg"),
-		text: "Teams started asking for more code generators, like CTRE's swerve generator, so in May 2025 we made YAMG. Fill in a form, and it writes the mechanism and simulates it in your browser.",
+		text: "Teams started asking for more code generators like CTRE's swerve generator, so in May 2025 we made YAMG. Fill in a form, and it writes the mechanism and simulates it in your browser.",
 	},
 	{
-		title: "2025: YASS spins off from BroncBotz",
-		text: "In 2025, YASS spun off from <a href=\"https://broncbotz.org\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-yass-600 hover:underline\">BroncBotz</a> into its own organization, founded by several teams outside of San Antonio, so that it could grow as a community for every team.",
+		title: "Summer 2025: YASS becomes a Community Organization",
+		text: "During the offseason, YASS spun off from a BroncBotz project and into its own organization founded by four teams in San Antonio. YASS became a global community of teams.",
+	},
+	{
+		title: "October 2025: Team YASS",
+		text: "Team YASS is formed consisting of eight teams plus the four founding teams. Partner Teams that help test new features and promote YASS throughtout the FIRST Community. ",
 	},
 	{
 		title: "2026: over 500 teams",
@@ -123,7 +138,7 @@ const story = [
 			<div class="grid sm:grid-cols-2 gap-5">
 				{goals.map((goal) => (
 					<div class="bg-graphite-panel border border-graphite-border rounded-sm p-6">
-						<h3 class="font-bold text-lg text-ink mb-2">{goal.title}</h3>
+						<h3 class="font-sans font-bold text-[22px] normal-case leading-tight text-ink mb-2">{goal.title}</h3>
 						<p class="text-sm text-dim leading-relaxed">{goal.description}</p>
 					</div>
 				))}
@@ -140,28 +155,12 @@ const story = [
 						<span class="absolute -left-[7px] top-1.5 w-3 h-3 rounded-full bg-yass-600" aria-hidden="true"></span>
 						<div class="flex items-center gap-3 mb-2">
 							{step.logo && <img src={step.logo.src} alt="" class="w-8 h-8 object-contain" />}
-							<h3 class="font-bold text-lg text-ink">{step.title}</h3>
+							<h3 class="font-sans font-bold text-[22px] normal-case leading-tight text-ink">{step.title}</h3>
 						</div>
 						<p class="text-dim leading-relaxed" set:html={step.text} />
 					</li>
 				))}
 			</ol>
-			<p class="text-sm text-dim mt-10">
-				Our founding teams:{" "}
-				{foundingTeams.map((team, i) => (
-					<span>
-						{i > 0 && ", "}
-						{team.url ? (
-							<a href={team.url} target="_blank" rel="noopener noreferrer" class="text-yass-600 hover:underline">
-								{team.number} {team.name}
-							</a>
-						) : (
-							<span class="text-ink">{team.number} {team.name}</span>
-						)}
-					</span>
-				))}.
-				<a href="/teams" class="text-yass-600 hover:underline ml-1">Meet Team YASS &rarr;</a>
-			</p>
 		</div>
 	</section>
 
@@ -169,9 +168,7 @@ const story = [
 		<div class="max-w-5xl mx-auto">
 			<h2 class="text-3xl sm:text-4xl font-bold text-yass-600 mb-4 text-center">Our Discord admin team</h2>
 			<p class="max-w-3xl mx-auto text-dim leading-relaxed text-center mb-8">
-				The YASS Discord started in 2024 as the YAGSL Discord, and has grown to over 1,000 members. Its most active
-				and knowledgeable members became its admins, and they help anyone, without restraint. We could not sustain
-				our level of support without them.
+				The YASS Discord started in 2024,  and has grown to over 1,000 members. Our admin team serves as part of our 24 hour helpdesk; jumping into action whenever teams reach out for help. They also help moderate the server, and keep Nstrike from going insane. Admins can be identified by the Gray "Trusted" role.
 			</p>
 			<div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
 				{admins.map((team) => (
@@ -188,7 +185,7 @@ const story = [
 				))}
 			</div>
 			<p class="text-center mt-8">
-				<a href="https://discord.gg/yass" target="_blank" rel="noopener noreferrer" class="font-mono text-sm uppercase tracking-wider text-yass-600 hover:underline">Ask them on Discord &rarr;</a>
+				<a href="https://discord.gg/yass" target="_blank" rel="noopener noreferrer" class="font-mono text-sm uppercase tracking-wider text-yass-600 hover:underline">Say hi on Discord &rarr;</a>
 			</p>
 		</div>
 	</section>
@@ -199,7 +196,7 @@ const story = [
 			<div class="grid sm:grid-cols-2 gap-5">
 				{support.map((item) => (
 					<div class="bg-graphite-panel border border-graphite-border rounded-sm p-6">
-						<h3 class="font-bold text-lg text-ink mb-2">{item.title}</h3>
+						<h3 class="font-sans font-bold text-[22px] normal-case leading-tight text-ink mb-2">{item.title}</h3>
 						<p class="text-sm text-dim leading-relaxed">{item.description}</p>
 						{item.link && (
 							<a href={item.link.url} target="_blank" rel="noopener noreferrer" class="inline-block mt-4 font-mono text-xs uppercase tracking-wider text-yass-600 hover:underline">
@@ -219,7 +216,7 @@ const story = [
 				<div class="bg-graphite-panel border border-graphite-border rounded-sm p-6">
 					<div class="flex items-center gap-3 mb-3">
 						<img src={logo("yamg")?.src} alt="" class="w-8 h-8 object-contain" />
-						<h3 class="font-bold text-lg text-ink">Train builders with YAMG</h3>
+						<h3 class="font-sans font-bold text-[22px] normal-case leading-tight text-ink">Train builders with YAMG</h3>
 					</div>
 					<p class="text-sm text-dim leading-relaxed">
 						YAMG's simulation runs in your browser, so builders can test a mechanism interactively before anything is
@@ -231,7 +228,7 @@ const story = [
 				<div class="bg-graphite-panel border border-graphite-border rounded-sm p-6">
 					<div class="flex items-center gap-3 mb-3">
 						<img src={logo("yams")?.src} alt="" class="w-8 h-8 object-contain" />
-						<h3 class="font-bold text-lg text-ink">Program with YAMS</h3>
+						<h3 class="font-sans font-bold text-[22px] normal-case leading-tight text-ink">Program with YAMS</h3>
 					</div>
 					<p class="text-sm text-dim leading-relaxed">
 						YAMS makes programming mechanisms easy, and puts features top teams took years to develop in one library:
