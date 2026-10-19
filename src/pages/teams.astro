@@ -1,9 +1,10 @@
 ---
 import { Image } from "astro:assets";
 import partnerTeamsLogo from "../assets/logos/partner-teams-logo.png";
-import { foundingTeams, testimonials, legacyTeams } from "../data/teams.js";
+import { foundingTeams, testimonials, legacyTeams as legacyTeamsData } from "../data/teams.js";
 import Layout from "../layouts/Layout.astro";
 
+const legacyTeams = [...legacyTeamsData].sort((a, b) => a.number - b.number);
 const partnerTeams = testimonials.filter((t) => !t.founding);
 const foundingTestimonials = testimonials.filter((t) => t.founding);
 const applyUrl = "https://docs.google.com/forms/d/e/1FAIpQLSdl3Jf_2HzPgFP8PF9abXcG21ZQ6LmE5BUKLv3bUopzj1wpzg/viewform";
@@ -107,7 +108,7 @@ const applyUrl = "https://docs.google.com/forms/d/e/1FAIpQLSdl3Jf_2HzPgFP8PF9abX
 								)} <span class="text-partner-pink text-base font-normal font-mono block">Team {t.number}</span>
 							</figcaption>
 							{t.logo ? (
-								<div class="w-14 h-14 flex items-center justify-center shrink-0">
+								<div class={`w-14 h-14 flex items-center justify-center shrink-0 ${t.logoBackdrop ? "bg-white rounded-sm p-1" : ""}`}>
 									<Image src={t.logo} alt={`${t.team} logo`} width={112} class="max-w-full max-h-full w-auto h-auto object-contain rounded-sm" />
 								</div>
 							) : (

@@ -77,25 +77,8 @@ export const testimonials = [
 		quote: "YASS IS LOVE YASS IS LIFE",
 		url: "https://first2225.com",
 		logo: logo2225,
+		logoBackdrop: true,
 		contributions: ["YAMS beta tester", "Easy CRT beta tester", "Discord Moderator"],
-	},
-	{
-		team: "The Engineers on Fire",
-		number: 5517,
-		quote:
-			"YASS has completely transformed how we build and code our robots. What started as Yet Another Generic Swerve Library has grown into an incredibly intuitive and dependable software suite that makes programming feel easy and exciting again. With YAMS now part of the mix, designing and fine-tuning our mechanisms has never been smoother.",
-		url: "https://sites.google.com/view/frc5517",
-		logo: logo5517,
-		contributions: ["Inspiration for YAMS", "Contributed towards an upcoming library", "Discord Moderator"],
-	},
-	{
-		team: "Raider Robotics",
-		number: 5561,
-		quote:
-			"On 5561, we started using YAGSL in 2024-2025, and that was the easiest swerve library I've used. With the release of YAMG and YAMS, I have extremely high expectations for our team. YASS as a whole will be an incredible organization to learn from and to teach from.",
-		url: "https://sites.google.com/view/frc5561/home",
-		logo: logo5561,
-		contributions: ["2026 Worlds Presenter", "YASS Weekly Host", "Inspiration for YAMG"],
 	},
 	{
 		team: "Trial and Terror",
@@ -142,5 +125,23 @@ export const legacyTeams = [
 			"Using YAGSL made a huge difference in our ability to program our robot for the 2025 season. The library simplified programming and fine-tuning our swerve base, allowing our rookie programmer to get the drive base running smoothly. Thanks to YAGSL, we were able to focus on improving subsystems and develop autonomous routines much earlier in the season than we otherwise could have.",
 		logo: logo8818,
 		contributions: ["Helped develop and beta tested the YAGSL 8 steps"],
+	},
+	{
+		team: "The Engineers on Fire",
+		number: 5517,
+		quote:
+			"YASS has completely transformed how we build and code our robots. What started as Yet Another Generic Swerve Library has grown into an incredibly intuitive and dependable software suite that makes programming feel easy and exciting again. With YAMS now part of the mix, designing and fine-tuning our mechanisms has never been smoother.",
+		url: "https://sites.google.com/view/frc5517",
+		logo: logo5517,
+		contributions: ["Inspiration for YAMS", "Contributed towards an upcoming library", "Discord Moderator"],
+	},
+	{
+		team: "Raider Robotics",
+		number: 5561,
+		quote:
+			"On 5561, we started using YAGSL in 2024-2025, and that was the easiest swerve library I've used. With the release of YAMG and YAMS, I have extremely high expectations for our team. YASS as a whole will be an incredible organization to learn from and to teach from.",
+		url: "https://sites.google.com/view/frc5561/home",
+		logo: logo5561,
+		contributions: ["2026 Worlds Presenter", "YASS Weekly Host", "Inspiration for YAMG"],
 	},
 ];
