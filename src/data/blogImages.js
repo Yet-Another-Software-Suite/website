@@ -4,6 +4,7 @@ import frcPluginClion from "../assets/blog/frc-plugin-clion/01-arm-subsystem.png
 import jsimFuelHub from "../assets/blog/jsim-fuel-hub.png";
 import yamg2027 from "../assets/blog/yamg-2027/01-hero.png";
 import yamgNewLook from "../assets/blog/yamg-new-look/01-hero.png";
+import yagslConfigNewLook from "../assets/blog/yagsl-config-new-look/01-hero.png";
 import yass2027Alpha7 from "../assets/blog/yass-2027-alpha7/systemcoretesting-yass.png";
 
 export const blogImages = {
@@ -11,5 +12,6 @@ export const blogImages = {
 	"jsim-fuel-hub": jsimFuelHub,
 	"yamg-2027": yamg2027,
 	"yamg-new-look": yamgNewLook,
+	"yagsl-config-new-look": yagslConfigNewLook,
 	"yass-2027-alpha7": yass2027Alpha7,
 };
