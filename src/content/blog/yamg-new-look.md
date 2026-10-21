@@ -1,7 +1,7 @@
 ---
 title: "YAMG has a new look"
 sortDate: 2026-10-21
-excerpt: "YAMG now matches yassrobotics.com: graphite and Bright Fern green, the blueprint grid, and the same fonts. The form is easier to scan, and the brake mode switch says Brake or Coast."
+excerpt: "YAMG now matches yassrobotics.com: graphite and Bright Fern green, the blueprint grid, and the same fonts. The form is easier to scan, the brake mode switch says Brake or Coast, and every mechanism starts with gains and a gear ratio that work."
 image: "yamg-new-look"
 imageAlt: "YAMG in its new look, generating an arm, with green form sections and the generated code in a graphite panel"
 ---
@@ -10,7 +10,7 @@ imageAlt: "YAMG in its new look, generating an arm, with green form sections and
 
 ![YAMG in its new look, generating an arm](../../assets/blog/yamg-new-look/01-hero.png)
 
-Nothing about the code it generates has changed. The same form gives you the same code, and share links you've already posted still open the same mechanism.
+The code it generates is the same as before. What has changed is where the form starts: each mechanism now starts with firm PID gains and a gear ratio that suits it. See [New starting values](#new-starting-values) below.
 
 ## Before and after
 
@@ -44,6 +44,27 @@ The generated code sits on a graphite panel in JetBrains Mono, with the same syn
 The simulation has the new colours too. On the graph, the measured angle (or height, or speed) is green, the setpoint is yellow and the stator current is red. The mechanism's current and target markers match the graph. Here a NEO at 60:1 moves an arm to 60°, down to 15° and back up to 45°:
 
 ![YAMG simulating an arm moving between angles, with the angle in green and the setpoint in yellow on the graph](../../assets/blog/yamg-new-look/04-simulation.png)
+
+## New starting values
+
+YAMG used to start every mechanism at a kP of 1 on a 15:1 gearbox. That was far too soft. A kP of 1 barely moves an elevator, which made a normal kP of 50 look like a mistake. 15:1 was also wrong for two mechanisms: one motor couldn't lift the default arm, and the flywheel topped out near 400 RPM.
+
+Each mechanism now has its own starting values. Each one was checked in YAMG's simulation:
+
+| Mechanism | Gear ratio | kP | kD | In the simulation |
+|---|---|---|---|---|
+| Elevator | 15:1 | 50 V/m | 0 | 0.8 m in about 1.2 s, no overshoot |
+| Arm | 60:1 | 150 V/rot | 30 | 60° in about 1.7 s, within 2% |
+| Pivot and turret | 15:1 | 50 V/rot | 20 | 60° in about 1.4 s, no overshoot |
+| Flywheel | 1:1 | 5 V/(rot/s) | 0 | holds 3000 RPM within 3% |
+
+The default arm is also lighter, at 3 kg instead of 5.
+
+When you change the mechanism type, the gains and gear ratio switch to that mechanism's starting values, unless you've already changed them. Then they stay as you set them.
+
+These are starting points, not a tune. Without feedforward, an arm sags a little below its target and a flywheel runs a little under its setpoint. Add kG for the arm and kV for the flywheel to close the gap. The **Open ReCalc** button can work out an arm's or elevator's feedforward for you.
+
+Share links only store what differs from the starting values. A link made before this change that kept the old kP of 1 or the old gear ratio will now open with the new ones.
 
 ## On your phone
 
