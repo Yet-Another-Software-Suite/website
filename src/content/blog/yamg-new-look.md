@@ -6,7 +6,7 @@ image: "yamg-new-look"
 imageAlt: "YAMG in its new look, generating an arm, with green form sections and the generated code in a graphite panel"
 ---
 
-[YAMG](https://yamg.yassrobotics.com) (Yet Another Mechanisms Generator) has been restyled to match this website. It now looks like the rest of YASS, including the [YAMS Live Tuner](https://tuning.yassrobotics.com).
+[YAMG](https://yamg.yassrobotics.com) (Yet Another Mechanisms Generator) has been restyled to match this website. It now looks like the rest of YASS.
 
 ![YAMG in its new look, generating an arm](../../assets/blog/yamg-new-look/01-hero.png)
 
@@ -20,7 +20,7 @@ Here's how it looked last week, in the [YAMG 2027 post](/blog/yamg-2027):
 
 The new look uses the YASS website's design:
 
-- **Colours:** dark graphite surfaces, Bright Fern green for the things you act on, and YAMS blue along the edge of the code and simulation panels.
+- **Colours:** dark graphite surfaces, Bright Fern green for the things you act on, and a green edge on the form, code and simulation panels.
 - **Fonts:** headings in Courier Prime, text in Inter, and code and labels in JetBrains Mono, with a small pixel YAMG wordmark at the top.
 - **The page:** the blueprint grid behind everything, and the green stripe under the header.
 - **Corners:** square, with uppercase buttons, like the cards on this site.
