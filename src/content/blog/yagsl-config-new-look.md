@@ -1,7 +1,7 @@
 ---
 title: "The YAGSL config generator has a new look"
 sortDate: 2026-10-21
-excerpt: "config.yagsl.com now matches yassrobotics.com and YAMG: graphite and Bright Fern green, the blueprint grid, the same fonts and the YAGSL logo. The Quick Start Guide has the new look too, and both pages fit a phone in portrait or landscape."
+excerpt: "config.yagsl.com now matches yassrobotics.com and YAMG: graphite and Bright Fern green, the blueprint grid, the same fonts and the YAGSL logo. The Quick Start Guide has the new look too, both pages fit a phone, and there's a first look at Live mode, with SysId built in."
 image: "yagsl-config-new-look"
 imageAlt: "The YAGSL swerve drive config generator in its new look, on the Gyro tab, with a green pixel title and the YAGSL logo"
 ---
@@ -49,6 +49,28 @@ Dark is now the default, like this website. The switch in the top corner still t
 Both pages fit a phone, in portrait or landscape. Wide code samples in the guide now scroll inside their own box instead of making the whole page wider than the screen:
 
 ![The config generator, the Quick Start Guide and a code sample in the guide on a phone](../../assets/blog/yagsl-config-new-look/05-phone.png)
+
+## Coming soon: Live mode
+
+Here's a peek at what's next. Live mode connects the Quick Start Guide to your simulator or robot over NetworkTables, so you can tune your swerve drive right on the page. It's still being tested, so it isn't open to everyone yet.
+
+When you connect, it finds the swerve drives your robot code publishes and lets you pick one:
+
+![Live mode connected to the simulator, with the swerve drive found and the robot enabled in Utility mode](../../assets/blog/yagsl-config-new-look/06-live-connect.png)
+
+Tuning happens in one panel. Pick azimuth or drive, press Start, and move the setpoint. A graph shows every module against the setpoint, and the gains you type are used on the robot's next loop. Here the azimuth switches between 0° and 15° every 2 seconds in the YAGSL example project's simulation:
+
+![Live mode tuning the azimuth, with all four modules following the angle setpoint on the graph](../../assets/blog/yagsl-config-new-look/07-live-azimuth.png)
+
+Not sure where to start? Press **Auto**. It works like WPILib's SysId, built into the page. It drives every wheel slowly, then quickly, each way, fits the feedforward to how they moved, works out the feedback, and sends all six gains to the robot. On the simulation it takes about 20 seconds:
+
+![Auto running on the drive motors: the wheel speed ramps up slowly, then down, then steps quickly forward and backward, and the gains fill in](../../assets/blog/yagsl-config-new-look/08-live-auto.gif)
+
+When it's done, it shows how well the fit matched, and each gain shows what it was before:
+
+![The drive gains Auto worked out, with the old value under each one and a note on how well the fit matched](../../assets/blog/yagsl-config-new-look/09-live-auto-done.png)
+
+When you're happy with the gains, Live mode downloads them as your `pidfproperties.json`. On a real robot, it asks you to go through a safety checklist before anything moves.
 
 ## Feedback
 
