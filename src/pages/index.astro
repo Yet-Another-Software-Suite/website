@@ -100,6 +100,9 @@ import rivetHero from "../assets/logo/rivet.png";
 							{project.docs && (
 								<a href={project.docs} target="_blank" rel="noopener noreferrer" class="text-ink border-b border-faint hover:border-yass-600 hover:text-yass-600 pb-0.5 transition-colors">Docs</a>
 							)}
+							{project.api?.map((link) => (
+								<a href={link.url} target="_blank" rel="noopener noreferrer" class="text-ink border-b border-faint hover:border-yass-600 hover:text-yass-600 pb-0.5 transition-colors">{link.label}</a>
+							))}
 							<a href={project.github} target="_blank" rel="noopener noreferrer" class="text-ink border-b border-faint hover:border-yass-600 hover:text-yass-600 pb-0.5 transition-colors">GitHub</a>
 							{project.extra && !project.extra.primary && (
 								<a href={project.extra.url} target="_blank" rel="noopener noreferrer" class="text-ink border-b border-faint hover:border-yass-600 hover:text-yass-600 pb-0.5 transition-colors">{project.extra.label}</a>

@@ -61,6 +61,16 @@ import Layout from "../layouts/Layout.astro";
 								Read the Docs
 							</a>
 						)}
+						{project.api?.map((link) => (
+							<a
+								href={link.url}
+								target="_blank"
+								rel="noopener noreferrer"
+								class="inline-block rounded-sm border border-faint text-ink text-sm font-mono uppercase tracking-wider px-4 py-2.5 hover:border-ink transition-colors"
+							>
+								{link.label}
+							</a>
+						))}
 						<a
 							href={project.github}
 							target="_blank"

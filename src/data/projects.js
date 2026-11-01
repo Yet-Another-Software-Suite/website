@@ -11,6 +11,7 @@ export const projects = [
 		description:
 			"A plug-and-play swerve drive library. Describe your robot's hardware in a JSON file and YAGSL handles kinematics, odometry, and motor configuration, whether you're wiring up your first swerve chassis or tuning a competition drivetrain.",
 		docs: "https://yagsl.yassrobotics.com",
+		api: [{ label: "Java API", url: "https://javadocs.yassrobotics.com/yagsl/" }],
 		github: "https://github.com/Yet-Another-Software-Suite/YAGSL",
 		extra: { label: "Config Generator", url: "https://config.yagsl.com" },
 		ledColor: "var(--color-yass-600)",
@@ -23,6 +24,10 @@ export const projects = [
 		description:
 			"A unified interface for elevators, arms, and pivots, with simulation and telemetry built in from the start. Write your mechanism code once and run it the same way on the real robot and in sim for FRC.",
 		docs: "https://yams.yassrobotics.com",
+		api: [
+			{ label: "Java API", url: "https://javadocs.yassrobotics.com/yams/" },
+			{ label: "C++ API", url: "https://doxygen.yassrobotics.com/yams/" },
+		],
 		github: "https://github.com/Yet-Another-Software-Suite/YAMS",
 		ledColor: "var(--color-sapphire)",
 		logo: yamsLogo,
