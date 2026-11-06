@@ -1,7 +1,7 @@
 ---
 title: "What's new in YAMS since alpha 7, and every breaking change"
 sortDate: 2026-11-05
-excerpt: "A Thrifty Nova that runs its own closed loop, the A301, new arm examples in Commands v2 and v3, mechanisms on a 3D robot model and LQR live tuning. Plus every breaking change since alpha 7, and the bugs we fixed."
+excerpt: "A Thrifty Nova that runs its own closed loop, wraps over any range and takes a feedforward without a motion profile, the A301, new arm examples in Commands v2 and v3, mechanisms on a 3D robot model and LQR live tuning. Plus every breaking change since alpha 7, and the bugs we fixed."
 image: "yams-whats-new"
 imageAlt: "The latest YAMS release on GitHub, with its table of example robot projects to download for Commands v2 and v3"
 ---
@@ -16,7 +16,11 @@ YAMS now drives FIRST's A301 smart motor with the new `A301Wrapper`, in Java and
 
 ## The Thrifty Nova runs its own closed loop
 
-A Nova now runs the PID, the trapezoidal profile and the feedforward on the motor controller, including kG with cosine gravity for an arm, the same way a TalonFX or a SPARK does. You give YAMS the same gains in the same units, and YAMS sets up the Nova's slots, soft limits and wrapping for you. An LQR, an exponential profile or a velocity profile still runs on the SystemCore. In simulation the Nova runs its closed loop just like the real one.
+A Nova now runs the PID, the trapezoidal profile and the feedforward on the motor controller, including kG with cosine gravity for an arm, the same way a TalonFX or a SPARK does. You give YAMS the same gains in the same units, and YAMS sets up the Nova's slots, soft limits and wrapping for you. In simulation the Nova runs its closed loop just like the real one.
+
+- **A feedforward doesn't need a motion profile.** YAMS gives the Nova your kS, kV, kA and kG either way, so a swerve drive motor or a flywheel keeps its whole feedforward on the Nova.
+- **Continuous wrapping works over any range**, such as [-0.5, 0.5). With an absolute encoder plugged into the Nova, the Nova wraps it itself. On the Nova's own motor encoder, YAMS sends each target the short way round, so a swerve azimuth seeded from a CANcoder runs entirely on the Nova, just like one on a SPARK MAX.
+- **Anything the Nova can't do runs on the SystemCore** instead of throwing: an LQR, an exponential profile, a velocity profile, an absolute encoder read over a range other than [0, 1) without continuous wrapping, or continuous wrapping of an absolute encoder geared to the mechanism. `getClosedLoopControllerPeriod()` tells you where the loop runs: 1 ms on the Nova, or 20 ms on the SystemCore.
 
 ## New examples
 
@@ -63,10 +67,10 @@ Most of these only need a find and replace, but check the gains of anything on a
   .withWrapping(Rotations.of(-0.5), Rotations.of(0.5))
   ```
 
-  Each motor controller only accepts ranges its encoder can read, and throws if you give it another one. Without wrapping, a SPARK or Nova absolute encoder reads [0, 1), and a CANcoder or CANdi keeps its own range.
+  Each motor controller only accepts ranges its encoder can read, and throws if you give it another one, except a Nova, which runs those on the SystemCore. Without wrapping, a SPARK or Nova absolute encoder reads [0, 1), and a CANcoder or CANdi keeps its own range.
 - **`getContinuousWrapping()` and `getContinuousWrappingMin()` are now `getWrappingMax()` and `getWrappingMin()`.** `isWrappingContinuous()` says whether the closed loop wraps.
 - **Continuous wrapping and soft limits can't be used together**, in either order. Java used to accept soft limits set after continuous wrapping. Plain `withWrapping` and soft limits are fine together.
-- **When the Thrifty Nova runs the closed loop**, a feedforward needs a trapezoidal profile, only `SLOT_0` and `SLOT_1` exist, mechanism limits need both an upper and a lower limit, and `withTemperatureCutoff`, `withClosedLoopControllerMaximumVoltage`, `withFeedbackSynchronizationThreshold` and `withClosedLoopControlPeriod` are rejected. Gains tuned with the loop on the SystemCore need tuning again.
+- **When the Thrifty Nova runs the closed loop**, only `SLOT_0` and `SLOT_1` exist, mechanism limits need both an upper and a lower limit, and `withTemperatureCutoff`, `withClosedLoopControllerMaximumVoltage`, `withFeedbackSynchronizationThreshold` and `withClosedLoopControlPeriod` are rejected. Gains tuned with the loop on the SystemCore need tuning again.
 - **`getRelativeMechanismPosition()` is replaced by `getPose3d()`** on every mechanism. The old one threw a `NullPointerException` on the robot, and turned the wrong way.
 - **The `SwerveDrive` Live Tuning command moved** to `Tuning/<name>/Live Tuning`, like every other mechanism's. It was at `Mechanisms/<name>/tuning`. Move any dashboard button that starts it.
 - **C++:** `MechanismPositionConfig` is now the class that places a mechanism in 3D, as in Java, and `ArmConfig`, `ElevatorConfig`, `PivotConfig` and `FlyWheelConfig` take one with `WithMechanismPositionConfig(...)`.
