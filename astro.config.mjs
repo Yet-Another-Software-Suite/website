@@ -10,6 +10,11 @@ export default defineConfig({
 
 	prefetch: true,
 
+	// Posts that were renamed after they were published.
+	redirects: {
+		"/blog/yams-a301-and-more": "/blog/yams-a301-wrapper",
+	},
+
 	vite: {
 		plugins: [tailwindcss()],
 	},
