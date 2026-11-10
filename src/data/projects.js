@@ -29,6 +29,7 @@ export const projects = [
 			{ label: "C++ API", url: "https://doxygen.yassrobotics.com/yams/" },
 		],
 		github: "https://github.com/Yet-Another-Software-Suite/YAMS",
+		extra: { label: "Live Tuner", url: "https://tuning.yassrobotics.com" },
 		ledColor: "var(--color-sapphire)",
 		logo: yamsLogo,
 	},
