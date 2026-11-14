@@ -1,19 +1,19 @@
 ---
 title: "ADRC comes to YAMS, thanks to Team 8331"
 sortDate: 2026-11-14T21:45:00Z
-excerpt: "YAMS can now run an ADRC, an Active Disturbance Rejection Controller, in place of a PID and its feedforward. There's no kG, kS or kV to tune: it finds gravity, friction and game pieces on its own. It was written by FRC Team 8331, Carson Graham Robotics, and it works on every YAMS motor controller in Java and C++."
+excerpt: "YAMS can now run an ADRC, an Active Disturbance Rejection Controller, in place of a PID and its feedforward. There's no kG, kS or kV to tune: it finds gravity, friction and game pieces on its own. All of its math is by FRC Team 8331, Carson Graham Robotics. We reworked the API and ported it to C++, so it works on every YAMS motor controller in Java and C++."
 logoHeader: true
 ---
 
 YAMS has a new closed loop controller: **ADRC**, short for Active Disturbance Rejection Control. It takes the place of a PID and its feedforward, and you tune it with one number: how quickly the mechanism should reach its setpoint.
 
-It wasn't written by us. **[FRC Team 8331](https://www.instagram.com/cgss.robotics/), Carson Graham Robotics from North Vancouver, wrote it** in their fork of YAMS and contributed it back.
+The math isn't ours. **[FRC Team 8331](https://www.instagram.com/cgss.robotics/), Carson Graham Robotics from North Vancouver, wrote it** in their fork of YAMS and contributed it back.
 
 ![FRC Team 8331's logo](../../assets/blog/yams-adrc/8331-logo.png)
 
 ## Thank you, 8331
 
-Contributing a controller to a library is a lot more than writing the controller. 8331 brought the math, the observer and the tracking differentiator, and then stuck with it while it was fitted into YAMS: every motor controller, both command frameworks, simulation, telemetry and live tuning, and then a port to C++.
+All of the math in YAMS's ADRC is 8331's: the controller, the extended state observer and the tracking differentiator. We took what they gave us, reworked the API to fit the rest of YAMS, wired it into every motor controller, simulation, telemetry and live tuning, and ported it to C++. The C++ version runs the same math as theirs.
 
 YAMS is built by teams for teams, and this is the best kind of contribution: a team solved a problem on their own robot and made it so every other team can use it too. Thank you, 8331. Go give them a follow on [Instagram](https://www.instagram.com/cgss.robotics/).
 
