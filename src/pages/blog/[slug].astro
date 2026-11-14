@@ -172,6 +172,17 @@ const img = post.data.image ? blogImages[post.data.image] : null;
 		width: calc(50% - 0.5rem);
 		height: auto;
 	}
+	/* A logo (alt text ending in "logo") is drawn small and centered, without a frame.
+	   Dark line art on a transparent background is inverted in the dark theme. */
+	.post-content :global(img[alt$="logo"]) {
+		display: block;
+		width: 12rem;
+		margin-inline: auto;
+		border: none;
+	}
+	:global(.dark) .post-content :global(img[alt$="logo"]) {
+		filter: invert(1);
+	}
 	.post-content :global(a) {
 		color: var(--color-yass-600);
 		font-weight: 600;
