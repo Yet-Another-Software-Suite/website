@@ -2,11 +2,12 @@
 title: "YAMS drives the FIRST A301"
 sortDate: 2026-11-05T12:00:00Z
 excerpt: "The new A301Wrapper lets YAMS drive FIRST's A301 smart motor like any other motor controller, in Java and C++. Here's how to set one up, what it can and can't do, and an arm example you can run in simulation today, in Commands v2 and v3."
-image: "yams-a301-wrapper"
-imageAlt: "A chart of the simulated A301 arm's angle over 12 seconds: it falls while disabled, then stows at -80 degrees and moves to 0, 45, 80 and 0 degrees before stowing again"
+image: "A301"
+imagePosition: "center 20%"
+imageAlt: "The FIRST A301 smart motor, a black motor with a 1000 RPM label and a splined output shaft"
 ---
 
-The [FIRST A301](https://www.firstinspires.org/community-blog/introducing-the-first-a301) is FIRST's new smart motor, and YAMS now drives it like any other motor controller. Arms, elevators, pivots and flywheels all work with it, with the same simulation, telemetry and live tuning as a TalonFX or a SPARK. For everything else that's new, see [What's new in YAMS since alpha 7](/blog/yams-whats-new).
+The [FIRST A301](https://www.firstinspires.org/community-blog/introducing-the-first-a301) is FIRST's new smart motor, and YAMS now drives it like any other motor controller. Arms, elevators, pivots and flywheels all work with it, with the same simulation, telemetry and live tuning as a TalonFX or a SPARK. 
 
 ![The A301 arm example in simulation: it falls while disabled, then stows and tours its setpoints](../../assets/blog/yams-a301-wrapper/01-hero.png)
 

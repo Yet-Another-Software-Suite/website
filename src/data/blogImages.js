@@ -6,7 +6,7 @@ import yamg2027 from "../assets/blog/yamg-2027/01-hero.png";
 import yamgNewLook from "../assets/blog/yamg-new-look/01-hero.png";
 import yagslConfigNewLook from "../assets/blog/yagsl-config-new-look/01-hero.png";
 import yamsDocsNewLook from "../assets/blog/yams-docs-new-look/01-hero.png";
-import yamsA301Wrapper from "../assets/blog/yams-a301-wrapper/01-hero.png";
+import yamsA301Wrapper from "../assets/blog/yams-a301-wrapper/A301.png";
 import yamsWhatsNew from "../assets/blog/yams-whats-new/01-hero.png";
 import yass2027Alpha7 from "../assets/blog/yass-2027-alpha7/systemcoretesting-yass.png";
 
@@ -16,7 +16,7 @@ export const blogImages = {
 	"yamg-2027": yamg2027,
 	"yamg-new-look": yamgNewLook,
 	"yagsl-config-new-look": yagslConfigNewLook,
-	"yams-a301-wrapper": yamsA301Wrapper,
+	"A301": yamsA301Wrapper,
 	"yams-whats-new": yamsWhatsNew,
 	"yams-docs-new-look": yamsDocsNewLook,
 	"yass-2027-alpha7": yass2027Alpha7,

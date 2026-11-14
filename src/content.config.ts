@@ -11,6 +11,7 @@ const blog = defineCollection({
 			excerpt: z.string(),
 			image: z.string().optional(),
 			imageAlt: z.string().optional(),
+			imagePosition: z.string().default("center"),
 			logoHeader: z.boolean().default(false),
 			source: z.string().optional(),
 		})

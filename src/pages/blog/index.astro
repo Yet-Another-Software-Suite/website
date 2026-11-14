@@ -43,7 +43,7 @@ const latestImg = latest?.data.image ? blogImages[latest.data.image] : null;
 					class="block bg-graphite-panel border border-graphite-border rounded-sm overflow-hidden hover:border-yass-600 transition-colors mb-8"
 				>
 					{latestImg ? (
-						<img src={latestImg.src} alt={latest.data.imageAlt} class="w-full h-48 sm:h-64 object-cover" />
+						<img src={latestImg.src} alt={latest.data.imageAlt} class="w-full h-48 sm:h-64 object-cover" style={`object-position: ${latest.data.imagePosition};`} />
 					) : (
 						<div class="h-32 sm:h-40 flex items-center justify-center bg-graphite-raised">
 							<img src={mascot.src} alt="YASS logo" class="w-14 h-14 object-contain" />
@@ -72,6 +72,7 @@ const latestImg = latest?.data.image ? blogImages[latest.data.image] : null;
 											src={img.src}
 											alt={post.data.imageAlt}
 											class="w-full sm:w-48 h-40 sm:h-32 object-cover shrink-0"
+											style={`object-position: ${post.data.imagePosition};`}
 										/>
 									)}
 									<div class="p-5 sm:p-6">
