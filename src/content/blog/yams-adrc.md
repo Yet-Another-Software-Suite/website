@@ -47,6 +47,7 @@ Your mechanism doesn't change. An `Arm`, `Elevator`, `Pivot` or `FlyWheel` keeps
 - **Pick the system order.** `ARM`, `PIVOT` or `ELEVATOR` for a position loop, and `FLYWHEEL` for a velocity loop.
 - **Set the moment of inertia.** YAMS uses it, with the motor and gearing, to work out `b0`, how strongly a volt moves the mechanism. You rarely need to set `b0` yourself.
 - **Set the settling time.** Start around 0.5 s for a position loop and 0.3 s for a velocity loop, and shorten it while each move gets faster and stays clean.
+- **Set a voltage limit.** Always set `withClosedLoopControllerMaximumVoltage`. A short settling time drives the output to the limit at the start of every move, and the ADRC has no limit of its own, so without one it applies whatever the battery has. 12 V, as in the examples, gives you the same moves on a fresh battery and a tired one. The first time you run a mechanism on the robot, start lower, around 6 V, so a wrong setting can't slam it, then raise it once it behaves. A lower limit also makes the mechanism slower, so give it a longer settling time to match: if the output sits at the limit for most of a move, a shorter settling time only adds overshoot.
 
 ![The example ADRC arm stepping between setpoints in simulation](../../assets/blog/yams-adrc/adrc-arm.gif)
 
@@ -57,7 +58,7 @@ That's the example arm: a NEO on a 60:1 reduction moving a 3 kg, 0.5 m arm, with
 - **It works everywhere.** The ADRC runs on the SystemCore, like an LQR, so it works with the SPARK MAX, SPARK Flex, TalonFX, TalonFXS, Thrifty Nova and A301, in Java and C++.
 - **Position loops pick their own form.** A heavily geared arm moves at a speed set by its motor's back-EMF, and a lightly geared one is set by its inertia. They need different controllers, so YAMS works out which one your mechanism is when the controller is built. The wrong one works badly: run the other way, a 60:1 pivot overshoots a 135° step by 77°.
 - **It knows what the motor actually did.** The observer is told the voltage the motor controller applied, not the one it asked for, so a current limit or a low battery isn't mistaken for a disturbance.
-- **Limits and ramps are the same as before.** `withClosedLoopControllerMaximumVoltage` and `withClosedLoopRampRate` limit and ramp an ADRC's output like any other closed loop.
+- **Ramps are the same as before.** `withClosedLoopRampRate` ramps an ADRC's output like any other closed loop. Leave it off unless the mechanism needs it: a ramp slows the response and adds overshoot.
 - **Motion profiles work.** Add a trapezoidal or exponential profile as usual, and the ADRC follows it.
 - **You can live tune it.** With `HIGH` telemetry, `b0`, the settling time and the bandwidth scale show up in place of kP, kI and kD, and a change takes effect on the next loop without the output jumping.
 
