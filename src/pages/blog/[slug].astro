@@ -223,6 +223,64 @@ const img = post.data.image ? blogImages[post.data.image] : null;
 	.post-content :global(li) {
 		margin-bottom: 0.5rem;
 	}
+	.post-content :global(table) {
+		width: 100%;
+		border-collapse: separate;
+		border-spacing: 0;
+		border: 1px solid var(--color-graphite-border);
+		border-radius: 2px;
+		overflow: hidden;
+		margin-bottom: 1.5rem;
+		font-size: 0.9em;
+	}
+	.post-content :global(th),
+	.post-content :global(td) {
+		text-align: left;
+		padding: 0.7rem 1rem;
+		vertical-align: top;
+	}
+	.post-content :global(thead th) {
+		background: var(--color-graphite-raised);
+		border-bottom: 1px solid var(--color-graphite-border);
+		color: var(--color-yass-600);
+		font-family: "JetBrains Mono", monospace;
+		font-size: 0.85rem;
+		font-weight: 700;
+		-webkit-text-stroke: 0.4px currentColor;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+	}
+	.post-content :global(tbody td) {
+		border-top: 1px solid var(--color-graphite-border);
+		color: var(--color-dim);
+	}
+	.post-content :global(tbody tr:first-child td) {
+		border-top: 0;
+	}
+	.post-content :global(tbody tr:hover td) {
+		background: var(--color-yass-soft);
+	}
+	.post-content :global(tbody td:first-child) {
+		color: var(--color-ink);
+		font-weight: 600;
+	}
+	.post-content :global(tbody td:nth-child(2)),
+	.post-content :global(tbody td:nth-child(3)),
+	.post-content :global(tbody td:nth-child(4)) {
+		font-family: "JetBrains Mono", monospace;
+		font-size: 0.85em;
+		white-space: nowrap;
+	}
+	@media (max-width: 640px) {
+		.post-content :global(table) {
+			display: block;
+			overflow-x: auto;
+		}
+		.post-content :global(th),
+		.post-content :global(td) {
+			white-space: nowrap;
+		}
+	}
 	.post-content :global(blockquote) {
 		border-left: 2px solid var(--color-yass-600);
 		padding-left: 1rem;

@@ -5,6 +5,11 @@ excerpt: "YAMG now matches yassrobotics.com: graphite and Bright Fern green, the
 image: "yamg-new-look"
 imageAlt: "YAMG in its new look, generating an arm, with green form sections and the generated code in a graphite panel"
 ---
+## Before and after
+
+Here's how it looked last week, in the [YAMG 2027 post](/blog/yamg-2027):
+
+![YAMG before the restyle: black, white and grey](../../assets/blog/yamg-2027/01-hero.png)
 
 [YAMG](https://yamg.yassrobotics.com) (Yet Another Mechanisms Generator) has been restyled to match this website. It now looks like the rest of YASS.
 
@@ -12,23 +17,13 @@ imageAlt: "YAMG in its new look, generating an arm, with green form sections and
 
 The code it generates is the same as before. What has changed is where the form starts: each mechanism now starts with firm PID gains and a gear ratio that suits it. See [New starting values](#new-starting-values) below.
 
-## Before and after
 
-Here's how it looked last week, in the [YAMG 2027 post](/blog/yamg-2027):
-
-![YAMG before the restyle: black, white and grey](../../assets/blog/yamg-2027/01-hero.png)
-
-The new look uses the YASS website's design:
-
-- **Colours:** dark graphite surfaces, Bright Fern green for the things you act on, and a green edge on the form, code and simulation panels.
-- **Fonts:** headings in Courier Prime, text in Inter, and code and labels in JetBrains Mono, with a small pixel YAMG wordmark at the top.
-- **The page:** the blueprint grid behind everything, and the green stripe under the header.
-- **Corners:** square, with uppercase buttons, like the cards on this site.
 
 ## A form that's easier to scan
 
-The form is long, so it's now easier to find your way around. Every section (Motor Configuration, Control Configuration, Telemetry, Homing and the rest) and every group inside one (Ramp Rates, Current Limits, PID Values, Feedforward and so on) has a green heading, larger than the field labels under it. The top of the form, where you name the mechanism and pick its type, has a green edge.
+ Every section (Motor Configuration, Control Configuration, Telemetry, Homing, etc) and every group inside one (Ramp Rates, Current Limits, PID Values, Feedforward and so on) has a green heading, larger than the field labels under it. At the top of the form, where you name the mechanism and pick its type can be identified by a green stripe on the left side of the box. 
 
+![The Mechanism Configuration section, with a green stripe on the left hand side](../../assets/blog/yamg-new-look/MechanismType.png)
 ![The Motor Configuration section, with green section and group headings above the fields](../../assets/blog/yamg-new-look/02-form.png)
 
 ## Brake or coast
@@ -39,15 +34,13 @@ The brake mode switch now says what it does. It reads **Brake** when it's on and
 
 ## The code and the simulation
 
-The generated code sits on a graphite panel in JetBrains Mono, with the same syntax colours as before.
-
-The simulation has the new colours too. On the graph, the measured angle (or height, or speed) is green, the setpoint is yellow and the stator current is red. The mechanism's current and target markers match the graph. Here a NEO at 60:1 moves an arm to 60°, down to 15° and back up to 45°:
+Simulation has the new colors too. On the graph, the measured angle (or height, or speed) is green, the setpoint is yellow and the stator current is red. The mechanism's current and target markers match the graph. Here a NEO at 60:1 moves an arm to 60°, down to 15° and back up to 45°:
 
 ![YAMG simulating an arm moving between angles, with the angle in green and the setpoint in yellow on the graph](../../assets/blog/yamg-new-look/04-simulation.png)
 
 ## New starting values
 
-YAMG used to start every mechanism at a kP of 1 on a 15:1 gearbox. That was far too soft. A kP of 1 barely moves an elevator, which made a normal kP of 50 look like a mistake. 15:1 was also wrong for two mechanisms: one motor couldn't lift the default arm, and the flywheel topped out near 400 RPM.
+YAMG used to start every mechanism at a kP of 1 on a 15:1 gearbox. A kP of 1 barely moves an elevator, which made a normal kP of 50 look like a mistake. 15:1 was also wrong for two mechanisms: one motor couldn't lift the default arm, and the flywheel topped out near 400 RPM.
 
 Each mechanism now has its own starting values. Each one was checked in YAMG's simulation:
 
@@ -60,9 +53,9 @@ Each mechanism now has its own starting values. Each one was checked in YAMG's s
 
 The default arm is also lighter, at 3 kg instead of 5.
 
-When you change the mechanism type, the gains and gear ratio switch to that mechanism's starting values, unless you've already changed them. Then they stay as you set them.
+When you change the mechanism type, the gains and gear ratio switch to that mechanism's starting values, unless you've already changed them.
 
-These are starting points, not a tune. Without feedforward, an arm sags a little below its target and a flywheel runs a little under its setpoint. Add kG for the arm and kV for the flywheel to close the gap. The **Open ReCalc** button can work out an arm's or elevator's feedforward for you.
+These are starting points, not a tuned mechanism. Without feedforward, an arm sags a little below its target and a flywheel runs a little under its setpoint. Add kG for the arm and kV for the flywheel to close the gap. The **Open ReCalc** button can work out an arm's or elevator's feedforward for you.
 
 Share links only store what differs from the starting values. A link made before this change that kept the old kP of 1 or the old gear ratio will now open with the new ones.
 
