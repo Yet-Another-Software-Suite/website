@@ -18,6 +18,11 @@ const links = [
 		description: "Quick updates, announcements, and Team YASS shoutouts.",
 		url: "https://www.instagram.com/yassrobotics",
 	},
+	{
+		name: "Email",
+		description: "Prefer email? Write to us at rivet@yassrobotics.com.",
+		url: "mailto:rivet@yassrobotics.com",
+	},
 ];
 
 const donateUrl = `${storeUrl}/pages/donations`;
@@ -25,7 +30,7 @@ const donateUrl = `${storeUrl}/pages/donations`;
 
 <Layout
 	title="Contact - Yet Another Software Suite"
-	description="Get in touch with YASS on Discord, GitHub, or Instagram."
+	description="Get in touch with YASS on Discord, GitHub, Instagram, or by email."
 	url="https://yassrobotics.com/contact"
 >
 	<section class="py-16 sm:py-20 px-4 sm:px-6">
@@ -41,12 +46,11 @@ const donateUrl = `${storeUrl}/pages/donations`;
 	</section>
 
 	<section class="py-16 sm:py-20 px-4 sm:px-6 bg-graphite-panel/40 border-y border-graphite-border">
-		<div class="max-w-3xl mx-auto grid sm:grid-cols-3 gap-5">
+		<div class="max-w-3xl mx-auto grid sm:grid-cols-2 gap-5">
 			{links.map((link) => (
 				<a
 					href={link.url}
-					target="_blank"
-					rel="noopener noreferrer"
+					{...(link.url.startsWith("mailto:") ? {} : { target: "_blank", rel: "noopener noreferrer" })}
 					class="block bg-graphite-panel border border-graphite-border rounded-sm p-6 text-center hover:border-yass-600 transition-colors"
 				>
 					<h2 class="font-bold text-lg text-yass-600 mb-2">{link.name}</h2>

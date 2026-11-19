@@ -11,6 +11,9 @@ import logo7900 from "../assets/logos/teams/7900.jpg";
 import logo8818 from "../assets/logos/teams/8818.png";
 import logo6911 from "../assets/logos/teams/6911.png";
 import logo3100 from "../assets/logos/teams/3100.png";
+import logo8331 from "../assets/logos/teams/8331.png";
+import logo5829 from "../assets/logos/teams/5829.jpg";
+import logo7902 from "../assets/logos/teams/7902.png";
 
 export const foundingTeams = [
 	{ name: "Grease Monkeys", number: 457, url: "https://frcteam457.wixsite.com/team-457" },
@@ -81,11 +84,38 @@ export const testimonials = [
 		contributions: ["YAMS beta tester", "Easy CRT beta tester", "Discord Moderator"],
 	},
 	{
+		team: "Awtytbots",
+		number: 5829,
+		quote: null,
+		logo: logo5829,
+	},
+	{
 		team: "Trial and Terror",
 		number: 7900,
 		quote: null,
 		logo: logo7900,
 		contributions: ["YAGSL Maintainer", "Discord Moderator"],
+	},
+	{
+		team: "Markham Firebirds",
+		number: 7902,
+		logo: logo7902,
+		quote:
+			"Over the past five years, FRC programming has advanced rapidly, making it increasingly difficult for students to keep up with the growing number of tools, features, and best practices. YASS has had a tremendous impact on our team's software development by allowing us to easily set up high-fidelity 3D simulations of our robot. This has completely transformed the way we teach programming to our members. Before our robot is even fully assembled, our programmers can visualize, code, test, and debug robot behaviour from home. For a team like ours, with limited access to our build space and only 10 to 15 hours of in-person collaboration each week, this has been incredibly valuable. YASS has allowed us to design our training around a more hybrid and accessible environment, giving students more opportunities to learn, experiment, and contribute meaningfully to the robot's software. It has not only improved our development workflow, but also helped us build stronger, more confident programmers.",
+	},
+	{
+		team: "Carson Graham Robotics",
+		number: 8331,
+		quote: null,
+		logo: logo8331,
+		logoBackdrop: true,
+		contributions: ["ADRC (Active Disturbance Rejection Control) for YAMS"],
+	},
+	{
+		team: "EliteBots",
+		number: 9251,
+		quote: null,
+		contributions: ["Discord Moderator"],
 	},
 	{
 		team: "Ionic Bond",
