@@ -14,6 +14,7 @@ import logo3100 from "../assets/logos/teams/3100.png";
 import logo8331 from "../assets/logos/teams/8331.png";
 import logo5829 from "../assets/logos/teams/5829.jpg";
 import logo7902 from "../assets/logos/teams/7902.png";
+import logo4160 from "../assets/logos/teams/4160.png";
 
 export const foundingTeams = [
 	{ name: "Grease Monkeys", number: 457, url: "https://frcteam457.wixsite.com/team-457" },
@@ -82,6 +83,13 @@ export const testimonials = [
 		logo: logo2225,
 		logoBackdrop: true,
 		contributions: ["YAMS beta tester", "Easy CRT beta tester", "Discord Moderator"],
+	},
+	{
+		team: "The RoBucs",
+		number: 4160,
+		quote: null,
+		logo: logo4160,
+		contributions: ["Discord Moderator"],
 	},
 	{
 		team: "Awtytbots",
