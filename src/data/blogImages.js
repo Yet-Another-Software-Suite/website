@@ -10,7 +10,10 @@ import yamsA301Wrapper from "../assets/blog/yams-a301-wrapper/A301.png";
 import yamsWhatsNew from "../assets/blog/yams-whats-new/01-hero.png";
 import yass2027Alpha7 from "../assets/blog/yass-2027-alpha7/systemcoretesting-yass.png";
 
+import partnerTeams from "../assets/blog/partner-teams-2026-2027/01-hero.webp";
+
 export const blogImages = {
+	"partner-teams-2026-2027": partnerTeams,
 	"frc-plugin-clion": frcPluginClion,
 	"jsim-fuel-hub": jsimFuelHub,
 	"yamg-2027": yamg2027,

@@ -12,6 +12,8 @@ const blog = defineCollection({
 			image: z.string().optional(),
 			imageAlt: z.string().optional(),
 			imagePosition: z.string().default("center"),
+			// Show the header image uncropped at its natural aspect ratio.
+			imageFull: z.boolean().default(false),
 			logoHeader: z.boolean().default(false),
 			source: z.string().optional(),
 		})

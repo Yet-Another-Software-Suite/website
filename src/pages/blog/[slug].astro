@@ -54,7 +54,7 @@ const img = post.data.image ? blogImages[post.data.image] : null;
 
 				{img ? (
 					<>
-						<img src={img.src} alt={post.data.imageAlt} class="w-full h-56 sm:h-72 object-cover rounded-sm mb-6" style={`object-position: ${post.data.imagePosition};`} />
+						<img src={img.src} alt={post.data.imageAlt} class:list={["w-full rounded-sm mb-6", post.data.imageFull ? "h-auto" : "h-56 sm:h-72 object-cover"]} style={`object-position: ${post.data.imagePosition};`} />
 						<p class="font-mono text-faint text-sm mb-2">{dateline}</p>
 						<h1 class="text-2xl sm:text-3xl font-bold text-ink mb-8">{post.data.title}</h1>
 					</>
