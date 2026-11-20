@@ -89,7 +89,7 @@ export const testimonials = [
 		number: 4160,
 		quote: null,
 		logo: logo4160,
-		contributions: ["Discord Moderator"],
+		contributions: ["Easy CRT alpha tester", "Discord Moderator"],
 	},
 	{
 		team: "Awtytbots",
