@@ -36,9 +36,9 @@ export const projects = [
 	{
 		key: "yall",
 		name: "YALL",
-		fullName: "Yet Another Limelight Library",
+		fullName: "Yet Another Localization Library",
 		description:
-			"A simpler, more reliable interface for getting Limelight vision working on your robot, without having to dig through NetworkTables by hand.",
+			"One camera API for PhotonVision, Limelight and Synapse, with simulation for all three, so your robot knows where it is on the field. The same code runs on the real robot and in sim.",
 		docs: "https://yall.yassrobotics.com",
 		github: "https://github.com/Yet-Another-Software-Suite/YALL",
 		ledColor: "var(--color-yall)",
