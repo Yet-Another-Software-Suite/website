@@ -1,7 +1,6 @@
 // Maps the `image` string in each blog post's frontmatter to an imported,
 // build-time-optimized asset. Add one import + one entry per image used.
 import frcPluginClion from "../assets/blog/frc-plugin-clion/01-arm-subsystem.png";
-import jsimFuelHub from "../assets/blog/jsim-fuel-hub.png";
 import yamg2027 from "../assets/blog/yamg-2027/01-hero.png";
 import yamgNewLook from "../assets/blog/yamg-new-look/01-hero.png";
 import yagslConfigNewLook from "../assets/blog/yagsl-config-new-look/01-hero.png";
@@ -15,7 +14,6 @@ import partnerTeams from "../assets/blog/partner-teams-2026-2027/01-hero.webp";
 export const blogImages = {
 	"partner-teams-2026-2027": partnerTeams,
 	"frc-plugin-clion": frcPluginClion,
-	"jsim-fuel-hub": jsimFuelHub,
 	"yamg-2027": yamg2027,
 	"yamg-new-look": yamgNewLook,
 	"yagsl-config-new-look": yagslConfigNewLook,
