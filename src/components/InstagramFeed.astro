@@ -3,11 +3,16 @@
 // on third-party sites, so instead of embedding live iframes we mirror a
 // handful of posts as self-hosted cards that link back to the real post.
 // Swap the image/caption/url here to feature different posts.
+import thanksgiving from "../assets/instagram/ig-thanksgiving.jpg";
 import partners from "../assets/instagram/ig-partners.jpg";
 import meme from "../assets/instagram/ig-meme.jpg";
-import diwali from "../assets/instagram/ig-diwali.jpg";
 
 const posts = [
+	{
+		image: thanksgiving,
+		caption: "Happy Thanksgiving from Rivet and the YASS team!",
+		url: "https://www.instagram.com/yassrobotics/p/DgNmWzitfpY/",
+	},
 	{
 		image: partners,
 		caption: "Introducing Team YASS for 2026-2027! So excited to partner with these fantastic teams to help shape the future of FRC!",
@@ -17,11 +22,6 @@ const posts = [
 		image: meme,
 		caption: "This is what happens when a programmer does marketing. Tag a team that should try YASS this year!",
 		url: "https://www.instagram.com/yassrobotics/p/DfxrSGSsMuY/",
-	},
-	{
-		image: diwali,
-		caption: "Happy Diwali! May the Festival of Lights brighten your life with joy, prosperity, and endless happiness.",
-		url: "https://www.instagram.com/yassrobotics/p/Dff-tv5tR5j/",
 	},
 ];
 
